@@ -1,3 +1,5 @@
+package enums;
+
 public enum RoomStatus {
     AVAILABLE("Свободен"),
     OCCUPIED("Занят"),
