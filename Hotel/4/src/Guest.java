@@ -1,3 +1,4 @@
+import enums.ServiceSort;
 import enums.SortDirection;
 
 import java.time.LocalDate;
@@ -25,12 +26,24 @@ public class Guest {
         return id;
     }
 
+    public String getFirstName() {
+        return firstname;
+    }
+
+    public String getLastName() {
+        return lastname;
+    }
+
     public String getFullName() {
         return firstname + " " + lastname;
     }
 
     public int getRoomNumber() {
         return roomNumber;
+    }
+
+    public List<GuestServiceUsage> getServiceUsages() {
+        return serviceUsages;
     }
 
     public String getDescription() {
@@ -51,6 +64,10 @@ public class Guest {
         return information.toString();
     }
 
+    public List<GuestServiceUsage> getServicesSorted(ServiceSort sortBy, SortDirection direction) {
+        return sortServices(sortBy, direction);
+    }
+
     public void setRoomNumber(int number) {
         this.roomNumber = number;
     }
@@ -60,48 +77,11 @@ public class Guest {
         serviceUsages.add(newServiceUsage);
     }
 
-    public void displayServicesSorted(String sortBy, SortDirection direction) {
-        List<GuestServiceUsage> sortedList;
-        String sortDescription;
-
-        switch (sortBy.toLowerCase()) {
-            case "price":
-                sortedList = sortServicesByPrice(direction);
-                sortDescription = "цене";
-                break;
-            case "date":
-                sortedList = sortServicesByDate(direction);
-                sortDescription = "дате";
-                break;
-            default:
-                System.out.println("Неизвестный параметр сортировки: " + sortBy);
-                return;
-        }
-
-        String directionText = (direction == SortDirection.ASC) ? "возрастанию" : "убыванию";
-        System.out.println("Услуги гостя " + getFullName() + " (сортировка по " + sortDescription + ", по " + directionText + "):");
-
-        if (sortedList.isEmpty()) {
-            System.out.println("  Нет услуг");
-        } else {
-            sortedList.forEach(usage -> System.out.println("  " + usage));
-        }
-    }
-
-    private List<GuestServiceUsage> sortServicesByPrice(SortDirection direction) {
-        Comparator<GuestServiceUsage> comparator = Comparator.comparingInt(GuestServiceUsage::getPrice);
-
-        if (direction == SortDirection.DESC) {
-            comparator = comparator.reversed();
-        }
-
-        return serviceUsages.stream()
-                .sorted(comparator)
-                .collect(Collectors.toList());
-    }
-
-    private List<GuestServiceUsage> sortServicesByDate(SortDirection direction) {
-        Comparator<GuestServiceUsage> comparator = Comparator.comparing(GuestServiceUsage::getUsageDate);
+    private List<GuestServiceUsage> sortServices(ServiceSort sortBy, SortDirection direction) {
+        Comparator<GuestServiceUsage> comparator = switch (sortBy) {
+            case ServiceSort.PRICE -> Comparator.comparingInt(GuestServiceUsage::getPrice);
+            case ServiceSort.DATE -> Comparator.comparing(GuestServiceUsage::getUsageDate);
+        };
 
         if (direction == SortDirection.DESC) {
             comparator = comparator.reversed();
