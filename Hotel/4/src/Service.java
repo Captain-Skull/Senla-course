@@ -1,4 +1,8 @@
-public class Service {
+import java.io.Serializable;
+
+public class Service implements Serializable {
+    private static final long serialVersionUID = 0004L;
+
     private String id;
     private String name;
     private int price;

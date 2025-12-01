@@ -38,6 +38,7 @@ public class MainMenuContext extends BaseContext{
             case "5":
                 controller.setContext(new ImportExportContext(controller));
             case "6":
+                controller.saveAndExit();
                 break;
             default:
                 System.out.println("Такого кода нет. Попробуйте еще раз");

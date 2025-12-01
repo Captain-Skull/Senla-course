@@ -1,13 +1,16 @@
 import enums.ServiceSort;
 import enums.SortDirection;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Guest {
+public class Guest implements Serializable {
+    private static final long serialVersionUID = 0002L;
+
     private String id;
     private String firstname;
     private String lastname;

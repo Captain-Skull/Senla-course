@@ -3,19 +3,21 @@ import enums.*;
 import exceptions.ImportExportException;
 import exceptions.ValidationException;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class HotelModel {
+public class HotelModel implements Serializable {
+    private static final long serialVersionUID = 1111L;
+
     private String name;
-//    private List<Room> rooms;
-//    private List<Service> services;
     private Map<String, Room> rooms;
     private Map<String, Service> services;
     private Map<String, Guest> guests;
     private Map<String, Guest> previousGuests;
     private LocalDate currentDay;
+    private HotelConfig config;
 
 
     public HotelModel(String name) {
@@ -25,6 +27,7 @@ public class HotelModel {
         this.guests = new HashMap<>();
         this.previousGuests = new HashMap<>();
         this.currentDay = LocalDate.now();
+        this.config = HotelConfig.getInstance();
         initializeHotelData();
     }
 
@@ -235,18 +238,27 @@ public class HotelModel {
     }
 
     public boolean setRoomUnderMaintenance(int roomId, int days) {
-        Room room = getRoomByNumber(roomId);
-        return room.setUnderMaintenance(currentDay, days);
+        if (config.isAllowRoomStatusChange()) {
+            Room room = getRoomByNumber(roomId);
+            return room.setUnderMaintenance(currentDay, days);
+        }
+        return false;
     }
 
     public boolean setRoomCleaning(int roomId) {
-        Room room = getRoomByNumber(roomId);
-        return room.setCleaning(currentDay);
+        if (config.isAllowRoomStatusChange()) {
+            Room room = getRoomByNumber(roomId);
+            return room.setCleaning(currentDay);
+        }
+        return false;
     }
 
     public boolean setRoomAvailable(int roomId) {
-        Room room = getRoomByNumber(roomId);
-        return room.setAvailable();
+        if (config.isAllowRoomStatusChange()) {
+            Room room = getRoomByNumber(roomId);
+            return room.setAvailable();
+        }
+        return false;
     }
 
     public void setRoomPrice(int roomId, int price) {

@@ -37,4 +37,5 @@ public interface ControllerInterface {
     void exportRooms(String filePath);
     void importServices(String filePath);
     void exportServices(String filePath);
+    void saveAndExit();
 }
