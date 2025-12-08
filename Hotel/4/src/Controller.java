@@ -1,3 +1,6 @@
+import annotations.Component;
+import annotations.Inject;
+import annotations.PostConstruct;
 import contexts.*;
 import enums.*;
 import exceptions.HotelException;
@@ -9,14 +12,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class Controller implements ControllerInterface {
+    @Inject
     private HotelModel hotelModel;
+
+    @Inject
     private HotelView hotelView;
+
     private BaseContext currentContext;
 
-    public Controller(HotelModel hotelModel, HotelView hotelView) {
-        this.hotelModel  = hotelModel;
-        this.hotelView = hotelView;
+    // КОНСТРУКТОР БЕЗ ПАРАМЕТРОВ для DI
+    public Controller() {
+    }
+
+    @PostConstruct
+    private void init() {
         this.currentContext = new MainMenuContext(this);
     }
 

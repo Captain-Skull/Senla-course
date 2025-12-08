@@ -1,3 +1,5 @@
+import annotations.Component;
+import annotations.Singleton;
 import enums.*;
 
 import java.time.LocalDate;
@@ -5,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
+@Component
+@Singleton
 public class HotelView {
     public void nextDay(LocalDate currentDay) {
         System.out.println("Наступил новый день: " + getFormattedDate(currentDay));

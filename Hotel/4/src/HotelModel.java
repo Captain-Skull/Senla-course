@@ -1,3 +1,7 @@
+import annotations.Component;
+import annotations.Inject;
+import annotations.PostConstruct;
+import annotations.Singleton;
 import contexts.GuestDraft;
 import enums.*;
 import exceptions.ImportExportException;
@@ -8,6 +12,8 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Component
+@Singleton
 public class HotelModel implements Serializable {
     private static final long serialVersionUID = 1111L;
 
@@ -17,8 +23,11 @@ public class HotelModel implements Serializable {
     private Map<String, Guest> guests;
     private Map<String, Guest> previousGuests;
     private LocalDate currentDay;
+    @Inject
     private HotelConfig config;
 
+    public HotelModel() {
+    }
 
     public HotelModel(String name) {
         this.name = name;
@@ -29,6 +38,33 @@ public class HotelModel implements Serializable {
         this.currentDay = LocalDate.now();
         this.config = HotelConfig.getInstance();
         initializeHotelData();
+    }
+
+    @PostConstruct
+    private void init() {
+        if (this.name == null) {
+            this.name = config.getHotelName();
+        }
+        if (this.rooms == null) {
+            this.rooms = new HashMap<>();
+        }
+        if (this.services == null) {
+            this.services = new HashMap<>();
+        }
+        if (this.guests == null) {
+            this.guests = new HashMap<>();
+        }
+        if (this.previousGuests == null) {
+            this.previousGuests = new HashMap<>();
+        }
+        if (this.currentDay == null) {
+            this.currentDay = LocalDate.now();
+        }
+
+        // Инициализируем данные только если коллекции пустые
+        if (rooms.isEmpty()) {
+            initializeHotelData();
+        }
     }
 
     private void initializeHotelData() {
