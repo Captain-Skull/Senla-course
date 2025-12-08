@@ -1,11 +1,14 @@
 import enums.RoomStatus;
 import enums.RoomType;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room {
+public class Room implements Serializable {
+    private static final long serialVersionUID = 0003L;
+
     private String id;
     private int number;
     private RoomType type;
@@ -16,6 +19,7 @@ public class Room {
     private List<List<Guest>> previousGuests;
     private LocalDate endDate;
     private int daysUnderStatus;
+    private int maxHistorySize;
 
     public Room(String roomId, int number, RoomType type, int price, int capacity) {
         this.id = roomId;
@@ -28,6 +32,7 @@ public class Room {
         this.previousGuests = new ArrayList<>();
         this.endDate = LocalDate.now();
         this.daysUnderStatus = 0;
+        this.maxHistorySize = HotelConfig.getInstance().getRoomHistorySize();
     }
 
     public String getId() {
@@ -178,11 +183,11 @@ public class Room {
     }
 
     private void addPreviousGuests(List<Guest> guests) {
-        if (previousGuests.size() == 3) {
-            previousGuests.removeLast();
-        }
+        previousGuests.addFirst(new ArrayList<>(guests));
 
-        previousGuests.addFirst(guests);
+        if (previousGuests.size() > maxHistorySize) {
+            previousGuests = previousGuests.subList(0, maxHistorySize);
+        }
     }
 
     private void setStatusDates(LocalDate startDate, int days) {

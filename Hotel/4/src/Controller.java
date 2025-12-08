@@ -402,6 +402,17 @@ public class Controller implements ControllerInterface {
         }
     }
 
+    @Override
+    public void saveAndExit() {
+        try {
+            StatePersistenceService.saveHotelModel(hotelModel);
+            System.exit(0);
+        } catch (Exception e) {
+            hotelView.displayError("Ошибка при сохранении: " + e.getMessage());
+            System.exit(1);
+        }
+    }
+
     private void setExitContext() {
         setContext(new ExitContext(this));
     }

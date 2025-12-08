@@ -1,7 +1,10 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class GuestServiceUsage {
+public class GuestServiceUsage implements Serializable {
+    private static final long serialVersionUID = 00011L;
+
     private Service service;
     private LocalDate usageDate;
     private Guest guest;

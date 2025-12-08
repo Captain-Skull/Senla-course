@@ -181,4 +181,8 @@ public class HotelView {
             System.out.println(room.getDescription());
         });
     }
+
+    public void displayMessage(String s) {
+        System.out.println(s);
+    }
 }
