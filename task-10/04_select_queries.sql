@@ -91,7 +91,7 @@ WHERE speed < (SELECT MIN(speed) FROM pc);
 SELECT DISTINCT p.maker, pr.price
 from product p
 JOIN printer pr ON p.model = pr.model
-WHERE pr.color = 'y' and pr.price = (SELECT MIN(price) from printer WHERE pr.color = 'y');
+WHERE pr.color = 'y' and pr.price = (SELECT MIN(price) from printer WHERE color = 'y');
 
 SELECT p.maker, AVG(l.screen)
 FROM product p
@@ -99,12 +99,12 @@ JOIN laptop l ON p.model = l.model
 GROUP BY p.maker
 ORDER BY p.maker;
 
-SELECT p.maker, COUNT(*) as model_count
-FROM product p
-JOIN pc ON pc.model = p.model
-GROUP BY p.maker
-HAVING COUNT(*) >= 3
-ORDER BY p.maker;
+SELECT maker, COUNT(DISTINCT model) as model_count
+FROM product
+WHERE type = 'PC'
+GROUP BY maker
+HAVING COUNT(DISTINCT model) >= 3
+ORDER BY maker;
 
 SELECT p.maker, MAX(pc.price) as max_price
 FROM product p

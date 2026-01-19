@@ -41,13 +41,13 @@ public class HotelView {
         }
     }
 
-    public void displaySortedAvailableRooms(Map<String, Room> sortedAvailableRooms, RoomSort sortBy, SortDirection direction) {
+    public void displaySortedAvailableRooms(Map<Integer, Room> sortedAvailableRooms, RoomSort sortBy, SortDirection direction) {
         String directionText = direction.getDirection();
         System.out.println("=============Доступные комнаты отсортированные по " + sortBy + " по " + directionText);
         displayRooms(sortedAvailableRooms);
     }
 
-    public void displaySortedRooms(Map<String, Room> sortedRooms, RoomSort sortBy, SortDirection direction) {
+    public void displaySortedRooms(Map<Integer, Room> sortedRooms, RoomSort sortBy, SortDirection direction) {
         String directionText = direction.getDirection();
         System.out.println("===========Все комнаты отсортированные по " + sortBy + " по " + directionText);
         displayRooms(sortedRooms);
@@ -66,7 +66,7 @@ public class HotelView {
         System.out.println("=======================");
     }
 
-    public void displayAvailableRoomsByDate(Map<String, Room> availableRoomsByDate, LocalDate date) {
+    public void displayAvailableRoomsByDate(Map<Integer, Room> availableRoomsByDate, LocalDate date) {
         System.out.println("===========Список доступных комнат на " + getFormattedDate(date));
         for (Room room : availableRoomsByDate.values()) {
             System.out.println(room.getDescription());
@@ -74,13 +74,13 @@ public class HotelView {
         System.out.println("================");
     }
 
-    public void displayPreviousGuests(List<List<Guest>> previousGuests, int roomNumber) {
+    public void displayPreviousGuests(List<List<RoomGuestHistory>> previousGuests, int roomNumber) {
         System.out.println("=======Список последних трех постояльцев номера " + roomNumber + "=========");
 
         for (int i = 0; i < previousGuests.size(); i++) {
             StringBuilder text = new StringBuilder();
             text.append(i+1).append(".");
-            for (Guest g : previousGuests.get(i)) {
+            for (RoomGuestHistory g : previousGuests.get(i)) {
                 text.append(" ").append(g.getFullName());
             }
             System.out.println(text.toString());
@@ -124,16 +124,14 @@ public class HotelView {
         }
     }
 
-    public void displayCheckout(boolean success, Room room) {
+    public void displayCheckout(boolean success, int roomNumber, List<Guest> guests, int totalCost) {
         if (success) {
-            for (Guest guest : room.getGuests()) {;
-                guest.setRoomNumber(0);
-                System.out.println("Гость " + guest.getFullName() + " выехал из номера " + room.getNumber());
+            for (Guest guest : guests) {
+                System.out.println("Гость " + guest.getFullName() + " выехал из номера " + roomNumber);
             }
-
-            System.out.println("Жители комнаты " + room.getNumber() + " заплатили за проживание " + room.calculateCost() + "руб");
+            System.out.println("Жители комнаты " + roomNumber + " заплатили за проживание " + totalCost + " руб.");
         } else {
-            System.out.println("Номер " + room.getNumber() + " не заселен.");
+            System.out.println("Номер " + roomNumber + " не заселен.");
         }
     }
 
@@ -182,7 +180,7 @@ public class HotelView {
         return date.format(formatter);
     }
 
-    private void displayRooms(Map<String, Room> roomsToDisplay) {
+    private void displayRooms(Map<Integer, Room> roomsToDisplay) {
         roomsToDisplay.values().forEach(room -> {
             System.out.println(room.getDescription());
         });

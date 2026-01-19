@@ -174,7 +174,7 @@ public class RoomManagementContext extends BaseContext{
                 type = RoomType.LUXURY;
                 break;
             case "4":
-                type = RoomType.PRESEDENTIAL;
+                type = RoomType.PRESIDENTIAL;
                 break;
             default:
                 noSuchIndex();

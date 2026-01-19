@@ -6,8 +6,10 @@ import annotations.PostConstruct;
 import annotations.Singleton;
 import contexts.GuestDraft;
 import enums.*;
+import exceptions.DaoException;
 import exceptions.ImportExportException;
 import exceptions.ValidationException;
+import hotel.service.HotelService;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -20,13 +22,13 @@ public class HotelModel implements Serializable {
     private static final long serialVersionUID = 1111L;
 
     private String name;
-    private Map<String, Room> rooms;
-    private Map<String, Service> services;
-    private Map<String, Guest> guests;
-    private Map<String, Guest> previousGuests;
+
     private LocalDate currentDay;
     @Inject
     private HotelConfig config;
+
+    @Inject
+    private transient HotelService hotelService;
 
     public HotelModel() {
     }
@@ -36,67 +38,35 @@ public class HotelModel implements Serializable {
         if (this.name == null) {
             this.name = config.getHotelName();
         }
-        if (this.rooms == null) {
-            this.rooms = new HashMap<>();
-        }
-        if (this.services == null) {
-            this.services = new HashMap<>();
-        }
-        if (this.guests == null) {
-            this.guests = new HashMap<>();
-        }
-        if (this.previousGuests == null) {
-            this.previousGuests = new HashMap<>();
-        }
         if (this.currentDay == null) {
             this.currentDay = LocalDate.now();
         }
-
-        // Инициализируем данные только если коллекции пустые
-        if (rooms.isEmpty()) {
-            initializeHotelData();
-        }
-    }
-
-    private void initializeHotelData() {
-        addRoom(101, RoomType.ECONOM, 1000, 1);
-        addRoom(102, RoomType.ECONOM, 1000, 1);
-        addRoom(103, RoomType.ECONOM, 1000, 1);
-        addRoom(104, RoomType.STANDARD, 2500, 2);
-        addRoom(105, RoomType.STANDARD, 2600, 3);
-        addRoom(201, RoomType.STANDARD, 2700, 2);
-        addRoom(202, RoomType.STANDARD, 2800, 2);
-        addRoom(203, RoomType.STANDARD, 2950, 3);
-        addRoom(204, RoomType.LUXURY, 5000, 4);
-        addRoom(301, RoomType.LUXURY, 5200, 4);
-        addRoom(302, RoomType.LUXURY, 5500, 4);
-        addRoom(401, RoomType.PRESEDENTIAL, 11000, 6);
-        addRoom(501, RoomType.PRESEDENTIAL, 15000, 6);
-
-        addService("Завтрак", 200, "Завтрак в 8:00");
-        addService("Обед", 300, "Обед в 13:00");
-        addService("Ужин", 275, "Ужин в 20:00");
-        addService("Тренажерный зал", 200, "Пропуск в тренажерный зал на день");
-        addService("SPA-зона", 250, "Пропуск в зону спа на день");
-        addService("Бассейн", 150, "Пропуск в бассейн на день");
     }
 
     public String getName() {
         return name;
     }
 
+    public List<Room> getRoomsList() {
+        return hotelService.getAllRooms();
+    }
+
+    public List<Guest> getGuestsList() {
+        return hotelService.getAllGuests();
+    }
+
+    public List<Service> getServicesList() {
+        return hotelService.getAllServices();
+    }
+
+    public List<Guest> getGuestsByRoom(int roomNumber) {
+        return hotelService.getGuestsByRoom(roomNumber);
+    }
+
     public List<Guest> initializeGuests(List<GuestDraft> newGuestsDraft) {
         List<Guest> newGuests = new ArrayList<>();
-        List<String> allGuestIds = new ArrayList<>();
-        allGuestIds.addAll(guests.keySet());
-        allGuestIds.addAll(previousGuests.keySet());
-        int nextGuestIndex = getNextIndex(allGuestIds);
-
         for (GuestDraft draft : newGuestsDraft) {
-            String guestId = "G" + nextGuestIndex;
-            nextGuestIndex++;
-
-            Guest guest = new Guest(guestId, draft.firstName(), draft.lastName());
+            Guest guest = new Guest(null, draft.firstName(), draft.lastName());
             newGuests.add(guest);
         }
 
@@ -104,16 +74,13 @@ public class HotelModel implements Serializable {
     }
 
     public void addService(String name, int price, String description) {
-        int nextServiceIndex = getNextIndex(new ArrayList<>(services.keySet()));
-        String serviceId = "S" + nextServiceIndex;
-
-        services.put(serviceId, new Service(serviceId, name, price, description));
+        Service service = new Service(null, name, price, description);
+        hotelService.saveService(service);
     }
 
     public void addRoom(int number, RoomType type, int price, int capacity) {
-        String roomId = "R" + number;
-        Room room = new Room(roomId, number, type, price, capacity);
-        this.rooms.put(roomId, room);
+        Room room = new Room(number, type, price, capacity);
+        hotelService.saveRoom(room);
     }
 
     public LocalDate nextDay() {
@@ -127,50 +94,45 @@ public class HotelModel implements Serializable {
     }
 
     public String getRoomInformation(int roomNumber) {
-        String roomId = "R" + roomNumber;
-        return rooms.get(roomId).getDescription();
+        return getRoomByNumber(roomNumber).getDescription();
     }
 
     public int getAvailableRoomsCount() {
-        int count = 0;
-        for (Room room : rooms.values()) {
-            if (room.getStatus() == RoomStatus.AVAILABLE) {
-                count++;
-            }
-        }
-        return count;
+        return hotelService.getAvailableRooms().size();
     }
 
     public int getGuestsCount() {
-        return guests.size();
+        return hotelService.getAllGuests().size();
     }
 
     public Guest getGuestById(String guestId) {
-        Guest guest = guests.get(guestId);
+        Guest guest = hotelService.getGuestById(guestId);
         if (guest == null) {
-            throw  new ValidationException("Гостя с id " + guestId + " не найдено");
+            throw new ValidationException("Гость с id " + guestId + " не найден");
         }
-        return guests.get(guestId);
+        return guest;
     }
 
     public Room getRoomByNumber(int number) {
-        String roomId = "R" + number;
-        Room room = rooms.get(roomId);
+        Room room = hotelService.getRoomByNumber(number);
         if (room == null) {
-            throw new ValidationException("Комната с номером " + number + " не найдено");
+            throw new ValidationException("Комната с номером " + number + " не найдена");
         }
         return room;
     }
 
-    public List<GuestServiceUsage> getGuestServiseUsageList(Guest guest, ServiceSort sortBy, SortDirection direction) {
-        return guest.getServicesSorted(sortBy, direction);
+    public List<GuestServiceUsage> getGuestServiceUsageList(Guest guest, ServiceSort sortBy, SortDirection direction) {
+        List<GuestServiceUsage> usages = hotelService.getGuestServices(guest.getId());
+        return sortServices(usages, sortBy, direction);
     }
 
-    public Map<String, Room> getSortedAvailableRooms(RoomSort sortBy, SortDirection direction) {
-        return sortRooms(getAvailableRooms(), sortBy, direction);
+    public Map<Integer, Room> getSortedAvailableRooms(RoomSort sortBy, SortDirection direction) {
+        List<Room> availableRooms = hotelService.getAvailableRooms();
+        return sortRooms(availableRooms, sortBy, direction);
     }
 
-    public Map<String, Room> getSortedRooms(RoomSort sortBy, SortDirection direction) {
+    public Map<Integer, Room> getSortedRooms(RoomSort sortBy, SortDirection direction) {
+        List<Room> rooms = hotelService.getAllRooms();
         return sortRooms(rooms, sortBy, direction);
     }
 
@@ -178,142 +140,92 @@ public class HotelModel implements Serializable {
         return sortGuests(sortBy, direction);
     }
 
-    public Map<String, Room> getAvailableRoomsByDate(LocalDate date) {
-        Map<String, Room> availableRoomsByDate = new HashMap<>();
-        for (Room room : rooms.values()) {
+    public Map<Integer, Room> getAvailableRoomsByDate(LocalDate date) {
+        Map<Integer, Room> availableRoomsByDate = new HashMap<>();
+        for (Room room : hotelService.getAllRooms()) {
             LocalDate endDate = room.getEndDate();
-            if (date.isAfter(endDate)) {
-                availableRoomsByDate.put(room.getId(), room);
+            if (endDate == null || date.isAfter(endDate)) {
+                availableRoomsByDate.put(room.getNumber(), room);
             }
         }
-
         return availableRoomsByDate;
     }
 
-    public List<List<Guest>> getPreviousGuests(int roomNumber) {
-        return getRoomByNumber(roomNumber).getPreviousGuests();
-    }
-
-    public Map<String, Guest> getPreviousGuests() {
-        return previousGuests;
-    }
-
-    public Map<String, Guest> getGuests() {
-        return guests;
+    public List<List<RoomGuestHistory>> getPreviousGuests(int roomNumber) {
+        return hotelService.getPreviousGuests(roomNumber, config.getRoomHistorySize());
     }
 
     public List<IdPricePair> getPricesOfRoomsAndServices(IdPriceSort sortBy, SortDirection direction) {
         return sortRoomsAndServices(sortBy, direction);
     }
 
-    public Service getServiceById(String serviceId) {
-        Service service = services.get(serviceId);
-        if (service == null) {
-            throw new ValidationException("Услуга с id " + serviceId + " не найдена");
-        }
-        return service;
-    }
-
-    public List<Room> getRoomsList() {
-        return new ArrayList<>(rooms.values());
-    }
-
-    public List<Service> getServicesList() {
-        return new ArrayList<>(services.values());
-    }
-
-    public List<Guest> getGuestsList() {
-        return new ArrayList<>(guests.values());
-    }
-
     public boolean isRoomExists(int roomNumber) {
-        Room room = rooms.get("R" + roomNumber);
-        return room != null;
+        return hotelService.getRoomByNumber(roomNumber) != null;
     }
 
-    public boolean checkIn(List<Guest> newGuests, int roomId, int days) {
-        Room room = getRoomByNumber(roomId);
-
-        for (Guest guest : newGuests) {
-            this.guests.put(guest.getId(), guest);
+    public boolean checkIn(List<Guest> newGuests, int roomNumber, int days) {
+        try {
+            return hotelService.checkIn(newGuests, roomNumber, days, currentDay);
+        } catch (DaoException e) {
+            return false;
         }
-
-        return room.checkIn(newGuests, currentDay, days);
     }
 
     public boolean checkOut(int roomNumber) {
-        Room room = getRoomByNumber(roomNumber);
-
-        List<Guest> roomGuests = new ArrayList<>(room.getGuests());
-
-        if (room.checkOut()) {
-            for (Guest guest : roomGuests) {
-                String guestId = guest.getId();
-                this.guests.remove(guestId);
-                guest.setRoomNumber(0);
-                previousGuests.put(guestId, guest);
-            }
-            return true;
+        try {
+            return hotelService.checkOut(roomNumber);
+        } catch (DaoException e) {
+            return false;
         }
-
-        return false;
     }
 
-    public void addServiceToGuest(Guest guest, String serviceId) {
-        Service service = getServiceById(serviceId);
-        guest.addService(service, currentDay);
+    public void addServiceToGuest(String guestId, String serviceId) {
+        hotelService.addServiceToGuest(guestId, serviceId, currentDay);
     }
 
-    public boolean setRoomUnderMaintenance(int roomId, int days) {
+    public boolean setRoomUnderMaintenance(int roomNumber, int days) {
         if (config.isAllowRoomStatusChange()) {
-            Room room = getRoomByNumber(roomId);
-            return room.setUnderMaintenance(currentDay, days);
+            return hotelService.setRoomUnderMaintenance(roomNumber, currentDay, days);
         }
         return false;
     }
 
-    public boolean setRoomCleaning(int roomId) {
+    public boolean setRoomCleaning(int roomNumber) {
         if (config.isAllowRoomStatusChange()) {
-            Room room = getRoomByNumber(roomId);
-            return room.setCleaning(currentDay);
+            return hotelService.setRoomCleaning(roomNumber, currentDay);
         }
         return false;
     }
 
-    public boolean setRoomAvailable(int roomId) {
+    public boolean setRoomAvailable(int roomNumber) {
         if (config.isAllowRoomStatusChange()) {
-            Room room = getRoomByNumber(roomId);
-            return room.setAvailable();
+            return hotelService.setRoomAvailable(roomNumber);
         }
         return false;
     }
 
-    public void setRoomPrice(int roomId, int price) {
-        Room room = getRoomByNumber(roomId);
-
-        room.setPrice(price);
+    public void setRoomPrice(int roomNumber, int price) {
+        hotelService.updateRoomPrice(roomNumber, price);
     }
 
     public void setServicePrice(String serviceId, int price) {
-        Service service = getServiceById(serviceId);
-
-        service.setPrice(price);
+        hotelService.updateServicePrice(serviceId, price);
     }
 
     public void importRooms(List<Room> importedRooms) {
         for (Room room : importedRooms) {
-            rooms.put(room.getId(), room);
+            hotelService.saveRoom(room);
         }
     }
 
     public void importServices(List<Service> importedServices) {
         for (Service service : importedServices) {
-            services.put(service.getId(), service);
+            hotelService.saveService(service);
         }
     }
 
     public void importGuests(List<Guest> importedGuests) {
-        boolean isErrorOcurred = false;
+        boolean isErrorOccurred = false;
         StringBuilder errorRooms = new StringBuilder();
 
         Map<Integer, List<Guest>> guestsByRoom = importedGuests.stream()
@@ -326,34 +238,25 @@ public class HotelModel implements Serializable {
 
             Room room = getRoomByNumber(roomNumber);
             if (room.getStatus() == RoomStatus.AVAILABLE) {
-                for (Guest guest : roomGuests) {
-                    guests.put(guest.getId(), guest);
-                }
-                room.checkIn(roomGuests, currentDay, 1);
+                hotelService.checkIn(roomGuests, roomNumber, 1, currentDay);
             } else if (room.getStatus() == RoomStatus.OCCUPIED) {
-                List<Guest> currentGuests = room.getGuests();
+                List<Guest> currentGuests = hotelService.getGuestsByRoom(roomNumber);
                 if (areGuestGroupsIdentical(roomGuests, currentGuests)) {
                     for (Guest guest : roomGuests) {
-                        guests.put(guest.getId(), guest);
+                        hotelService.updateGuest(guest);
                     }
                 } else {
-                    isErrorOcurred = true;
-                    errorRooms.append(roomNumber + " ");
-                    continue;
+                    isErrorOccurred = true;
+                    errorRooms.append(roomNumber).append(" ");
                 }
             } else {
-                isErrorOcurred = true;
-                errorRooms.append(roomNumber + " ");
-                continue;
+                isErrorOccurred = true;
+                errorRooms.append(roomNumber).append(" ");
             }
         }
 
-        importedGuests.stream()
-                .filter(guest -> guest.getRoomNumber() == 0)
-                .forEach(guest -> previousGuests.put(guest.getId(), guest));
-
-        if (isErrorOcurred) {
-            throw new ImportExportException("Не удалось расселить всех постояльцев. Комнаты, которые выдали ошибку: " + errorRooms.toString());
+        if (isErrorOccurred) {
+            throw new ImportExportException("Не удалось расселить всех постояльцев. Комнаты: " + errorRooms);
         }
     }
 
@@ -373,58 +276,35 @@ public class HotelModel implements Serializable {
         return group1Ids.equals(group2Ids);
     }
 
-    private int getNextIndex(List<String> ids) {
-        if (ids == null || ids.isEmpty()) {
-            return 1;
-        }
-
-        return ids.stream()
-                .map(id -> id.substring(1))
-                .mapToInt(id -> {
-                    try {
-                        return Integer.parseInt(id);
-                    } catch (NumberFormatException e) {
-                        return 0;
-                    }
-                })
-                .max()
-                .orElse(0) + 1;
-    }
-
-    private Map<String, Room> getAvailableRooms() {
-        return rooms.entrySet().stream()
-                .filter(entry -> entry.getValue().getStatus() == RoomStatus.AVAILABLE)
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-    }
-
     private void performEndOfDayOperations() {
-        for (Room room : rooms.values()) {
-            if (room.getEndDate().equals(currentDay)) {
+        for (Room room : hotelService.getAllRooms()) {
+            LocalDate endDate = room.getEndDate();
+            if (endDate != null && endDate.equals(currentDay)) {
                 if (room.getStatus() == RoomStatus.OCCUPIED) {
                     checkOut(room.getNumber());
                 } else if (room.getStatus() == RoomStatus.CLEANING || room.getStatus() == RoomStatus.MAINTENANCE) {
-                    room.setAvailable();
+                    hotelService.setRoomAvailable(room.getNumber());
                 }
             }
         }
     }
 
-    private Map<String, Room> sortRooms(Map<String, Room> roomsToSort, RoomSort sortBy, SortDirection direction) {
-        Comparator<Map.Entry<String, Room>> comparator = switch (sortBy) {
-            case RoomSort.PRICE -> Comparator.comparingInt(entry -> entry.getValue().getPrice());
-            case RoomSort.CAPACITY -> Comparator.comparingInt(entry -> entry.getValue().getCapacity());
-            case RoomSort.TYPE -> Comparator.comparing(entry -> entry.getValue().getType());
+    private Map<Integer, Room> sortRooms(List<Room> roomsToSort, RoomSort sortBy, SortDirection direction) {
+        Comparator<Room> comparator = switch (sortBy) {
+            case RoomSort.PRICE -> Comparator.comparingInt(Room::getPrice);
+            case RoomSort.CAPACITY -> Comparator.comparingInt(Room::getCapacity);
+            case RoomSort.TYPE -> Comparator.comparing(Room::getType);
         };
 
         if (direction == SortDirection.DESC) {
             comparator = comparator.reversed();
         }
 
-        return roomsToSort.entrySet().stream()
+        return roomsToSort.stream()
                 .sorted(comparator)
                 .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
+                        Room::getNumber,
+                        room -> room,
                         (e1, e2) -> e1,
                         LinkedHashMap::new
                 ));
@@ -443,7 +323,7 @@ public class HotelModel implements Serializable {
             comparator = comparator.reversed();
         }
 
-        List<Guest> sortedGuests = guests.values().stream().sorted(comparator).toList();
+        List<Guest> sortedGuests = hotelService.getAllGuests().stream().sorted(comparator).toList();
         return createGuestDataList(sortedGuests);
     }
 
@@ -463,10 +343,11 @@ public class HotelModel implements Serializable {
 
     private List<IdPricePair> sortRoomsAndServices(IdPriceSort sortBy, SortDirection direction) {
         List<IdPricePair> roomsAndServices = new ArrayList<>();
-        for (Room room : rooms.values()) {
-            roomsAndServices.add(new IdPricePair(room.getId(), room.getPrice()));
+        for (Room room : hotelService.getAllRooms()) {
+            String roomId = String.valueOf('R' + room.getNumber());
+            roomsAndServices.add(new IdPricePair(roomId, room.getPrice()));
         }
-        for (Service service : services.values()) {
+        for (Service service : hotelService.getAllServices()) {
             roomsAndServices.add(new IdPricePair(service.getId(), service.getPrice()));
         }
 
@@ -487,5 +368,22 @@ public class HotelModel implements Serializable {
         }
 
         return comparator;
+    }
+
+    private List<GuestServiceUsage> sortServices(List<GuestServiceUsage> usages,
+                                                 ServiceSort sortBy,
+                                                 SortDirection direction) {
+        Comparator<GuestServiceUsage> comparator = switch (sortBy) {
+            case PRICE -> Comparator.comparingInt(GuestServiceUsage::getPrice);
+            case DATE -> Comparator.comparing(GuestServiceUsage::getUsageDate);
+        };
+
+        if (direction == SortDirection.DESC) {
+            comparator = comparator.reversed();
+        }
+
+        return usages.stream()
+                .sorted(comparator)
+                .collect(Collectors.toList());
     }
 }

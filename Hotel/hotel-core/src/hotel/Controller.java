@@ -115,7 +115,7 @@ public class Controller implements ControllerInterface {
     public void displayGuestServices(String guestId, ServiceSort sortBy, SortDirection direction) {
         try {
             Guest guest = hotelModel.getGuestById(guestId);
-            List<GuestServiceUsage> guestServiceUsageList = hotelModel.getGuestServiseUsageList(guest, sortBy, direction);
+            List<GuestServiceUsage> guestServiceUsageList = hotelModel.getGuestServiceUsageList(guest, sortBy, direction);
             hotelView.displayGuestServicesSorted(guestServiceUsageList, guest, sortBy, direction);
             setExitContext();
         } catch (HotelException e) {
@@ -139,7 +139,7 @@ public class Controller implements ControllerInterface {
     @Override
     public void displaySortedRooms(RoomSort sortBy, SortDirection direction) {
         try {
-            Map<String, Room> rooms = hotelModel.getSortedRooms(sortBy, direction);
+            Map<Integer, Room> rooms = hotelModel.getSortedRooms(sortBy, direction);
             hotelView.displaySortedRooms(rooms, sortBy, direction);
             setExitContext();
         } catch (HotelException e) {
@@ -151,7 +151,7 @@ public class Controller implements ControllerInterface {
     @Override
     public void displaySortedAvailableRooms(RoomSort sortBy, SortDirection direction) {
         try {
-            Map<String, Room> rooms = hotelModel.getSortedAvailableRooms(sortBy, direction);
+            Map<Integer, Room> rooms = hotelModel.getSortedAvailableRooms(sortBy, direction);
             hotelView.displaySortedAvailableRooms(rooms, sortBy, direction);
             setExitContext();
         } catch (HotelException e) {
@@ -165,7 +165,7 @@ public class Controller implements ControllerInterface {
         try {
             LocalDate currentDate = hotelModel.getCurrentDay();
             LocalDate date = currentDate.plusDays(days);
-            Map<String, Room> rooms = hotelModel.getAvailableRoomsByDate(date);
+            Map<Integer, Room> rooms = hotelModel.getAvailableRoomsByDate(date);
             hotelView.displayAvailableRoomsByDate(rooms, date);
             setExitContext();
         } catch (HotelException e) {
@@ -177,7 +177,7 @@ public class Controller implements ControllerInterface {
     @Override
     public void displayPreviousGuests(int roomNumber) {
         try {
-            List<List<Guest>> previousGuests = hotelModel.getPreviousGuests(roomNumber);
+            List<List<RoomGuestHistory>> previousGuests = hotelModel.getPreviousGuests(roomNumber);
             hotelView.displayPreviousGuests(previousGuests, roomNumber);
             setExitContext();
         } catch (HotelException e) {
@@ -262,8 +262,13 @@ public class Controller implements ControllerInterface {
     public void checkoutGuest(int roomNumber) {
         try {
             Room room = hotelModel.getRoomByNumber(roomNumber);
+
+            List<Guest> guests = hotelModel.getGuestsByRoom(roomNumber);
+            int totalCost = room.calculateCost();
+
             boolean success = hotelModel.checkOut(roomNumber);
-            hotelView.displayCheckout(success, room);
+
+            hotelView.displayCheckout(success, roomNumber, guests, totalCost);
             setExitContext();
         } catch (HotelException e) {
             hotelView.displayError(e.getMessage());
@@ -339,7 +344,7 @@ public class Controller implements ControllerInterface {
     public void addServiceToGuest(String guestId, String serviceId) {
         try {
             Guest guest = hotelModel.getGuestById(guestId);
-            hotelModel.addServiceToGuest(guest, serviceId);
+            hotelModel.addServiceToGuest(guestId, serviceId);
             hotelView.displayAdditionServiceToGuest(guest.getFullName(), serviceId);
             setExitContext();
         } catch (HotelException e) {

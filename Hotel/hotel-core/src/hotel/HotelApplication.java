@@ -6,6 +6,9 @@ import annotations.PostConstruct;
 import annotations.Singleton;
 import di.ContextFactory;
 import di.Injector;
+import hotel.connection.ConnectionManager;
+import hotel.dao.*;
+import hotel.service.HotelService;
 
 @Component
 @Singleton
@@ -37,15 +40,24 @@ public class HotelApplication {
 
     private static void registerComponents(HotelModel savedModel) {
         Injector.registerComponent(HotelConfig.class);
-        Injector.registerComponent(HotelView.class);
 
+        Injector.registerComponent(ConnectionManager.class);
+        Injector.registerComponent(RoomDao.class);
+        Injector.registerComponent(GuestDao.class);
+        Injector.registerComponent(ServiceDao.class);
+        Injector.registerComponent(GuestServiceUsageDao.class);
+        Injector.registerComponent(RoomGuestHistoryDao.class);
+
+        Injector.registerComponent(HotelService.class);
+
+        Injector.registerComponent(HotelView.class);
         Injector.registerComponent(ContextFactory.class);
 
         if (savedModel != null) {
             Injector.injectDependencies(savedModel);
             Injector.registerComponent(HotelModel.class, savedModel);
         } else {
-            System.out.println("⚠️ No saved state found, will create new HotelModel");
+            Injector.registerComponent(HotelModel.class);
         }
 
         Injector.registerComponent(GuestCSVConverter.class);

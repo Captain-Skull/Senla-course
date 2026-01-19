@@ -22,7 +22,7 @@ public class RoomCSVConverter implements CSVService.CSVConverter<Room> {
 
     @Override
     public String getHeaders() {
-        return "id,number,type,price,capacity,status,endDate,daysUnderStatus,currentGuests,previousGuests";
+        return "number,type,price,capacity,status,endDate,daysUnderStatus,currentGuests,previousGuests";
     }
 
     @Override
@@ -31,14 +31,7 @@ public class RoomCSVConverter implements CSVService.CSVConverter<Room> {
                 .map(this::guestToCSV)
                 .collect(Collectors.joining("|"));
 
-        String previousGuestsString = room.getPreviousGuests().stream()
-                .map(group -> group.stream()
-                        .map(this::guestToCSV)
-                        .collect(Collectors.joining("|")))
-                .collect(Collectors.joining("||"));
-
-        return String.format("%s,%d,%s,%d,%d,%s,%s,%d,%s,%s",
-                room.getId(),
+        return String.format("%d,%s,%d,%d,%s,%s,%d,%s",
                 room.getNumber(),
                 room.getType(),
                 room.getPrice(),
@@ -46,8 +39,7 @@ public class RoomCSVConverter implements CSVService.CSVConverter<Room> {
                 room.getStatus(),
                 room.getEndDate(),
                 room.getDaysUnderStatus(),
-                currentGuestsString.isEmpty() ? "" : currentGuestsString,
-                previousGuestsString.isEmpty() ? "" : previousGuestsString);
+                currentGuestsString.isEmpty() ? "" : currentGuestsString);
     }
 
     private String guestToCSV(Guest guest) {
@@ -65,18 +57,16 @@ public class RoomCSVConverter implements CSVService.CSVConverter<Room> {
     @Override
     public Room fromCSV(String csvLine) {
         String[] parts = csvLine.split(",");
-        String id = parts[0];
-        int number = Integer.parseInt(parts[1]);
-        RoomType type = RoomType.valueOf(parts[2]);
-        int price = Integer.parseInt(parts[3]);
-        int capacity = Integer.parseInt(parts[4]);
-        RoomStatus status = RoomStatus.valueOf(parts[5]);
-        LocalDate endDate = LocalDate.parse(parts[6]);
-        int daysUnderStatus = Integer.parseInt(parts[7]);
-        String currentGuestsPart = parts.length > 8 ? parts[8] : "";
-        String previousGuestsPart = parts.length > 9 ? parts[9] : "";
+        int number = Integer.parseInt(parts[0]);
+        RoomType type = RoomType.valueOf(parts[1]);
+        int price = Integer.parseInt(parts[2]);
+        int capacity = Integer.parseInt(parts[3]);
+        RoomStatus status = RoomStatus.valueOf(parts[4]);
+        LocalDate endDate = LocalDate.parse(parts[5]);
+        int daysUnderStatus = Integer.parseInt(parts[6]);
+        String currentGuestsPart = parts.length > 7 ? parts[7] : "";
 
-        Room room = new Room(id, number, type, price, capacity);
+        Room room = new Room(number, type, price, capacity);
         room.setStatus(status);
         room.setEndDate(endDate);
         room.setDaysUnderStatus(daysUnderStatus);
@@ -88,23 +78,6 @@ public class RoomCSVConverter implements CSVService.CSVConverter<Room> {
                     Guest guest = guestFromCSV(guestCSV);
                     room.getGuests().add(guest);
                     guest.setRoomNumber(number);
-                }
-            }
-        }
-
-        if (!previousGuestsPart.isEmpty()) {
-            String[] guestGroups = previousGuestsPart.split("\\|\\|");
-            for (String group : guestGroups) {
-                if (!group.isEmpty()) {
-                    String[] guestCSVLines = group.split("\\|");
-                    List<Guest> guestGroup = new ArrayList<>();
-                    for (String guestCSV : guestCSVLines) {
-                        if (!guestCSV.isEmpty()) {
-                            Guest guest = guestFromCSV(guestCSV);
-                            guestGroup.add(guest);
-                        }
-                    }
-                    room.getPreviousGuests().add(guestGroup);
                 }
             }
         }

@@ -11,34 +11,24 @@ import java.util.List;
 public class Room implements Serializable {
     private static final long serialVersionUID = 0003L;
 
-    private String id;
     private int number;
     private RoomType type;
     private int price;
     private int capacity;
     private RoomStatus status;
     private List<Guest> guests;
-    private List<List<Guest>> previousGuests;
     private LocalDate endDate;
     private int daysUnderStatus;
-    private int maxHistorySize;
 
-    public Room(String roomId, int number, RoomType type, int price, int capacity) {
-        this.id = roomId;
+    public Room(int number, RoomType type, int price, int capacity) {
         this.number = number;
         this.type = type;
         this.price = price;
         this.capacity = capacity;
         this.status = RoomStatus.AVAILABLE;
         this.guests = new ArrayList<>();
-        this.previousGuests = new ArrayList<>();
         this.endDate = LocalDate.now();
         this.daysUnderStatus = 0;
-        this.maxHistorySize = HotelConfig.getInstance().getRoomHistorySize();
-    }
-
-    public String getId() {
-        return id;
     }
 
     public int getNumber() {
@@ -85,10 +75,6 @@ public class Room implements Serializable {
         return daysUnderStatus;
     }
 
-    public List<List<Guest>> getPreviousGuests() {
-        return previousGuests;
-    }
-
     public boolean checkIn(List<Guest> newGuests, LocalDate checkInDate, int days) {
         if (status != RoomStatus.AVAILABLE) {
             return false;
@@ -119,7 +105,6 @@ public class Room implements Serializable {
             guest.setRoomNumber(0);
         }
 
-        addPreviousGuests(new ArrayList<>(guests));
         this.guests.clear();
         this.status = RoomStatus.AVAILABLE;
         setCleaning(endDate);
@@ -182,14 +167,6 @@ public class Room implements Serializable {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
-    }
-
-    private void addPreviousGuests(List<Guest> guests) {
-        previousGuests.addFirst(new ArrayList<>(guests));
-
-        if (previousGuests.size() > maxHistorySize) {
-            previousGuests = previousGuests.subList(0, maxHistorySize);
-        }
     }
 
     private void setStatusDates(LocalDate startDate, int days) {

@@ -96,15 +96,27 @@ public class Injector {
     }
 
     private static void injectFields(Object target) throws Exception {
-        for (Field field : target.getClass().getDeclaredFields()) {
-            if (field.isAnnotationPresent(Inject.class)) {
-                field.setAccessible(true);
+        Class<?> currentClass = target.getClass();
 
-                Object dependency = resolveDependency(field.getType());
-                if (dependency != null) {
-                    field.set(target, dependency);
+        // Проходим вверх по иерархии наследования
+        while (currentClass != null && currentClass != Object.class) {
+            for (Field field : currentClass.getDeclaredFields()) {
+                if (field.isAnnotationPresent(Inject.class)) {
+                    field.setAccessible(true);
+
+                    // Если поле уже инициализировано — не перезаписываем (опционально)
+                    if (field.get(target) != null) continue;
+
+                    Object dependency = resolveDependency(field.getType());
+                    if (dependency != null) {
+                        field.set(target, dependency);
+                    } else {
+                        throw new RuntimeException("Dependency not found for field: " +
+                                field.getName() + " in " + currentClass.getSimpleName());
+                    }
                 }
             }
+            currentClass = currentClass.getSuperclass(); // Переходим к родителю
         }
     }
 

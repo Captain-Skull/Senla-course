@@ -69,10 +69,6 @@ public class Guest implements Serializable {
         return information.toString();
     }
 
-    public List<GuestServiceUsage> getServicesSorted(ServiceSort sortBy, SortDirection direction) {
-        return sortServices(sortBy, direction);
-    }
-
     public void setRoomNumber(int number) {
         this.roomNumber = number;
     }
@@ -80,20 +76,5 @@ public class Guest implements Serializable {
     public void addService(Service service, LocalDate usageDate) {
         GuestServiceUsage newServiceUsage = new GuestServiceUsage(service, usageDate, this);
         serviceUsages.add(newServiceUsage);
-    }
-
-    private List<GuestServiceUsage> sortServices(ServiceSort sortBy, SortDirection direction) {
-        Comparator<GuestServiceUsage> comparator = switch (sortBy) {
-            case ServiceSort.PRICE -> Comparator.comparingInt(GuestServiceUsage::getPrice);
-            case ServiceSort.DATE -> Comparator.comparing(GuestServiceUsage::getUsageDate);
-        };
-
-        if (direction == SortDirection.DESC) {
-            comparator = comparator.reversed();
-        }
-
-        return serviceUsages.stream()
-                .sorted(comparator)
-                .collect(Collectors.toList());
     }
 }
