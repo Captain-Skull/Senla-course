@@ -1,0 +1,7 @@
+2026-01-20 18:56:30.723 [main] INFO  hotel.Controller - Запуск приложения
+2026-01-20 18:56:44.759 [main] INFO  hotel.Controller - Обработка команды: displayAvailableRoomsCount
+2026-01-20 18:57:09.283 [main] INFO  hotel.Controller - Обработка команды: displayGuests
+2026-01-20 19:03:00.837 [main] INFO  hotel.Controller - Запуск приложения
+2026-01-20 19:03:04.739 [main] INFO  hotel.Controller - Обработка команды: displayAvailableRoomsCount
+2026-01-20 19:03:09.875 [main] INFO  hotel.Controller - Обработка команды: saveAndExit
+2026-01-20 19:03:09.883 [main] INFO  hotel.Controller - Команда выполнена: saveAndExit
