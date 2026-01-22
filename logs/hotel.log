@@ -5,3 +5,11 @@
 2026-01-20 19:03:04.739 [main] INFO  hotel.Controller - Обработка команды: displayAvailableRoomsCount
 2026-01-20 19:03:09.875 [main] INFO  hotel.Controller - Обработка команды: saveAndExit
 2026-01-20 19:03:09.883 [main] INFO  hotel.Controller - Команда выполнена: saveAndExit
+2026-01-20 20:31:22.919 [main] INFO  hotel.Controller - Запуск приложения
+2026-01-20 20:31:22.920 [main] INFO  hotel.Controller - Приложение запущено
+2026-01-20 20:31:30.077 [main] INFO  hotel.Controller - Обработка команды: displaySortedRooms
+2026-01-20 20:31:30.109 [main] INFO  hotel.Controller - Команда выполнена: displaySortedRooms
+2026-01-22 20:47:49.630 [main] INFO  hotel.Controller - Запуск приложения
+2026-01-22 20:47:49.632 [main] INFO  hotel.Controller - Приложение запущено
+2026-01-22 20:48:04.263 [main] INFO  hotel.Controller - Обработка команды: displaySortedRooms
+2026-01-22 20:48:04.291 [main] INFO  hotel.Controller - Команда выполнена: displaySortedRooms

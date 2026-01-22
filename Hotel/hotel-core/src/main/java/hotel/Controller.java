@@ -60,8 +60,8 @@ public class Controller implements ControllerInterface {
     public void start() {
         try {
             logger.info("Запуск приложения");
-            currentContext.initializeMenu();
             logger.info("Приложение запущено");
+            currentContext.initializeMenu();
         } catch (HotelException e) {
             logger.error("Критическая ошибка при запуске: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -87,8 +87,8 @@ public class Controller implements ControllerInterface {
             logger.info("Переход в следующий день");
             LocalDate date = hotelModel.nextDay();
             hotelView.nextDay(date);
-            currentContext.initializeMenu();
             logger.info("Следующий день наступил");
+            currentContext.initializeMenu();
         } catch (HotelException e) {
             logger.error("Ошибка при смене дня: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -102,8 +102,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displayGuestsCount");
             int guestsCount = hotelModel.getGuestsCount();
             hotelView.displayGuestsCount(guestsCount);
-            setExitContext();
             logger.info("Команда выполнена: displayGuestsCount");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayGuestsCount: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -117,8 +117,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displayGuests");
             List<GuestData> sortedGuests = hotelModel.getSortedGuests(sortBy, direction);
             hotelView.displayGuests(sortedGuests, sortBy, direction);
-            setExitContext();
             logger.info("Команда выполена: displayGuests");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayGuests: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -143,8 +143,8 @@ public class Controller implements ControllerInterface {
             Guest guest = hotelModel.getGuestById(guestId);
             List<GuestServiceUsage> guestServiceUsageList = hotelModel.getGuestServiceUsageList(guest, sortBy, direction);
             hotelView.displayGuestServicesSorted(guestServiceUsageList, guest, sortBy, direction);
-            setExitContext();
             logger.info("Команда выполнена: displayGuestService");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayGuestService: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -158,8 +158,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displayAvailableRoomsCount");
             int availableRoomsCount = hotelModel.getAvailableRoomsCount();
             hotelView.displayAvailableRoomCount(availableRoomsCount);
-            setExitContext();
             logger.info("Команда выполнена: displayAvailableRoomsCount");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayAvailableRoomsCount: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -173,8 +173,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displaySortedRooms");
             Map<Integer, Room> rooms = hotelModel.getSortedRooms(sortBy, direction);
             hotelView.displaySortedRooms(rooms, sortBy, direction);
-            setExitContext();
             logger.info("Команда выполнена: displaySortedRooms");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displaySortedRooms: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -188,8 +188,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displaySortedAvailableRooms");
             Map<Integer, Room> rooms = hotelModel.getSortedAvailableRooms(sortBy, direction);
             hotelView.displaySortedAvailableRooms(rooms, sortBy, direction);
-            setExitContext();
             logger.info("Команда выполнена: displaySortedAvailableRooms");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displaySortedAvailableRooms: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -205,8 +205,8 @@ public class Controller implements ControllerInterface {
             LocalDate date = currentDate.plusDays(days);
             Map<Integer, Room> rooms = hotelModel.getAvailableRoomsByDate(date);
             hotelView.displayAvailableRoomsByDate(rooms, date);
-            setExitContext();
             logger.info("Команда выполнена: displayAvailableRoomsByDate");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayAvailableRoomsByDate: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -220,8 +220,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displayPreviousGuests");
             List<List<RoomGuestHistory>> previousGuests = hotelModel.getPreviousGuests(roomNumber);
             hotelView.displayPreviousGuests(previousGuests, roomNumber);
-            setExitContext();
             logger.info("Команда выполнена: displayPreviousGuests");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayPreviousGuests: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -235,8 +235,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displayRoomInformation");
             String roomInformation = hotelModel.getRoomInformation(roomNumber);
             hotelView.displayRoomInformation(roomInformation);
-            setExitContext();
             logger.info("Команда выполнена: displayRoomInformation");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayRoomInformation: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -250,8 +250,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: displayPricesOfRoomsAndServices");
             List<IdPricePair> roomsAndServices = hotelModel.getPricesOfRoomsAndServices(sortBy, direction);
             hotelView.displayPricesOfRoomsAndServices(roomsAndServices);
-            setExitContext();
             logger.info("Команда выполнена: displayPricesOfRoomsAndServices");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка displayPricesOfRoomsAndServices: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -265,8 +265,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: setRoomPrice");
             hotelModel.setRoomPrice(roomNumber, price);
             hotelView.displayNewPriceForRoom(roomNumber, price);
-            setExitContext();
             logger.info("Команда выполнена: setRoomPrice");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка setRoomPrice: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -280,8 +280,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: setRoomAvailable");
             boolean success = hotelModel.setRoomAvailable(roomNumber);
             hotelView.displayRoomAvailable(success, roomNumber);
-            setExitContext();
             logger.info("Команда выполнена: setRoomAvailable");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка setRoomAvailable: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -295,8 +295,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: setRoomCleaning");
             boolean success = hotelModel.setRoomCleaning(roomNumber);
             hotelView.displayCleaningStarted(success, roomNumber);
-            setExitContext();
             logger.info("Команда выполнена: setRoomCleaning");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка setRoomCleaning: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -310,8 +310,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: setRoomUnderMaintenance");
             boolean success = hotelModel.setRoomUnderMaintenance(roomNumber, days);
             hotelView.displayMaintenanceStarted(success, roomNumber);
-            setExitContext();
             logger.info("Команда выполнена: setRoomUnderMaintenance");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка setRoomUnderMaintenance: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -331,8 +331,8 @@ public class Controller implements ControllerInterface {
             boolean success = hotelModel.checkOut(roomNumber);
 
             hotelView.displayCheckout(success, roomNumber, guests, totalCost);
-            setExitContext();
             logger.info("Команда выполнена: checkoutGuest");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка checkoutGuest: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -351,8 +351,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: addNewRoom");
             hotelModel.addRoom(roomNumber, roomType, price, capacity);
             hotelView.displayNewRoomAddition(roomNumber);
-            setExitContext();
             logger.info("Команда выполнена: addNewRoom");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка addNewRoom: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -377,8 +377,8 @@ public class Controller implements ControllerInterface {
             List<Guest> guests = hotelModel.initializeGuests(newGuestsDraft);
             boolean success = hotelModel.checkIn(guests, roomNumber, days);
             hotelView.displayCheckIn(success, guests, roomNumber);
-            setExitContext();
             logger.info("Команда выполнена: checkInGuests");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка checkInGuests: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -392,8 +392,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: setServicePrice");
             hotelModel.setServicePrice(serviceId, servicePrice);
             hotelView.displayNewPriceForService(serviceId, servicePrice);
-            setExitContext();
             logger.info("Команда выполнена: setServicePrice");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка setServicePrice: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -407,8 +407,8 @@ public class Controller implements ControllerInterface {
             logger.info("Обработка команды: addNewService");
             hotelModel.addService(name, price, description);
             hotelView.displayNewServiceAddition(name);
-            setExitContext();
             logger.info("Команда выполнена: addNewService");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка addNewService: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -423,8 +423,8 @@ public class Controller implements ControllerInterface {
             Guest guest = hotelModel.getGuestById(guestId);
             hotelModel.addServiceToGuest(guestId, serviceId);
             hotelView.displayAdditionServiceToGuest(guest.getFullName(), serviceId);
-            setExitContext();
             logger.info("Команда выполнена: addServiceToGuest");
+            setExitContext();
         } catch (HotelException e) {
             logger.error("Ошибка addServiceToGuest: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -439,8 +439,8 @@ public class Controller implements ControllerInterface {
             List<Guest> guests = CSVService.importFromCSV(filePath, guestCSVConverter);
             hotelModel.importGuests(guests);
             hotelView.displayImportSuccess("Гости", filePath, guests.size());
-            setExitContext();
             logger.info("Команда выполнена: importGuests");
+            setExitContext();
         } catch (ImportExportException e) {
             logger.error("Ошибка importGuests: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -455,8 +455,8 @@ public class Controller implements ControllerInterface {
             List<Guest> guests = hotelModel.getGuestsList();
             CSVService.exportToCSV(guests, filePath, guestCSVConverter);
             hotelView.displayExportSuccess("Гости", filePath);
-            setExitContext();
             logger.info("Команда выполнена: exportGuests");
+            setExitContext();
         } catch (ImportExportException e) {
             logger.error("Ошибка exportGuests: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -471,8 +471,8 @@ public class Controller implements ControllerInterface {
             List<Room> rooms = CSVService.importFromCSV(filePath, roomCSVConverter);
             hotelModel.importRooms(rooms);
             hotelView.displayImportSuccess("Комнаты", filePath, rooms.size());
-            setExitContext();
             logger.info("Команда выполнена: importRooms");
+            setExitContext();
         } catch (ImportExportException e) {
             logger.error("Ошибка importRooms: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -487,8 +487,8 @@ public class Controller implements ControllerInterface {
             List<Room> rooms = hotelModel.getRoomsList();
             CSVService.exportToCSV(rooms, filePath, roomCSVConverter);
             hotelView.displayExportSuccess("Комнаты", filePath);
-            setExitContext();
             logger.info("Команда выполнена: exportRooms");
+            setExitContext();
         } catch (ImportExportException e) {
             logger.error("Ошибка exportRooms: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -503,8 +503,8 @@ public class Controller implements ControllerInterface {
             List<Service> services = CSVService.importFromCSV(filePath, serviceCSVConverter);
             hotelModel.importServices(services);
             hotelView.displayImportSuccess("Услуги", filePath, services.size());
-            setExitContext();
             logger.info("Команда выполнена: importServices");
+            setExitContext();
         } catch (ImportExportException e) {
             logger.error("Ошибка importServices: {}", e.getMessage());
             hotelView.displayError(e.getMessage());
@@ -519,8 +519,8 @@ public class Controller implements ControllerInterface {
             List<Service> services = hotelModel.getServicesList();
             CSVService.exportToCSV(services, filePath, serviceCSVConverter);
             hotelView.displayExportSuccess("Услуги", filePath);
-            setExitContext();
             logger.info("Команда выполнена: exportServices");
+            setExitContext();
         } catch (ImportExportException e) {
             logger.error("Ошибка exportServices: {}", e.getMessage());
             hotelView.displayError(e.getMessage());

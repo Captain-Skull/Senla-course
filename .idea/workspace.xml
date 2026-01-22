@@ -5,257 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="131864da-8b05-43fc-9442-53ce735e091e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/Hotel.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/Bean.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/Bean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/ConfigClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/ConfigClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/ConfigProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/ConfigProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/Inject.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/Inject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/PostConstruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/PostConstruct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/PropertyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/PropertyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/Qualifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/Qualifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/annotations/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/annotations/Singleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/src/config/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/src/main/java/config/ConfigLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/di-module/src/di/ContextFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/ContextFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/di-module/src/di/DependencyContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/di-module/src/main/java/di/DependencyContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/di-module/src/di/Injector.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/di-module/src/main/java/di/Injector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/Guest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/Guest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/GuestServiceUsage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/GuestServiceUsage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/HotelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/HotelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/IdPricePair.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/IdPricePair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/enums/GuestSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/enums/GuestSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/enums/RoomSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/enums/RoomSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/enums/RoomStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/enums/RoomStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/enums/RoomType.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/enums/RoomType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/enums/ServiceSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/enums/ServiceSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/classes/enums/SortDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/classes/enums/SortDirection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/manifest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/build/program.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/build/program.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/guestsEx.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/guestsEx.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/guestsIm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/guestsIm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/hotel.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/hotel.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/hotel_state.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/hotel_state.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/roomsEx.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/roomsEx.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/roomsIm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/roomsIm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/servicesEx.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/servicesEx.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/resources/servicesIm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/resources/servicesIm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/BaseContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/BaseContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/ControllerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/ControllerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/ExitContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/ExitContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/GuestDraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/GuestDraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/GuestManagementContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/GuestManagementContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/ImportExportContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/ImportExportContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/MainMenuContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/MainMenuContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/RoomManagementContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/RoomManagementContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/ServiceManagementContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/ServiceManagementContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/contexts/SortAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/contexts/SortAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/Context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/GuestSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/GuestSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/IdPriceSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/IdPriceSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/RoomSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/RoomSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/RoomStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/RoomStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/RoomType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/RoomType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/ServiceSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/ServiceSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/enums/SortDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/enums/SortDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/exceptions/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/exceptions/DaoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/exceptions/HotelException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/exceptions/HotelException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/exceptions/ImportExportException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/exceptions/ImportExportException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/exceptions/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/exceptions/ValidationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/CSVService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/CSVService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/Guest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/GuestCSVConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/GuestCSVConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/GuestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/GuestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/GuestServiceUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/GuestServiceUsage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/HotelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/HotelApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/HotelConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/HotelConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/HotelModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/HotelModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/HotelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/HotelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/IdPricePair.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/IdPricePair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/RoomCSVConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/RoomCSVConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/RoomGuestHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/RoomGuestHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/ServiceCSVConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/ServiceCSVConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/ServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/ServiceRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/StatePersistenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/StatePersistenceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/connection/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/AbstractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/AbstractDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/GenericDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/GuestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/GuestDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/GuestServiceUsageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/GuestServiceUsageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/RoomDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/RoomDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/RoomGuestHistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/RoomGuestHistoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/dao/ServiceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/dao/ServiceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/hotel/service/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/service/HotelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Bouquet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Flower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/FlowerShop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Gladiolus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Lily.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Orchid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Rose.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/Tulip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/Bean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/Component.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/ConfigClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/ConfigProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/Configuration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/Inject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/PostConstruct.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/PropertyType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/Qualifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/annotations/Singleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/config/ConfigLoader$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/config/ConfigLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/BaseContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/ControllerInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/ExitContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/GuestDraft.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/GuestManagementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/ImportExportContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/MainMenuContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/RoomManagementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/ServiceManagementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/contexts/SortAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/di/ContextFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/di/DependencyContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/di/Injector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/Context.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/GuestSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/IdPriceSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/RoomSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/RoomStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/RoomType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/ServiceSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/enums/SortDirection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/exceptions/DaoException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/exceptions/HotelException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/exceptions/ImportExportException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/exceptions/ValidationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/CSVService$CSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/CSVService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/Guest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/Guest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/GuestCSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/GuestData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/GuestServiceUsage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/HotelApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/HotelConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/HotelModel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/HotelModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/HotelView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/IdPricePair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/RoomCSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/RoomGuestHistory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/ServiceCSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/ServiceRegistry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/StatePersistenceService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/connection/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/AbstractDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/GenericDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/GuestDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/GuestServiceUsageDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/RoomDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/RoomGuestHistoryDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/dao/ServiceDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel/hotel/service/HotelService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/ProducerConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/SynchronizedThreads.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/Task1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/Task2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/Task3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/Task4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/ThreadStates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/TimePrinter$TimePrinterThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/TimePrinter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/Bean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/Component.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/ConfigClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/ConfigProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/Configuration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/Inject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/PostConstruct.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/PropertyType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/Qualifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/annotations/Singleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/config/ConfigLoader$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/config/ConfigLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/BaseContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/ControllerInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/ExitContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/GuestDraft.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/GuestManagementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/ImportExportContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/MainMenuContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/RoomManagementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/ServiceManagementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/contexts/SortAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/database.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/di/ContextFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/di/DependencyContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/di/Injector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/Context.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/GuestSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/IdPriceSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/RoomSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/RoomStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/RoomType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/ServiceSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/enums/SortDirection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/exceptions/DaoException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/exceptions/HotelException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/exceptions/ImportExportException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/exceptions/ValidationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/guestsEx.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/guestsIm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/CSVService$CSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/CSVService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/Guest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/GuestCSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/GuestData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/GuestServiceUsage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/HotelApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/HotelConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/HotelModel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/HotelModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/HotelView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/IdPricePair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/RoomCSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/RoomGuestHistory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/ServiceCSVConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/ServiceRegistry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/StatePersistenceService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/connection/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/AbstractDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/GenericDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/GuestDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/GuestServiceUsageDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/RoomDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/RoomGuestHistoryDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/dao/ServiceDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel/service/HotelService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/hotel_state.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/roomsEx.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/roomsIm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/servicesEx.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Senla/servicesIm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/config-annotations/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/config-annotations/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/di-module/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/di-module/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/src/main/java/hotel/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/hotel-core/target/classes/hotel/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/hotel-core/target/classes/hotel/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/hotel.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/hotel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,24 +37,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Greeting.executor": "Run",
-    "Application.HotelApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "task-12",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/georgemk/Documents/Projects/Java/Senla",
-    "onboarding.tips.debug.path": "/Users/georgemk/Documents/Projects/Java/Senla/Hotel/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Greeting.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HotelApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;task-12&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/georgemk/Documents/Projects/Java/Senla&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/georgemk/Documents/Projects/Java/Senla/Hotel/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Hotel/hotel-core/src/main/java" />
@@ -309,6 +66,7 @@
   <component name="RunManager">
     <configuration name="HotelApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hotel.HotelApplication" />
+      <module name="hotel-core" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="hotel.*" />
