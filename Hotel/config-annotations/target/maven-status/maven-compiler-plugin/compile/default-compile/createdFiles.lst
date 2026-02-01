@@ -1,0 +1,12 @@
+annotations/Component.class
+annotations/PropertyType.class
+annotations/Inject.class
+annotations/ConfigClass.class
+annotations/Singleton.class
+config/ConfigLoader.class
+annotations/Bean.class
+annotations/ConfigProperty.class
+annotations/Configuration.class
+annotations/PostConstruct.class
+config/ConfigLoader$1.class
+annotations/Qualifier.class

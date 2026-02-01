@@ -16,6 +16,8 @@ import enums.RoomType;
 import exceptions.HotelException;
 import exceptions.ImportExportException;
 import exceptions.ValidationException;
+import hotel.dto.GuestWithServicesDto;
+import hotel.dto.RoomWithGuestsDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -171,7 +173,7 @@ public class Controller implements ControllerInterface {
     public void displaySortedRooms(RoomSort sortBy, SortDirection direction) {
         try {
             logger.info("Обработка команды: displaySortedRooms");
-            Map<Integer, Room> rooms = hotelModel.getSortedRooms(sortBy, direction);
+            List<RoomWithGuestsDto> rooms = hotelModel.getSortedRooms(sortBy, direction);
             hotelView.displaySortedRooms(rooms, sortBy, direction);
             logger.info("Команда выполнена: displaySortedRooms");
             setExitContext();
@@ -436,7 +438,7 @@ public class Controller implements ControllerInterface {
     public void importGuests(String filePath) {
         try {
             logger.info("Обработка команды: importGuests");
-            List<Guest> guests = CSVService.importFromCSV(filePath, guestCSVConverter);
+            List<GuestWithServicesDto> guests = CSVService.importFromCSV(filePath, guestCSVConverter);
             hotelModel.importGuests(guests);
             hotelView.displayImportSuccess("Гости", filePath, guests.size());
             logger.info("Команда выполнена: importGuests");
@@ -452,8 +454,8 @@ public class Controller implements ControllerInterface {
     public void exportGuests(String filePath) {
         try {
             logger.info("Обработка команды: exportGuests");
-            List<Guest> guests = hotelModel.getGuestsList();
-            CSVService.exportToCSV(guests, filePath, guestCSVConverter);
+            List<GuestWithServicesDto> guestsWithServices = hotelModel.getGuestsForExport();
+            CSVService.exportToCSV(guestsWithServices, filePath, guestCSVConverter);
             hotelView.displayExportSuccess("Гости", filePath);
             logger.info("Команда выполнена: exportGuests");
             setExitContext();
@@ -468,7 +470,7 @@ public class Controller implements ControllerInterface {
     public void importRooms(String filePath) {
         try {
             logger.info("Обработка команды: importRooms");
-            List<Room> rooms = CSVService.importFromCSV(filePath, roomCSVConverter);
+            List<RoomWithGuestsDto> rooms = CSVService.importFromCSV(filePath, roomCSVConverter);
             hotelModel.importRooms(rooms);
             hotelView.displayImportSuccess("Комнаты", filePath, rooms.size());
             logger.info("Команда выполнена: importRooms");
@@ -484,8 +486,8 @@ public class Controller implements ControllerInterface {
     public void exportRooms(String filePath) {
         try {
             logger.info("Обработка команды: exportRooms");
-            List<Room> rooms = hotelModel.getRoomsList();
-            CSVService.exportToCSV(rooms, filePath, roomCSVConverter);
+            List<RoomWithGuestsDto> roomsWithGuests = hotelModel.getRoomsForExport();
+            CSVService.exportToCSV(roomsWithGuests, filePath, roomCSVConverter);
             hotelView.displayExportSuccess("Комнаты", filePath);
             logger.info("Команда выполнена: exportRooms");
             setExitContext();

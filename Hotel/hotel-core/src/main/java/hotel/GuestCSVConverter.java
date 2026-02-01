@@ -3,13 +3,16 @@ package hotel;
 import annotations.Component;
 import annotations.Inject;
 import annotations.Singleton;
+import hotel.dto.GuestWithServicesDto;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 @Singleton
-public class GuestCSVConverter implements CSVService.CSVConverter<Guest> {
+public class GuestCSVConverter implements CSVService.CSVConverter<GuestWithServicesDto> {
 
     @Inject
     private ServiceRegistry serviceRegistry;
@@ -23,8 +26,10 @@ public class GuestCSVConverter implements CSVService.CSVConverter<Guest> {
     }
 
     @Override
-    public String toCSV(Guest guest) {
-        String servicesString = guest.getServiceUsages().stream()
+    public String toCSV(GuestWithServicesDto dto) {
+        Guest guest = dto.getGuest();
+
+        String servicesString = dto.getServiceUsages().stream()
                 .map(usage -> usage.getService().getId() + ":" + usage.getUsageDate())
                 .collect(Collectors.joining(";"));
 
@@ -37,8 +42,8 @@ public class GuestCSVConverter implements CSVService.CSVConverter<Guest> {
     }
 
     @Override
-    public Guest fromCSV(String csvLine) {
-        String[] parts = csvLine.split(",");
+    public GuestWithServicesDto fromCSV(String csvLine) {
+        String[] parts = csvLine.split(",", -1);
         String id = parts[0];
         String firstName = parts[1];
         String lastName = parts[2];
@@ -48,6 +53,7 @@ public class GuestCSVConverter implements CSVService.CSVConverter<Guest> {
         Guest guest = new Guest(id, firstName, lastName);
         guest.setRoomNumber(roomNumber);
 
+        List<GuestServiceUsage> usages = new ArrayList<>();
         if (!servicesPart.isEmpty()) {
             String[] serviceEntries = servicesPart.split(";");
             for (String serviceEntry : serviceEntries) {
@@ -58,12 +64,13 @@ public class GuestCSVConverter implements CSVService.CSVConverter<Guest> {
 
                     Service service = serviceRegistry.getServiceById(serviceId);
                     if (service != null) {
-                        guest.addService(service, usageDate);
+                        GuestServiceUsage usage = new GuestServiceUsage(service, usageDate, guest);
+                        usages.add(usage);
                     }
                 }
             }
         }
 
-        return guest;
+        return new GuestWithServicesDto(guest, usages);
     }
 }

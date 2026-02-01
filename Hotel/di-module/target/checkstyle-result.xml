@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/di-module/src/main/java/di/Injector.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/di-module/src/main/java/di/DependencyContainer.java">
+</file>
 </checkstyle>

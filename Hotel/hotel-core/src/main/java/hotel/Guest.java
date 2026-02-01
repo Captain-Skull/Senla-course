@@ -1,26 +1,35 @@
 package hotel;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+import java.io.Serializable;
+
+@Entity
+@Table(name = "guests")
 public class Guest implements Serializable {
 
     private static final long serialVersionUID = 0002L;
 
+    @Id
+    @Column(name = "id", insertable = false)
     private String id;
+    @Column(name = "firstname", nullable = false)
     private String firstname;
+    @Column(name = "lastname", nullable = false)
     private String lastname;
+    @Column(name = "room_number", nullable = false)
     private int roomNumber;
-    private List<GuestServiceUsage> serviceUsages;
+
+    public Guest() {  }
 
     public Guest(String id, String firstname, String lastname) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.roomNumber = -1;
-        this.serviceUsages = new ArrayList<>();
     }
 
     public String getId() {
@@ -43,34 +52,15 @@ public class Guest implements Serializable {
         return roomNumber;
     }
 
-    public List<GuestServiceUsage> getServiceUsages() {
-        return serviceUsages;
-    }
-
-    public String getDescription() {
-        return getFullName() + " Номер: " + roomNumber;
-    }
-
     public String getInformation() {
-        StringBuilder information = new StringBuilder(getFullName());
-        information.append(" Номер: ");
-        information.append(roomNumber);
-        if (!serviceUsages.isEmpty()) {
-            information.append("\nУслуги: ");
-            serviceUsages.forEach(serviceUsage -> {
-                information.append("\n").append(serviceUsage.getName());
-            });
-        }
-
-        return information.toString();
+        return "ID: " + id + ", Имя: " + firstname + " " + lastname;
     }
 
     public void setRoomNumber(int number) {
         this.roomNumber = number;
     }
 
-    public void addService(Service service, LocalDate usageDate) {
-        GuestServiceUsage newServiceUsage = new GuestServiceUsage(service, usageDate, this);
-        serviceUsages.add(newServiceUsage);
+    public void setId(String id) {
+        this.id = id;
     }
 }

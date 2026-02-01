@@ -2,24 +2,47 @@ package hotel;
 
 import enums.RoomStatus;
 import enums.RoomType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
+@Entity
+@Table(name = "rooms")
 public class Room implements Serializable {
 
     private static final long serialVersionUID = 0003L;
 
+    @Id
+    @Column(name = "number", nullable = false)
     private int number;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "room_type", nullable = false)
     private RoomType type;
+
+    @Column(name = "price", nullable = false)
     private int price;
+
+    @Column(name = "capacity", nullable = false)
     private int capacity;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "room_status", nullable = false)
     private RoomStatus status;
-    private List<Guest> guests;
+
+    @Column(name = "end_date")
     private LocalDate endDate;
+
+    @Column(name = "days_under_status", nullable = false)
     private int daysUnderStatus;
+
+    public Room() {  }
 
     public Room(int number, RoomType type, int price, int capacity) {
         this.number = number;
@@ -27,7 +50,6 @@ public class Room implements Serializable {
         this.price = price;
         this.capacity = capacity;
         this.status = RoomStatus.AVAILABLE;
-        this.guests = new ArrayList<>();
         this.endDate = LocalDate.now();
         this.daysUnderStatus = 0;
     }
@@ -52,64 +74,12 @@ public class Room implements Serializable {
         return type;
     }
 
-    public String getDescription() {
-        StringBuilder description = new StringBuilder("Номер " + number + " тип: " + type + "\nСтоимость: " + price + " вместимость: " + capacity + "\nСтатус: " + status.getStatus());
-
-        if (!guests.isEmpty()) {
-            System.out.println("Список гостей");
-            for (Guest guest : guests) {
-                description.append("\nГость: ").append(guest.getInformation());
-            }
-        }
-        return description.toString();
-    }
-
-    public List<Guest> getGuests() {
-        return guests;
-    }
-
     public LocalDate getEndDate() {
         return endDate;
     }
 
     public int getDaysUnderStatus() {
         return daysUnderStatus;
-    }
-
-    public boolean checkIn(List<Guest> newGuests, LocalDate checkInDate, int days) {
-        if (status != RoomStatus.AVAILABLE) {
-            return false;
-        }
-
-        if (newGuests.size() > capacity) {
-            return false;
-        }
-
-        for (Guest guest : newGuests) {
-            this.guests.add(guest);
-            guest.setRoomNumber(number);
-        }
-
-        setStatusDates(checkInDate, days);
-
-        this.status = RoomStatus.OCCUPIED;
-
-        return true;
-    }
-
-    public boolean checkOut() {
-        if (status != RoomStatus.OCCUPIED || guests.isEmpty()) {
-            return false;
-        }
-
-        for (Guest guest : guests) {
-            guest.setRoomNumber(0);
-        }
-
-        this.guests.clear();
-        this.status = RoomStatus.AVAILABLE;
-        setCleaning(endDate);
-        return true;
     }
 
     public int calculateCost() {
@@ -168,6 +138,26 @@ public class Room implements Serializable {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public boolean canCheckIn(int guestsCount) {
+        return status == RoomStatus.AVAILABLE && guestsCount <= capacity;
+    }
+
+    public boolean canCheckOut() {
+        return status == RoomStatus.OCCUPIED;
+    }
+
+    public void markAsOccupied(LocalDate checkInDate, int days) {
+        this.status = RoomStatus.OCCUPIED;
+        this.daysUnderStatus = days;
+        this.endDate = checkInDate.plusDays(days);
+    }
+
+    public void markAsAvailable() {
+        this.status = RoomStatus.AVAILABLE;
+        this.daysUnderStatus = 0;
+        this.endDate = null;
     }
 
     private void setStatusDates(LocalDate startDate, int days) {

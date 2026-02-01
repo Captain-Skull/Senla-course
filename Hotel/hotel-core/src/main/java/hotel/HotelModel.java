@@ -15,6 +15,8 @@ import enums.RoomStatus;
 import exceptions.DaoException;
 import exceptions.ImportExportException;
 import exceptions.ValidationException;
+import hotel.dto.GuestWithServicesDto;
+import hotel.dto.RoomWithGuestsDto;
 import hotel.service.HotelService;
 
 import java.io.Serializable;
@@ -60,20 +62,30 @@ public class HotelModel implements Serializable {
         return name;
     }
 
-    public List<Room> getRoomsList() {
-        return hotelService.getAllRooms();
-    }
-
-    public List<Guest> getGuestsList() {
-        return hotelService.getAllGuests();
-    }
-
     public List<Service> getServicesList() {
         return hotelService.getAllServices();
     }
 
     public List<Guest> getGuestsByRoom(int roomNumber) {
         return hotelService.getGuestsByRoom(roomNumber);
+    }
+
+    public List<RoomWithGuestsDto> getRoomsForExport() {
+        List<RoomWithGuestsDto> result = new ArrayList<>();
+        for (Room room : hotelService.getAllRooms()) {
+            List<Guest> guests = hotelService.getGuestsByRoom(room.getNumber());
+            result.add(new RoomWithGuestsDto(room, guests));
+        }
+        return result;
+    }
+
+    public List<GuestWithServicesDto> getGuestsForExport() {
+        List<GuestWithServicesDto> result = new ArrayList<>();
+        for (Guest guest : hotelService.getAllGuests()) {
+            List<GuestServiceUsage> usages = hotelService.getGuestServices(guest.getId());
+            result.add(new GuestWithServicesDto(guest, usages));
+        }
+        return result;
     }
 
     public List<Guest> initializeGuests(List<GuestDraft> newGuestsDraft) {
@@ -107,7 +119,24 @@ public class HotelModel implements Serializable {
     }
 
     public String getRoomInformation(int roomNumber) {
-        return getRoomByNumber(roomNumber).getDescription();
+        Room room = getRoomByNumber(roomNumber);
+        List<Guest> guests = hotelService.getGuestsByRoom(roomNumber);
+
+        StringBuilder info = new StringBuilder();
+        info.append("Номер ").append(room.getNumber())
+                .append(" тип: ").append(room.getType())
+                .append("\nСтоимость: ").append(room.getPrice())
+                .append(" вместимость: ").append(room.getCapacity())
+                .append("\nСтатус: ").append(room.getStatus());
+
+        if (!guests.isEmpty()) {
+            info.append("\nГости:");
+            for (Guest guest : guests) {
+                info.append("\n  - ").append(guest.getInformation());
+            }
+        }
+
+        return info.toString();
     }
 
     public int getAvailableRoomsCount() {
@@ -144,9 +173,17 @@ public class HotelModel implements Serializable {
         return sortRooms(availableRooms, sortBy, direction);
     }
 
-    public Map<Integer, Room> getSortedRooms(RoomSort sortBy, SortDirection direction) {
+    public List<RoomWithGuestsDto> getSortedRooms(RoomSort sortBy, SortDirection direction) {
         List<Room> rooms = hotelService.getAllRooms();
-        return sortRooms(rooms, sortBy, direction);
+        Map<Integer, Room> sortedRooms = sortRooms(rooms, sortBy, direction);
+
+        List<RoomWithGuestsDto> result = new ArrayList<>();
+        for (Room room : sortedRooms.values()) {
+            List<Guest> guests = hotelService.getGuestsByRoom(room.getNumber());
+            result.add(new RoomWithGuestsDto(room, guests));
+        }
+
+        return result;
     }
 
     public List<GuestData> getSortedGuests(GuestSort sortBy, SortDirection direction) {
@@ -225,51 +262,104 @@ public class HotelModel implements Serializable {
         hotelService.updateServicePrice(serviceId, price);
     }
 
-    public void importRooms(List<Room> importedRooms) {
-        for (Room room : importedRooms) {
-            hotelService.saveRoom(room);
+    public void importRooms(List<RoomWithGuestsDto> importedRooms) {
+        for (RoomWithGuestsDto dto : importedRooms) {
+            Room room = dto.getRoom();
+
+            if (isRoomExists(room.getNumber())) {
+                hotelService.updateRoom(room);
+            } else {
+                hotelService.saveRoom(room);
+            }
+
+            if (dto.hasGuests()) {
+                List<Guest> guests = dto.getGuests();
+                if (room.getStatus() == RoomStatus.AVAILABLE) {
+                    hotelService.checkIn(guests, room.getNumber(), room.getDaysUnderStatus(), currentDay);
+                } else if (room.getStatus() == RoomStatus.OCCUPIED) {
+                    if (areGuestGroupsIdentical(guests, hotelService.getGuestsByRoom(room.getNumber()))) {
+                        for (Guest guest : guests) {
+                            hotelService.updateGuest(guest);
+                        }
+                    }
+                }
+            }
         }
     }
 
     public void importServices(List<Service> importedServices) {
         for (Service service : importedServices) {
-            hotelService.saveService(service);
+            Service existing = hotelService.getServiceById(service.getId());
+            if (existing != null) {
+                hotelService.updateService(service);
+            } else {
+                hotelService.saveService(service);
+            }
         }
     }
 
-    public void importGuests(List<Guest> importedGuests) {
+    public void importGuests(List<GuestWithServicesDto> importedGuests) {
         boolean isErrorOccurred = false;
         StringBuilder errorRooms = new StringBuilder();
 
-        Map<Integer, List<Guest>> guestsByRoom = importedGuests.stream()
-                .filter(guest -> guest.getRoomNumber() > 0)
-                .collect(Collectors.groupingBy(Guest::getRoomNumber));
+        Map<Integer, List<GuestWithServicesDto>> dtosByRoom = importedGuests.stream()
+                .filter(dto -> dto.getGuest().getRoomNumber() > 0)
+                .collect(Collectors.groupingBy(dto -> dto.getGuest().getRoomNumber()));
 
-        for (Map.Entry<Integer, List<Guest>> entry : guestsByRoom.entrySet()) {
+        for (Map.Entry<Integer, List<GuestWithServicesDto>> entry : dtosByRoom.entrySet()) {
             int roomNumber = entry.getKey();
-            List<Guest> roomGuests = entry.getValue();
+            List<GuestWithServicesDto> roomDtos = entry.getValue();
+
+            if (!isRoomExists(roomNumber)) {
+                isErrorOccurred = true;
+                errorRooms.append(roomNumber).append(" (не существует) ");
+                continue;
+            }
 
             Room room = getRoomByNumber(roomNumber);
+            List<Guest> guests = roomDtos.stream()
+                    .map(GuestWithServicesDto::getGuest)
+                    .collect(Collectors.toList());
+
             if (room.getStatus() == RoomStatus.AVAILABLE) {
-                hotelService.checkIn(roomGuests, roomNumber, 1, currentDay);
-            } else if (room.getStatus() == RoomStatus.OCCUPIED) {
-                List<Guest> currentGuests = hotelService.getGuestsByRoom(roomNumber);
-                if (areGuestGroupsIdentical(roomGuests, currentGuests)) {
-                    for (Guest guest : roomGuests) {
-                        hotelService.updateGuest(guest);
-                    }
+                if (hotelService.checkIn(guests, roomNumber, 1, currentDay)) {
+                    saveGuestServices(roomDtos);
                 } else {
                     isErrorOccurred = true;
                     errorRooms.append(roomNumber).append(" ");
                 }
+            } else if (room.getStatus() == RoomStatus.OCCUPIED) {
+                List<Guest> currentGuests = hotelService.getGuestsByRoom(roomNumber);
+
+                if (areGuestGroupsIdentical(guests, currentGuests)) {
+                    for (Guest guest : guests) {
+                        hotelService.updateGuest(guest);
+                    }
+                    saveGuestServices(roomDtos);
+                } else {
+                    isErrorOccurred = true;
+                    errorRooms.append(roomNumber).append(" (занята другими) ");
+                }
             } else {
                 isErrorOccurred = true;
-                errorRooms.append(roomNumber).append(" ");
+                errorRooms.append(roomNumber).append(" (недоступна) ");
             }
         }
 
         if (isErrorOccurred) {
-            throw new ImportExportException("Не удалось расселить всех постояльцев. Комнаты: " + errorRooms);
+            throw new ImportExportException("Не удалось расселить постояльцев. Комнаты: " + errorRooms);
+        }
+    }
+
+    private void saveGuestServices(List<GuestWithServicesDto> dtos) {
+        for (GuestWithServicesDto dto : dtos) {
+            for (GuestServiceUsage usage : dto.getServiceUsages()) {
+                hotelService.addServiceToGuest(
+                        dto.getGuest().getId(),
+                        usage.getService().getId(),
+                        usage.getUsageDate()
+                );
+            }
         }
     }
 

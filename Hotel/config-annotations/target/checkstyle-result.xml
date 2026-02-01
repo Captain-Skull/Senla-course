@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/config/ConfigLoader.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/PostConstruct.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Inject.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/ConfigProperty.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/ConfigClass.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Singleton.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Configuration.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Component.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Qualifier.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Bean.java">
+</file>
+<file name="/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/PropertyType.java">
+</file>
 </checkstyle>

@@ -1,0 +1,11 @@
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Bean.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Component.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/ConfigClass.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/ConfigProperty.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Configuration.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Inject.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/PostConstruct.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/PropertyType.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Qualifier.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/annotations/Singleton.java
+/Users/georgemk/Documents/Projects/Java/Senla/Hotel/config-annotations/src/main/java/config/ConfigLoader.java

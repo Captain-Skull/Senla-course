@@ -3,14 +3,13 @@ package hotel.service;
 import annotations.Component;
 import annotations.Inject;
 import annotations.Singleton;
-import enums.RoomStatus;
 import exceptions.DaoException;
 import hotel.Guest;
 import hotel.GuestServiceUsage;
 import hotel.Room;
 import hotel.Service;
 import hotel.RoomGuestHistory;
-import hotel.connection.ConnectionManager;
+import hotel.connection.EntityManagerProvider;
 import hotel.dao.GuestDao;
 import hotel.dao.RoomDao;
 import hotel.dao.GuestServiceUsageDao;
@@ -32,7 +31,6 @@ public class HotelService {
     private static final String ERROR_ROOM_CAPACITY = "Превышена вместимость";
     private static final String ERROR_ROOM_NOT_OCCUPIED = "Комната не занята";
 
-
     @Inject
     private RoomDao roomDao;
 
@@ -49,31 +47,24 @@ public class HotelService {
     private RoomGuestHistoryDao historyDao;
 
     @Inject
-    private ConnectionManager connectionManager;
+    private EntityManagerProvider emProvider;
 
     public HotelService() {
     }
 
     public boolean checkIn(List<Guest> guests, int roomNumber, int days, LocalDate currentDay) {
         try {
-            connectionManager.beginTransaction();
+            emProvider.beginTransaction();
 
             Room room = roomDao.findById(roomNumber)
-                    .orElseThrow(() -> new DaoException(ERROR_ROOM_NOT_FOUND + roomNumber));
+                    .orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
 
-            if (room.getStatus() != RoomStatus.AVAILABLE) {
-                connectionManager.rollback();
-                throw new DaoException(ERROR_ROOM_NOT_AVAILABLE);
+            if (!room.canCheckIn(guests.size())) {
+                emProvider.rollback();
+                return false;
             }
 
-            if (guests.size() > room.getCapacity()) {
-                connectionManager.rollback();
-                throw new DaoException(ERROR_ROOM_CAPACITY);
-            }
-
-            room.setStatus(RoomStatus.OCCUPIED);
-            room.setEndDate(currentDay.plusDays(days));
-            room.setDaysUnderStatus(days);
+            room.markAsOccupied(currentDay, days);
             roomDao.update(room);
 
             List<Guest> savedGuests = new ArrayList<>();
@@ -83,60 +74,57 @@ public class HotelService {
                 savedGuests.add(saved);
             }
 
-            connectionManager.commit();
+            emProvider.commit();
 
             guests.clear();
             guests.addAll(savedGuests);
             return true;
         } catch (Exception e) {
-            connectionManager.rollback();
+            emProvider.rollback();
             throw new DaoException("Ошибка заселения", e);
         }
     }
 
     public boolean checkOut(int roomNumber) {
         try {
-            connectionManager.beginTransaction();
+            emProvider.beginTransaction();
 
             Room room = roomDao.findById(roomNumber)
-                    .orElseThrow(() -> new DaoException(ERROR_ROOM_NOT_FOUND + roomNumber));
+                    .orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
 
-            if (room.getStatus() != RoomStatus.OCCUPIED) {
-                connectionManager.rollback();
-                throw new DaoException(ERROR_ROOM_NOT_OCCUPIED);
+            if (!room.canCheckOut()) {
+                emProvider.rollback();
+                return false;
             }
 
             List<Guest> guests = guestDao.findByRoomNumber(roomNumber);
-            int nextGroupId = historyDao.getNextGroupId(roomNumber);
 
+            if (guests.isEmpty()) {
+                emProvider.rollback();
+                return false;
+            }
+
+            int nextGroupId = historyDao.getNextGroupId(roomNumber);
             for (Guest guest : guests) {
-                RoomGuestHistory history = new RoomGuestHistory(
-                        guest.getId(),
-                        guest.getFirstName(),
-                        guest.getLastName(),
-                        roomNumber,
-                        nextGroupId
-                );
+                RoomGuestHistory history = RoomGuestHistory.fromGuest(guest, roomNumber, nextGroupId);
                 historyDao.save(history);
                 guestDao.delete(guest.getId());
             }
 
-            room.setStatus(RoomStatus.AVAILABLE);
-            room.setEndDate(null);
-            room.setDaysUnderStatus(0);
+            room.markAsAvailable();
             roomDao.update(room);
 
-            connectionManager.commit();
+            emProvider.commit();
             return true;
         } catch (Exception e) {
-            connectionManager.rollback();
+            emProvider.rollback();
             throw new DaoException("Ошибка выселения", e);
         }
     }
 
     public void addServiceToGuest(String guestId, String serviceId, LocalDate usageDate) {
         try {
-            connectionManager.beginTransaction();
+            emProvider.beginTransaction();
 
             Guest guest = guestDao.findById(guestId)
                     .orElseThrow(() -> new DaoException(ERROR_GUEST_NOT_FOUND + guestId));
@@ -145,12 +133,11 @@ public class HotelService {
                     .orElseThrow(() -> new DaoException(ERROR_SERVICE_NOT_FOUND + serviceId));
 
             GuestServiceUsage usage = new GuestServiceUsage(service, usageDate, guest);
-            usage.setId(usageDao.getNextId());
             usageDao.save(usage);
 
-            connectionManager.commit();
+            emProvider.commit();
         } catch (Exception e) {
-            connectionManager.rollback();
+            emProvider.rollback();
             throw new DaoException("Ошибка добавления услуги", e);
         }
     }
@@ -163,8 +150,8 @@ public class HotelService {
         return roomDao.findAvailable();
     }
 
-    public Room getRoomByNumber(int n) {
-        return roomDao.findById(n).orElse(null);
+    public Room getRoomByNumber(int roomNumber) {
+        return roomDao.findById(roomNumber).orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
     }
 
     public List<Guest> getAllGuests() {
@@ -184,7 +171,7 @@ public class HotelService {
     }
 
     public Service getServiceById(String id) {
-        return serviceDao.findById(id).orElse(null);
+        return serviceDao.findById(id).orElseThrow(() -> new DaoException("Услуга не найдена: " + id));
     }
 
     public List<GuestServiceUsage> getGuestServices(String guestId) {
@@ -196,66 +183,149 @@ public class HotelService {
     }
 
     public void updateRoomPrice(int roomNumber, int price) {
-        Room room = getRoomByNumber(roomNumber);
-        if (room != null) {
+        try {
+            emProvider.beginTransaction();
+
+            Room room = getRoomByNumber(roomNumber);
+
             room.setPrice(price);
             roomDao.update(room);
+
+            emProvider.commit();
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка обновления цены комнаты", e);
         }
     }
 
     public void updateServicePrice(String serviceId, int price) {
-        Service service = getServiceById(serviceId);
-        if (service != null) {
+        try {
+            emProvider.beginTransaction();
+
+            Service service = getServiceById(serviceId);
+
             service.setPrice(price);
             serviceDao.update(service);
+
+            emProvider.commit();
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка обновления цены услуги", e);
         }
     }
 
     public void updateGuest(Guest guest) {
-        guestDao.update(guest);
+        try {
+            emProvider.beginTransaction();
+            guestDao.update(guest);
+            emProvider.commit();
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка обновления гостя", e);
+        }
+    }
+
+    public void updateRoom(Room room) {
+        try {
+            emProvider.beginTransaction();
+            roomDao.update(room);
+            emProvider.commit();
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка обновления комнаты", e);
+        }
+    }
+
+    public void updateService(Service service) {
+        try {
+            emProvider.beginTransaction();
+            serviceDao.update(service);
+            emProvider.commit();
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка обновления услуги", e);
+        }
     }
 
     public boolean setRoomUnderMaintenance(int roomNumber, LocalDate date, int days) {
-        Room room = getRoomByNumber(roomNumber);
-        if (room == null) {
+        try {
+            emProvider.beginTransaction();
+            Room room = getRoomByNumber(roomNumber);
+
+            if (room.setUnderMaintenance(date, days)) {
+                roomDao.update(room);
+                emProvider.commit();
+                return true;
+            }
+
+            emProvider.rollback();
             return false;
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка перевода комнаты на обслуживание", e);
         }
-        if (room.setUnderMaintenance(date, days)) {
-            roomDao.update(room);
-            return true;
-        }
-        return false;
     }
 
     public boolean setRoomCleaning(int roomNumber, LocalDate date) {
-        Room room = getRoomByNumber(roomNumber);
-        if (room == null) {
+        try {
+            emProvider.beginTransaction();
+            Room room = getRoomByNumber(roomNumber);
+
+            if (room.setCleaning(date)) {
+                roomDao.update(room);
+                emProvider.commit();
+                return true;
+            }
+
+            emProvider.rollback();
             return false;
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка уборки комнаты", e);
         }
-        if (room.setCleaning(date)) {
-            roomDao.update(room);
-            return true;
-        }
-        return false;
     }
 
     public boolean setRoomAvailable(int roomNumber) {
-        Room room = getRoomByNumber(roomNumber);
-        if (room == null) {
+        try {
+            emProvider.beginTransaction();
+
+            Room room = getRoomByNumber(roomNumber);
+
+            if (room.setAvailable()) {
+                roomDao.update(room);
+                emProvider.commit();
+                return true;
+            }
+
+            emProvider.rollback();
             return false;
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка перевода комнаты в доступный режим");
         }
-        if (room.setAvailable()) {
-            roomDao.update(room);
-            return true;
-        }
-        return false;
     }
 
     public Room saveRoom(Room room) {
-        return roomDao.save(room);
+        try {
+            emProvider.beginTransaction();
+            Room savedRoom = roomDao.save(room);
+            emProvider.commit();
+            return savedRoom;
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка при сохранении комнаты", e);
+        }
     }
 
     public Service saveService(Service service) {
-        return serviceDao.save(service);
+        try {
+            emProvider.beginTransaction();
+            Service savedService = serviceDao.save(service);
+            emProvider.commit();
+            return savedService;
+        } catch (Exception e) {
+            emProvider.rollback();
+            throw new DaoException("Ошибка при сохранении услуги", e);
+        }
     }
 }

@@ -6,6 +6,7 @@ import enums.GuestSort;
 import enums.RoomSort;
 import enums.ServiceSort;
 import enums.SortDirection;
+import hotel.dto.RoomWithGuestsDto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -51,7 +52,7 @@ public class HotelView {
         displayRooms(sortedAvailableRooms);
     }
 
-    public void displaySortedRooms(Map<Integer, Room> sortedRooms, RoomSort sortBy, SortDirection direction) {
+    public void displaySortedRooms(List<RoomWithGuestsDto> sortedRooms, RoomSort sortBy, SortDirection direction) {
         String directionText = direction.getDirection();
         System.out.println("===========Все комнаты отсортированные по " + sortBy + " по " + directionText);
         displayRooms(sortedRooms);
@@ -70,11 +71,18 @@ public class HotelView {
         System.out.println("=======================");
     }
 
-    public void displayAvailableRoomsByDate(Map<Integer, Room> availableRoomsByDate, LocalDate date) {
-        System.out.println("===========Список доступных комнат на " + getFormattedDate(date));
-        for (Room room : availableRoomsByDate.values()) {
-            System.out.println(room.getDescription());
+    public void displayAvailableRoomsByDate(Map<Integer, Room> rooms, LocalDate date) {
+        System.out.println("=========== Доступные комнаты на " + getFormattedDate(date) + " ===========");
+
+        if (rooms.isEmpty()) {
+            System.out.println("Нет доступных комнат");
+        } else {
+            for (Room room : rooms.values()) {
+                printRoomBasicInfo(room);
+                System.out.println("---");
+            }
         }
+
         System.out.println("================");
     }
 
@@ -186,11 +194,42 @@ public class HotelView {
 
     private void displayRooms(Map<Integer, Room> roomsToDisplay) {
         roomsToDisplay.values().forEach(room -> {
-            System.out.println(room.getDescription());
+            printRoomBasicInfo(room);
         });
     }
 
-    public void displayMessage(String s) {
-        System.out.println(s);
+    public void displayRooms(List<RoomWithGuestsDto> rooms) {
+        if (rooms.isEmpty()) {
+            System.out.println("Комнат не найдено");
+        } else {
+            for (RoomWithGuestsDto dto : rooms) {
+                Room room = dto.getRoom();
+
+                printRoomBasicInfo(room);
+
+                if (dto.hasGuests()) {
+                    System.out.println("Гости:");
+                    for (Guest guest : dto.getGuests()) {
+                        System.out.println("  - " + guest.getFullName());
+                    }
+                }
+
+                System.out.println("---");
+            }
+        }
+
+        System.out.println("================");
+    }
+
+    private void printRoomBasicInfo(Room room) {
+        System.out.println("Номер: " + room.getNumber());
+        System.out.println("Тип: " + room.getType());
+        System.out.println("Цена: " + room.getPrice() + " руб/сутки");
+        System.out.println("Вместимость: " + room.getCapacity() + " чел.");
+        System.out.println("Статус: " + room.getStatus());
+
+        if (room.getEndDate() != null) {
+            System.out.println("До: " + getFormattedDate(room.getEndDate()));
+        }
     }
 }

@@ -4,7 +4,7 @@ CREATE TABLE rooms (
     price int NOT NULL,
     capacity int NOT NULL,
     room_status varchar(11) CHECK ( room_status IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'CLEANING') ) DEFAULT 'AVAILABLE',
-    end_date date NOT NULL DEFAULT current_date,
+    end_date date DEFAULT current_date,
     days_under_status int NOT NULL DEFAULT 0
 );
 
@@ -27,16 +27,17 @@ CREATE TABLE guests (
 );
 
 CREATE TABLE guest_service_usage (
-    id int PRIMARY KEY ,
+    id SERIAL PRIMARY KEY ,
     guest_id varchar(4) NOT NULL ,
     service_id varchar(3) NOT NULL ,
     usage_date date NOT NULL
 );
 
-CREATE TABLE room_guests_history (
-    id varchar(4) PRIMARY KEY ,
+CREATE TABLE room_guest_history (
+    id SERIAL PRIMARY KEY ,
+    guest_id VARCHAR(4) NOT NULL,
     firstname varchar(20) NOT NULL ,
     lastname varchar(20) NOT NULL ,
     room_number int NOT NULL,
-    guest_group_id int NOT NULL
+    group_id int NOT NULL
 );
