@@ -5,11 +5,15 @@ import enums.RoomSort;
 import enums.RoomType;
 import enums.SortDirection;
 import hotel.Controller;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
+@Scope("prototype")
 public class RoomManagementContext extends BaseContext {
 
     private static final List<String> actions = Arrays.asList(

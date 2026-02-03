@@ -1,9 +1,8 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.Singleton;
 import hotel.dto.GuestWithServicesDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,13 +10,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@Singleton
 public class GuestCSVConverter implements CSVService.CSVConverter<GuestWithServicesDto> {
 
-    @Inject
-    private ServiceRegistry serviceRegistry;
+    private final ServiceRegistry serviceRegistry;
 
-    public GuestCSVConverter() {
+    @Autowired
+    public GuestCSVConverter(ServiceRegistry serviceRegistry) {
+        this.serviceRegistry = serviceRegistry;
     }
 
     @Override

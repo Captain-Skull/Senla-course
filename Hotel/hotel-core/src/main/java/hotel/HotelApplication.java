@@ -1,29 +1,21 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.Singleton;
-import contexts.ContextFactory;
-import di.Injector;
-import hotel.connection.ConnectionManager;
-import hotel.dao.RoomDao;
-import hotel.dao.GuestDao;
-import hotel.dao.GuestServiceUsageDao;
-import hotel.dao.RoomGuestHistoryDao;
-import hotel.dao.ServiceDao;
-import hotel.service.HotelService;
+import config.AppConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 @Component
-@Singleton
 public class HotelApplication {
 
-    @Inject
-    private Controller controller;
+    private final Controller controller;
 
-    @Inject
-    private HotelConfig hotelConfig;
+    private final HotelConfig hotelConfig;
 
-    public HotelApplication() {
+    @Autowired
+    public HotelApplication(Controller controller, HotelConfig hotelConfig) {
+        this.controller = controller;
+        this.hotelConfig = hotelConfig;
     }
 
     public void start() {
@@ -32,43 +24,11 @@ public class HotelApplication {
     }
 
     public static void main(String[] args) {
-        HotelModel savedModel = StatePersistenceService.loadHotelModel();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        registerComponents(savedModel);
+        context.registerShutdownHook();
 
-        Injector.initialize();
-
-        HotelApplication app = Injector.getInstance(HotelApplication.class);
+        HotelApplication app = context.getBean(HotelApplication.class);
         app.start();
-    }
-
-    private static void registerComponents(HotelModel savedModel) {
-        Injector.registerComponent(HotelConfig.class);
-
-        Injector.registerComponent(ConnectionManager.class);
-        Injector.registerComponent(RoomDao.class);
-        Injector.registerComponent(GuestDao.class);
-        Injector.registerComponent(ServiceDao.class);
-        Injector.registerComponent(GuestServiceUsageDao.class);
-        Injector.registerComponent(RoomGuestHistoryDao.class);
-
-        Injector.registerComponent(HotelService.class);
-
-        Injector.registerComponent(HotelView.class);
-        Injector.registerComponent(ContextFactory.class);
-
-        if (savedModel != null) {
-            Injector.injectDependencies(savedModel);
-            Injector.registerComponent(HotelModel.class, savedModel);
-        } else {
-            Injector.registerComponent(HotelModel.class);
-        }
-
-        Injector.registerComponent(GuestCSVConverter.class);
-        Injector.registerComponent(RoomCSVConverter.class);
-        Injector.registerComponent(ServiceCSVConverter.class);
-
-        Injector.registerComponent(Controller.class);
-        Injector.registerComponent(HotelApplication.class);
     }
 }

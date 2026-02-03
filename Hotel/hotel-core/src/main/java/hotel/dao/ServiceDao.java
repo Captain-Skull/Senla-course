@@ -1,11 +1,9 @@
 package hotel.dao;
 
-import annotations.Component;
-import annotations.Singleton;
 import hotel.Service;
+import org.springframework.stereotype.Repository;
 
-@Component
-@Singleton
+@Repository
 public class ServiceDao extends AbstractJpaDao<Service, String> {
 
     private static final String SAVE_SERVICE_SQL = "INSERT INTO services (name, price, description) " + "VALUES (?1, ?2, ?3) RETURNING id";

@@ -1,55 +1,40 @@
 package contexts;
 
-import annotations.Component;
-import di.Injector;
-import hotel.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 @Component
 public class ContextFactory {
 
-    public ContextFactory() {
+    private final ApplicationContext applicationContext;
+
+    @Autowired
+    public ContextFactory(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
     }
 
     public MainMenuContext createMainMenuContext() {
-        Controller controller = Injector.getInstance(Controller.class);
-        MainMenuContext context = new MainMenuContext(controller);
-        Injector.injectDependencies(context);
-        return context;
+        return applicationContext.getBean(MainMenuContext.class);
     }
 
     public RoomManagementContext createRoomManagementContext() {
-        Controller controller = Injector.getInstance(Controller.class);
-        RoomManagementContext context = new RoomManagementContext(controller);
-        Injector.injectDependencies(context);
-
-        return context;
+        return applicationContext.getBean(RoomManagementContext.class);
     }
 
     public GuestManagementContext createGuestManagementContext() {
-        Controller controller = Injector.getInstance(Controller.class);
-        GuestManagementContext context = new GuestManagementContext(controller);
-        Injector.injectDependencies(context);
-        return context;
+        return applicationContext.getBean(GuestManagementContext.class);
     }
 
     public ServiceManagementContext createServiceManagementContext() {
-        Controller controller = Injector.getInstance(Controller.class);
-        ServiceManagementContext context = new ServiceManagementContext(controller);
-        Injector.injectDependencies(context);
-        return context;
+        return applicationContext.getBean(ServiceManagementContext.class);
     }
 
     public ImportExportContext createImportExportContext() {
-        Controller controller = Injector.getInstance(Controller.class);
-        ImportExportContext context = new ImportExportContext(controller);
-        Injector.injectDependencies(context);
-        return context;
+        return applicationContext.getBean(ImportExportContext.class);
     }
 
     public ExitContext createExitContext() {
-        Controller controller = Injector.getInstance(Controller.class);
-        ExitContext context = new ExitContext(controller);
-        Injector.injectDependencies(context);
-        return context;
+        return applicationContext.getBean(ExitContext.class);
     }
 }

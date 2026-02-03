@@ -1,9 +1,5 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.PostConstruct;
-import annotations.Singleton;
 import contexts.GuestDraft;
 import enums.RoomSort;
 import enums.RoomType;
@@ -18,6 +14,7 @@ import exceptions.ValidationException;
 import hotel.dto.GuestWithServicesDto;
 import hotel.dto.RoomWithGuestsDto;
 import hotel.service.HotelService;
+import jakarta.annotation.PostConstruct;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -30,8 +27,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.stream.Collectors;
 
-@Component
-@Singleton
 public class HotelModel implements Serializable {
 
     private static final long serialVersionUID = 1111L;
@@ -39,10 +34,8 @@ public class HotelModel implements Serializable {
     private String name;
 
     private LocalDate currentDay;
-    @Inject
-    private HotelConfig config;
+    private transient HotelConfig config;
 
-    @Inject
     private transient HotelService hotelService;
 
     public HotelModel() {
@@ -56,6 +49,14 @@ public class HotelModel implements Serializable {
         if (this.currentDay == null) {
             this.currentDay = LocalDate.now();
         }
+    }
+
+    public void setHotelConfig(HotelConfig config) {
+        this.config = config;
+    }
+
+    public void setHotelService(HotelService service) {
+        this.hotelService = service;
     }
 
     public String getName() {

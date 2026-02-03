@@ -1,21 +1,24 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.PostConstruct;
-import annotations.Singleton;
+
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Component
-@Singleton
 public class ServiceRegistry {
 
     private final Map<String, Service> services = new HashMap<>();
 
-    @Inject
-    private HotelModel hotelModel;
+    private final HotelModel hotelModel;
+
+    @Autowired
+    public ServiceRegistry(HotelModel hotelModel) {
+        this.hotelModel = hotelModel;
+    }
 
     @PostConstruct
     private void init() {

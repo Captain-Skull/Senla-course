@@ -1,6 +1,5 @@
 package hotel.dao;
 
-import annotations.Inject;
 import exceptions.DaoException;
 import hotel.connection.EntityManagerProvider;
 import jakarta.persistence.EntityManager;
@@ -10,6 +9,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +25,7 @@ public abstract class AbstractJpaDao<T, K> implements GenericDao<T, K> {
     protected static final String ERROR_DELETE = "Ошибка удаления сущности: ";
     protected static final String ERROR_COUNT = "Ошибка подсчёта записей";
 
-    @Inject
+    @Autowired
     protected EntityManagerProvider entityManagerProvider;
 
     protected AbstractJpaDao() {

@@ -4,10 +4,14 @@ import enums.GuestSort;
 import enums.ServiceSort;
 import enums.SortDirection;
 import hotel.Controller;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
+@Scope("prototype")
 public class GuestManagementContext extends BaseContext {
 
     private static final List<String> actions = Arrays.asList(

@@ -1,16 +1,14 @@
 package hotel.dao;
 
-import annotations.Component;
-import annotations.Singleton;
 import enums.RoomStatus;
 import hotel.Room;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
-@Singleton
+@Repository
 public class RoomDao extends AbstractJpaDao<Room, Integer> {
 
     private static final String FIND_BY_STATUS_JPQL =

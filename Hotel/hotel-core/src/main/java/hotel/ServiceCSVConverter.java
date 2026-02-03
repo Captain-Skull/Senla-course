@@ -1,10 +1,8 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Singleton;
+import org.springframework.stereotype.Component;
 
 @Component
-@Singleton
 public class ServiceCSVConverter implements CSVService.CSVConverter<Service> {
 
     public ServiceCSVConverter() {

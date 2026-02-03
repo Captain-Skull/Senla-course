@@ -1,8 +1,5 @@
 package hotel.service;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.Singleton;
 import exceptions.DaoException;
 import hotel.Guest;
 import hotel.GuestServiceUsage;
@@ -15,13 +12,13 @@ import hotel.dao.RoomDao;
 import hotel.dao.GuestServiceUsageDao;
 import hotel.dao.RoomGuestHistoryDao;
 import hotel.dao.ServiceDao;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Singleton
+@org.springframework.stereotype.Service
 public class HotelService {
 
     private static final String ERROR_ROOM_NOT_FOUND = "Комната не найдена: ";
@@ -31,25 +28,31 @@ public class HotelService {
     private static final String ERROR_ROOM_CAPACITY = "Превышена вместимость";
     private static final String ERROR_ROOM_NOT_OCCUPIED = "Комната не занята";
 
-    @Inject
-    private RoomDao roomDao;
+    private final RoomDao roomDao;
 
-    @Inject
-    private GuestDao guestDao;
+    private final GuestDao guestDao;
 
-    @Inject
-    private ServiceDao serviceDao;
+    private final ServiceDao serviceDao;
 
-    @Inject
-    private GuestServiceUsageDao usageDao;
+    private final GuestServiceUsageDao usageDao;
 
-    @Inject
-    private RoomGuestHistoryDao historyDao;
+    private final RoomGuestHistoryDao historyDao;
 
-    @Inject
-    private EntityManagerProvider emProvider;
+    private final EntityManagerProvider emProvider;
 
-    public HotelService() {
+    @Autowired
+    public HotelService(RoomDao roomDao,
+                        GuestDao guestDao,
+                        ServiceDao serviceDao,
+                        GuestServiceUsageDao usageDao,
+                        RoomGuestHistoryDao historyDao,
+                        EntityManagerProvider emProvider) {
+        this.roomDao = roomDao;
+        this.guestDao = guestDao;
+        this.serviceDao = serviceDao;
+        this.usageDao = usageDao;
+        this.historyDao = historyDao;
+        this.emProvider = emProvider;
     }
 
     public boolean checkIn(List<Guest> guests, int roomNumber, int days, LocalDate currentDay) {
