@@ -1,12 +1,11 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Singleton;
 import enums.GuestSort;
 import enums.RoomSort;
 import enums.ServiceSort;
 import enums.SortDirection;
 import hotel.dto.RoomWithGuestsDto;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@Singleton
 public class HotelView {
 
     public void nextDay(LocalDate currentDay) {

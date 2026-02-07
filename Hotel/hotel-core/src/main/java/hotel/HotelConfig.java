@@ -1,49 +1,33 @@
 package hotel;
 
-import annotations.Component;
-import annotations.ConfigClass;
-import annotations.ConfigProperty;
-import annotations.Singleton;
-import annotations.PropertyType;
-import config.ConfigLoader;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-@ConfigClass(configFileName = "hotel.properties")
 @Component
-@Singleton
 public class HotelConfig implements Serializable {
 
     private static final long serialVersionUID = 1000L;
-    private static HotelConfig instance;
 
-    @ConfigProperty(propertyName = "room.status.change.enabled", type = PropertyType.BOOLEAN)
-    private boolean allowRoomStatusChange = true;
+    @Value("${room.status.change.enabled:true}")
+    private boolean allowRoomStatusChange;
 
-    @ConfigProperty(propertyName = "room.history.size", type = PropertyType.INTEGER)
-    private int roomHistorySize = 3;
+    @Value("${room.history.size:3}")
+    private int roomHistorySize;
 
-    @ConfigProperty(propertyName = "hotel.name")
-    private String hotelName = "Гостиница";
+    @Value("${hotel.name:Гостиница}")
+    private String hotelName;
 
     private transient boolean loadedFromFile = false;
 
-    public HotelConfig() {
-        try {
-            ConfigLoader.loadConfig(this);
-            loadedFromFile = true;
-        } catch (Exception e) {
-            System.err.println("⚠️ Config loading failed: " + e.getMessage() +
-                    ", using defaults");
-            loadedFromFile = false;
-        }
-    }
+    public HotelConfig() {  }
 
-    public static HotelConfig getInstance() {
-        if (instance == null) {
-            instance = new HotelConfig();
-        }
-        return instance;
+    @PostConstruct
+    public void init() {
+        loadedFromFile = true;
+        System.out.println("✅ HotelConfig загружен: " + this);
     }
 
     @Override

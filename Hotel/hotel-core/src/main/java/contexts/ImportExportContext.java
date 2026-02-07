@@ -1,11 +1,15 @@
 package contexts;
 
 import hotel.Controller;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+@Component
+@Scope("prototype")
 public class ImportExportContext extends BaseContext {
 
     private static final String RESOURCES_PATH = "Hotel/4/resources/";

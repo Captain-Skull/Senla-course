@@ -1,8 +1,9 @@
 package hotel.connection;
 
-import annotations.Component;
-import annotations.PostConstruct;
-import annotations.Singleton;
+import org.springframework.stereotype.Component;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
+import jakarta.annotation.PreDestroy;
 import exceptions.DaoException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -12,11 +13,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Component
-@Singleton
 public class EntityManagerProvider {
 
     private static final Logger logger = LogManager.getLogger(EntityManagerProvider.class);
-    private static final String PERSISTENCE_UNIT_NAME = "hotelPU";
+    @Value("${persistence.unit.name:hotelPU}")
+    private String PERSISTENCE_UNIT_NAME;
 
     private EntityManagerFactory entityManagerFactory;
     private final ThreadLocal<EntityManager> entityManagerHolder = new ThreadLocal<>();
@@ -32,6 +33,14 @@ public class EntityManagerProvider {
         } catch (Exception e) {
             logger.error("Ошибка создания EntityManagerFactory", e);
             throw new DaoException("Не удалось создать EntityManagerFactory", e);
+        }
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        closeEntityManager();
+        if (entityManagerFactory != null && entityManagerFactory.isOpen()) {
+            entityManagerFactory.close();
         }
     }
 

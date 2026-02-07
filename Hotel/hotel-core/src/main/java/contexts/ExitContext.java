@@ -1,19 +1,24 @@
 package contexts;
 
-import annotations.Inject;
 import hotel.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
+@Scope("prototype")
 public class ExitContext extends BaseContext {
 
     private static final List<String> actions = List.of("Для того чтобы вернуться в меню отправьте любую строку");
 
-    @Inject
-    private ContextFactory contextFactory;
+    private final ContextFactory contextFactory;
 
-    public ExitContext(Controller controller) {
+    @Autowired
+    public ExitContext(Controller controller, ContextFactory contextFactory) {
         super(controller, actions);
+        this.contextFactory = contextFactory;
     }
 
     @Override

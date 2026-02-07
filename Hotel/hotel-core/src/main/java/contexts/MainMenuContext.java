@@ -1,11 +1,15 @@
 package contexts;
 
-import annotations.Inject;
 import hotel.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
+@Scope("prototype")
 public class MainMenuContext extends BaseContext {
 
     private static final List<String> actions = Arrays.asList(
@@ -17,14 +21,12 @@ public class MainMenuContext extends BaseContext {
             "Выход"
     );
 
-    @Inject
-    private Controller controller;
+    private final ContextFactory contextFactory;
 
-    @Inject
-    private ContextFactory contextFactory;
-
-    public MainMenuContext(Controller controller) {
+    @Autowired
+    public MainMenuContext(Controller controller, ContextFactory contextFactory) {
         super(controller, actions);
+        this.contextFactory = contextFactory;
     }
 
     @Override

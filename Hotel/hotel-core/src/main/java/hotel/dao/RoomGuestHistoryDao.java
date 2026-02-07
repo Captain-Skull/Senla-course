@@ -1,16 +1,14 @@
 package hotel.dao;
 
-import annotations.Component;
-import annotations.Singleton;
 import hotel.RoomGuestHistory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Singleton
+@Repository
 public class RoomGuestHistoryDao extends AbstractJpaDao<RoomGuestHistory, Long> {
 
     private static final String FIND_BY_ROOM_JPQL =

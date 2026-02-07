@@ -1,11 +1,10 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.Singleton;
 import enums.RoomStatus;
 import enums.RoomType;
 import hotel.dto.RoomWithGuestsDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,13 +12,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@Singleton
 public class RoomCSVConverter implements CSVService.CSVConverter<RoomWithGuestsDto> {
 
-    @Inject
-    private ServiceRegistry serviceRegistry;
+    private final ServiceRegistry serviceRegistry;
 
-    public RoomCSVConverter() {
+    @Autowired
+    public RoomCSVConverter(ServiceRegistry serviceRegistry) {
+        this.serviceRegistry = serviceRegistry;
     }
 
     @Override

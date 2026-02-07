@@ -1,8 +1,5 @@
 package hotel;
 
-import annotations.Component;
-import annotations.Inject;
-import annotations.PostConstruct;
 import contexts.BaseContext;
 import contexts.ContextFactory;
 import contexts.ControllerInterface;
@@ -18,8 +15,11 @@ import exceptions.ImportExportException;
 import exceptions.ValidationException;
 import hotel.dto.GuestWithServicesDto;
 import hotel.dto.RoomWithGuestsDto;
+import jakarta.annotation.PostConstruct;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -30,27 +30,33 @@ public class Controller implements ControllerInterface {
 
     private static final Logger logger = LogManager.getLogger(Controller.class);
 
-    @Inject
-    private HotelModel hotelModel;
+    private final HotelModel hotelModel;
 
-    @Inject
-    private HotelView hotelView;
+    private final HotelView hotelView;
 
-    @Inject
-    private GuestCSVConverter guestCSVConverter;
+    private final GuestCSVConverter guestCSVConverter;
 
-    @Inject
-    private RoomCSVConverter roomCSVConverter;
+    private final RoomCSVConverter roomCSVConverter;
 
-    @Inject
-    private ServiceCSVConverter serviceCSVConverter;
+    private final ServiceCSVConverter serviceCSVConverter;
 
-    @Inject
-    private ContextFactory contextFactory;
+    private final ContextFactory contextFactory;
 
     private BaseContext currentContext;
 
-    public Controller() {
+    @Autowired
+    public Controller(HotelModel hotelModel,
+                      HotelView hotelView,
+                      GuestCSVConverter guestCSVConverter,
+                      RoomCSVConverter roomCSVConverter,
+                      ServiceCSVConverter serviceCSVConverter,
+                      ContextFactory contextFactory) {
+        this.hotelModel = hotelModel;
+        this.hotelView = hotelView;
+        this.guestCSVConverter = guestCSVConverter;
+        this.roomCSVConverter = roomCSVConverter;
+        this.serviceCSVConverter = serviceCSVConverter;
+        this.contextFactory = contextFactory;
     }
 
     @PostConstruct

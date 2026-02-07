@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hotel-core" />
-        <module name="di-module" />
-        <module name="config-annotations" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-annotations" target="25" />
+      <module name="di-module" target="25" />
+    </bytecodeTargetLevel>
   </component>
 </project>
