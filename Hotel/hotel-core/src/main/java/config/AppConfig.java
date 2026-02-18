@@ -4,11 +4,7 @@ import hotel.HotelConfig;
 import hotel.HotelModel;
 import hotel.StatePersistenceService;
 import hotel.service.HotelService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
@@ -23,6 +19,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
         @PropertySource("classpath:hotel.properties"),
         @PropertySource("classpath:database.properties")
 })
+@Import(LiquibaseConfig.class)
 public class AppConfig {
 
     @Bean

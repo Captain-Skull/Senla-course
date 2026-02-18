@@ -10,8 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="config-annotations" target="25" />
-      <module name="di-module" target="25" />
+      <module name="hello-servlet" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1897,3 +1897,39 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 2026-02-02 01:23:50.670 [main] INFO  hotel.Controller - Команда выполнена: displaySortedRooms
 2026-02-02 01:24:02.109 [main] INFO  hotel.Controller - Обработка команды: saveAndExit
 2026-02-02 01:24:02.116 [main] INFO  hotel.Controller - Команда выполнена: saveAndExit
+2026-02-12 16:11:27.208 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: hotelPU]
+2026-02-12 16:11:27.230 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-02-12 16:11:27.241 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-12 16:11:27.312 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-02-12 16:11:27.313 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2026-02-12 16:11:27.313 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/hotel_db]
+2026-02-12 16:11:27.313 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=hotel_app, password=****}
+2026-02-12 16:11:27.313 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2026-02-12 16:11:27.314 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2026-02-12 16:11:27.398 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12 16:11:27.733 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12 16:11:27.738 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d8056bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-02-12 16:11:27.763 [main] INFO  hotel.connection.EntityManagerProvider - EntityManagerFactory создан успешно
+2026-02-12 16:11:28.021 [main] WARN  org.springframework.context.annotation.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in config.LiquibaseConfig: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/001-update-rooms-price.yaml::001-update-rooms-price-1::George:
+     Reason: liquibase.exception.DatabaseException: ERROR: column "room_number" does not exist
+  Позиция: 46 [Failed SQL: (0) UPDATE public.rooms SET price = '1100' WHERE room_number IN (101, 102, 103)]
+2026-02-12 16:11:28.022 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hotel_db]
+2026-02-12 16:13:24.285 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: hotelPU]
+2026-02-12 16:13:24.300 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-02-12 16:13:24.310 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-12 16:13:24.377 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-02-12 16:13:24.378 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2026-02-12 16:13:24.378 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/hotel_db]
+2026-02-12 16:13:24.379 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=hotel_app, password=****}
+2026-02-12 16:13:24.379 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2026-02-12 16:13:24.379 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2026-02-12 16:13:24.444 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12 16:13:24.779 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12 16:13:24.785 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d8056bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-02-12 16:13:24.797 [main] INFO  hotel.connection.EntityManagerProvider - EntityManagerFactory создан успешно
+2026-02-12 16:13:25.079 [main] INFO  hotel.Controller - Запуск приложения
+2026-02-12 16:13:25.079 [main] INFO  hotel.Controller - Приложение запущено
+2026-02-12 16:14:59.190 [main] INFO  hotel.Controller - Обработка команды: displaySortedRooms
+2026-02-12 16:14:59.288 [main] INFO  hotel.Controller - Команда выполнена: displaySortedRooms
+2026-02-12 16:15:11.325 [main] INFO  hotel.Controller - Обработка команды: saveAndExit
+2026-02-12 16:15:11.333 [main] INFO  hotel.Controller - Команда выполнена: saveAndExit

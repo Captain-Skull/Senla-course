@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-update-rooms-price-1
+      author: George
+      comment: Обновление цен комнат
+      changes:
+          - update:
+              tableName: rooms
+              columns:
+                - column:
+                    name: price
+                    value: 1100
+              where: number IN (101, 102, 103)
+          - update:
+              tableName: rooms
+              columns:
+                - column:
+                    name: price
+                    value: 2600
+              where: number = 104
