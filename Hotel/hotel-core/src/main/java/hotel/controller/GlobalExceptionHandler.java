@@ -50,8 +50,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleException(Exception e) {
         logger.error("Ошибка: {}", e.getMessage());
-        return ResponseEntity.status(500).body(Map.of(
-                "status", 500,
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of(
+                "status", HttpStatus.INTERNAL_SERVER_ERROR,
                 "message", e.getMessage(),
                 "cause", e.getCause() != null ? e.getCause().getMessage() : "unknown",
                 "timestamp", java.time.LocalDateTime.now().toString()

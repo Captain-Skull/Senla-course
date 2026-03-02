@@ -24,8 +24,6 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,12 +62,7 @@ public class RoomController {
 
     @GetMapping("/available")
     public List<?> getAvailableRooms(@RequestParam(required = false) RoomSort sortBy, @RequestParam(required = false) SortDirection direction) {
-        List<?> rooms;
-        if (sortBy != null) {
-            rooms = hotelFacade.getSortedAvailableRooms(sortBy, direction);
-        } else {
-            rooms = roomService.getAvailableRooms();
-        }
+        List<?> rooms = sortBy != null ? hotelFacade.getSortedAvailableRooms(sortBy, direction) : roomService.getAvailableRooms();
 
         return rooms;
     }
