@@ -12,8 +12,12 @@ import hotel.GuestData;
 import hotel.dao.GuestDao;
 import hotel.dao.GuestServiceUsageDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
+import org.springframework.security.access.AccessDeniedException;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
@@ -39,11 +43,57 @@ public class GuestService {
     }
 
     public List<Guest> getAllGuests() {
-        return guestDao.findAll();
+        if (isAdmin()) {
+            return guestDao.findAll();
+        }
+
+        String username = getCurrentUsername();
+        Guest myGuest = guestDao.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException(
+                        "У вас нет привязанной записи гостя"
+                ));
+
+        return List.of(myGuest);
     }
 
     public List<Guest> getGuestsByRoom(int roomNumber) {
+        if (!isAdmin()) {
+            Guest myGuest = getMyGuest();
+            if (myGuest != null && myGuest.getRoomNumber() != roomNumber) {
+                throw new AccessDeniedException("У вас нет прав на просмотр гостей комнаты" + roomNumber);
+            }
+        }
+
         return guestDao.findByRoomNumber(roomNumber);
+    }
+
+    public List<Guest> getGuestsByRoomIfAllowed(int roomNumber) {
+        if (isAdmin()) {
+            return guestDao.findByRoomNumber(roomNumber);
+        }
+
+        try {
+            Guest myGuest = getMyGuest();
+            if (myGuest != null && myGuest.getRoomNumber() != null && myGuest.getRoomNumber() == roomNumber) {
+                return guestDao.findByRoomNumber(roomNumber);
+            }
+        } catch (Exception ignored) {
+        }
+
+        return null;
+    }
+
+    public boolean canViewGuestsInRoom(int roomNumber) {
+        if (isAdmin()) {
+            return true;
+        }
+
+        try {
+            Guest myGuest = getMyGuest();
+            return myGuest != null && myGuest.getRoomNumber() != null && myGuest.getRoomNumber() == roomNumber;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public List<GuestData> getSortedGuests(GuestSort sortBy, SortDirection direction) {
@@ -68,7 +118,14 @@ public class GuestService {
     }
 
     public Guest getGuestById(String id) {
-        return guestDao.findById(id).orElse(null);
+        Guest guest = guestDao.findById(id)
+                .orElseThrow(() -> new DaoException("Гость не найден: " + id));
+
+        if (!isAdmin()) {
+            checkOwnership(guest);
+        }
+
+        return guest;
     }
 
     public List<GuestServiceUsage> getGuestServiceUsageList(String guestId, UsageServiceSort sortBy, SortDirection direction) {
@@ -77,11 +134,21 @@ public class GuestService {
     }
 
     public List<GuestServiceUsage> getGuestServices(String guestId) {
+        if (!isAdmin()) {
+            Guest guest = guestDao.findById(guestId)
+                    .orElseThrow(() -> new DaoException("Не найден гость с таким id: " + guestId));
+            checkOwnership(guest);
+        }
         return usageDao.findByGuestId(guestId);
     }
 
     @Transactional
     public void updateGuest(Guest guest) {
+        if (!isAdmin()) {
+            Guest existing = guestDao.findById(guest.getId())
+                    .orElseThrow(() -> new DaoException("Гость не найден: " + guest.getId()));
+            checkOwnership(existing);
+        }
         try {
             guestDao.update(guest);
         } catch (Exception e) {
@@ -94,6 +161,10 @@ public class GuestService {
         Guest guest = guestDao.findById(guestId).orElseThrow(() -> new DaoException("Гость не найден" + guestId));
         Service service = serviceService.getServiceById(serviceId);
 
+        if (!isAdmin()) {
+            checkOwnership(guest);
+        }
+
         GuestServiceUsage usage = new GuestServiceUsage(service, hotelState.getCurrentDay(), guest);
         GuestServiceUsage saved = usageDao.save(usage);
         return saved;
@@ -103,6 +174,10 @@ public class GuestService {
     public GuestServiceUsage addServiceToGuest(String guestId, String serviceId, LocalDate date) {
         Guest guest = guestDao.findById(guestId).orElseThrow(() -> new DaoException("Гость не найден" + guestId));
         Service service = serviceService.getServiceById(serviceId);
+
+        if (!isAdmin()) {
+            checkOwnership(guest);
+        }
 
         GuestServiceUsage usage = new GuestServiceUsage(service, date, guest);
         GuestServiceUsage saved = usageDao.save(usage);
@@ -139,5 +214,29 @@ public class GuestService {
         return usages.stream()
                 .sorted(comparator)
                 .collect(Collectors.toList());
+    }
+
+    private Guest getMyGuest() {
+        String username = getCurrentUsername();
+        return guestDao.findByUsername(username)
+                .orElse(null);
+    }
+
+    private void checkOwnership(Guest guest) {
+        String currentUsername = getCurrentUsername();
+
+        if (guest.getUser() == null || !guest.getUser().getUsername().equals(currentUsername)) {
+            throw new AccessDeniedException("У вас нет прав на просмотр или изменение данных этого гостя");
+        }
+    }
+
+    private boolean isAdmin() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
+    }
+
+    private String getCurrentUsername() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth.getName();
     }
 }

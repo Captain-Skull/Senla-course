@@ -1,9 +1,12 @@
 package hotel;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
 
 import java.io.Serializable;
 
@@ -11,7 +14,7 @@ import java.io.Serializable;
 @Table(name = "guests")
 public class Guest implements Serializable {
 
-    private static final long serialVersionUID = 0002L;
+    private static final long serialVersionUID = 2L;
 
     @Id
     @Column(name = "id", insertable = false)
@@ -23,7 +26,12 @@ public class Guest implements Serializable {
     @Column(name = "room_number")
     private Integer roomNumber;
 
-    public Guest() {  }
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Guest() {
+    }
 
     public Guest(String id, String firstname, String lastname) {
         this.id = id;
@@ -56,11 +64,19 @@ public class Guest implements Serializable {
         return "ID: " + id + ", Имя: " + firstname + " " + lastname;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public void setRoomNumber(int number) {
         this.roomNumber = number;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

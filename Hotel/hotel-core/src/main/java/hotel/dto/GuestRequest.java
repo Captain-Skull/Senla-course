@@ -4,6 +4,7 @@ public class GuestRequest {
 
     private String firstname;
     private String lastname;
+    private String username;
 
     public String getFirstname() {
         return firstname;
@@ -19,5 +20,13 @@ public class GuestRequest {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

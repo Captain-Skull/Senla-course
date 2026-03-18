@@ -10,10 +10,15 @@ import hotel.RoomGuestHistory;
 import hotel.dao.GuestDao;
 import hotel.dao.RoomDao;
 import hotel.dao.RoomGuestHistoryDao;
+import hotel.dao.UserDao;
+import hotel.dto.GuestRequest;
 import hotel.dto.RoomWithGuestsDto;
+import hotel.dto.RoomInfoDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,38 +37,49 @@ public class HotelServiceFacade {
     private final RoomService roomService;
     private final RoomDao roomDao;
     private final GuestDao guestDao;
+    private final UserDao userDao;
     private final RoomGuestHistoryDao historyDao;
     private final HotelState hotelState;
 
     @Autowired
-    HotelServiceFacade(GuestService guestService, RoomService roomService, RoomDao roomDao, GuestDao guestDao, RoomGuestHistoryDao historyDao, HotelState hotelState) {
+    HotelServiceFacade(GuestService guestService, RoomService roomService, RoomDao roomDao, GuestDao guestDao, UserDao userDao, RoomGuestHistoryDao historyDao, HotelState hotelState) {
         this.guestService = guestService;
         this.roomService = roomService;
         this.roomDao = roomDao;
         this.guestDao = guestDao;
+        this.userDao = userDao;
         this.historyDao = historyDao;
         this.hotelState = hotelState;
     }
 
-    public String getRoomInformation(int roomNumber) {
+
+    public RoomInfoDto getRoomInformation(int roomNumber) {
         Room room = roomService.getRoomByNumber(roomNumber);
-        List<Guest> guests = guestService.getGuestsByRoom(roomNumber);
 
-        StringBuilder info = new StringBuilder();
-        info.append("Номер ").append(room.getNumber())
-                .append(" тип: ").append(room.getType())
-                .append("\nСтоимость: ").append(room.getPrice())
-                .append(" вместимость: ").append(room.getCapacity())
-                .append("\nСтатус: ").append(room.getStatus());
+        RoomInfoDto info = new RoomInfoDto();
+        info.setNumber(room.getNumber());
+        info.setType(room.getType().toString());
+        info.setPrice(room.getPrice());
+        info.setCapacity(room.getCapacity());
+        info.setStatus(room.getStatus().toString());
 
-        if (!guests.isEmpty()) {
-            info.append("\nГости:");
-            for (Guest guest : guests) {
-                info.append("\n  - ").append(guest.getInformation());
-            }
+        List<Guest> guests = guestService.getGuestsByRoomIfAllowed(roomNumber);
+
+        if (guests == null) {
+            info.setGuests(null);
+            info.setGuestsAccessMessage("Информация о гостях доступна только проживающим в этой комнате");
+        } else if (guests.isEmpty()) {
+            info.setGuests(List.of());
+            info.setGuestsAccessMessage("В комнате нет гостей");
+        } else {
+            info.setGuests(
+                    guests.stream()
+                            .map(Guest::getInformation)
+                            .toList()
+            );
         }
 
-        return info.toString();
+        return info;
     }
 
     public List<RoomWithGuestsDto> getSortedRooms(RoomSort sortBy, SortDirection direction) {
@@ -121,6 +137,47 @@ public class HotelServiceFacade {
     }
 
     @Transactional
+    public List<Guest> checkInRequest(List<GuestRequest> guestRequests, int roomNumber, int days) {
+        try {
+            LocalDate currentDay = hotelState.getCurrentDay();
+
+            Room room = roomDao.findById(roomNumber)
+                    .orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
+
+            if (!room.canCheckIn(guestRequests.size())) {
+                return new ArrayList<>();
+            }
+
+            room.markAsOccupied(currentDay, days);
+            roomDao.update(room);
+
+            List<Guest> savedGuests = new ArrayList<>();
+            boolean currentUserLinked = false;
+
+            for (GuestRequest gr : guestRequests) {
+                Guest guest = new Guest(null, gr.getFirstname(), gr.getLastname());
+                guest.setRoomNumber(roomNumber);
+
+                if (gr.getUsername() != null && !gr.getUsername().isEmpty()) {
+                    userDao.findByUsername(gr.getUsername()).ifPresent(guest::setUser);
+                } else if (!isAdmin() && !currentUserLinked) {
+                    String currentUsername = getCurrentUsername();
+                    userDao.findByUsername(currentUsername).ifPresent(guest::setUser);
+                    currentUserLinked = true;
+                }
+
+                Guest saved = guestDao.save(guest);
+                savedGuests.add(saved);
+            }
+
+            return savedGuests;
+        } catch (Exception e) {
+            logger.error("Ошибка при заселении в комнату {}: {}", roomNumber, e.getMessage());
+            throw new DaoException("Ошибка заселения", e);
+        }
+    }
+
+    @Transactional
     public boolean checkOut(int roomNumber) {
         try {
             Room room = roomDao.findById(roomNumber)
@@ -172,5 +229,16 @@ public class HotelServiceFacade {
                 }
             }
         }
+    }
+
+    private boolean isAdmin() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth != null && auth.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+    }
+
+    private String getCurrentUsername() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth != null ? auth.getName() : null;
     }
 }

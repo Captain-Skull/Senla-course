@@ -9,6 +9,7 @@ import hotel.service.ImportExportService;
 import hotel.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,7 @@ public class ServiceController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('SERVICE_READ')")
     public List<?> getServices(@RequestParam(required = false) ServiceSort sortBy, @RequestParam(required = false) SortDirection direction) {
         if (sortBy != null) {
             return dtoMapper.toServiceDtoList(serviceService.getSortedServices(sortBy, direction));
@@ -45,6 +47,7 @@ public class ServiceController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('SERVICE_CREATE')")
     public ServiceDto addNewService(@RequestBody ServiceDto serviceDto) {
         Service service = dtoMapper.toService(serviceDto);
         Service saved = serviceService.saveService(service);
@@ -52,12 +55,14 @@ public class ServiceController {
     }
 
     @PatchMapping("/{serviceId}/price")
+    @PreAuthorize("hasAuthority('SERVICE_UPDATE')")
     public ServiceDto setServicePrice(@PathVariable String serviceId, @RequestBody Map<String, Integer> body) {
         serviceService.updateServicePrice(serviceId, body.get("price"));
         return dtoMapper.toServiceDto(serviceService.getServiceById(serviceId));
     }
 
     @PostMapping("/import")
+    @PreAuthorize("hasAuthority('IMPORT')")
     public ResponseEntity<Map<String, Object>> importServices(
             @RequestBody Map<String, String> body) {
         int count = importExportService.importServices(body.get("filePath"));
@@ -68,6 +73,7 @@ public class ServiceController {
     }
 
     @PostMapping("/export")
+    @PreAuthorize("hasAuthority('EXPORT')")
     public ResponseEntity<Map<String, String>> exportServices(
             @RequestBody Map<String, String> body) {
         importExportService.exportServices(body.get("filePath"));
