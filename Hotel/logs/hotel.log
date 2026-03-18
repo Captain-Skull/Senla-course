@@ -2052,3 +2052,157 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2026-03-18 14:59:33.511 [main] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
 2026-03-18 14:59:33.630 [main] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 119 ms
 2026-03-18 14:59:33.734 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-18 15:24:32.544 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-18 15:47:47.252 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-03-18 15:47:47.815 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-18 15:47:47.871 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-18 15:47:47.900 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-18 15:47:48.205 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-18 15:47:48.419 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-18 15:47:49.384 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-18 15:47:49.386 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-18 15:47:50.555 [main] WARN  org.springframework.web.context.support.AnnotationConfigWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in config.LiquibaseConfig: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 changesets check sum
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-roles::George was: 9:20e1497b9b4e7070a32aa71ff19043b7 but is now: 9:87cf17c91665499990c5101594c73482
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-privileges::George was: 9:4ded8b8beadb50f029c85507f9f33e3f but is now: 9:3622b7ab346f182b9f28c9f31172aca9
+
+2026-03-18 15:47:50.555 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-18 15:47:50.558 [main] ERROR org.springframework.web.context.ContextLoader - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in config.LiquibaseConfig: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 changesets check sum
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-roles::George was: 9:20e1497b9b4e7070a32aa71ff19043b7 but is now: 9:87cf17c91665499990c5101594c73482
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-privileges::George was: 9:4ded8b8beadb50f029c85507f9f33e3f but is now: 9:3622b7ab346f182b9f28c9f31172aca9
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:394) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:274) [spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:126) [spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4001) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4426) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:564) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:663) [catalina.jar:11.0.18]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:923) [catalina.jar:11.0.18]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1839) [catalina.jar:11.0.18]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) [tomcat-util.jar:11.0.18]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:125) [?:?]
+	at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:727) [catalina.jar:11.0.18]
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:378) [catalina.jar:11.0.18]
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579) [catalina.jar:11.0.18]
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:262) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:741) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) [catalina.jar:11.0.18]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) [tomcat-util.jar:11.0.18]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [catalina.jar:11.0.18]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) [catalina.jar:11.0.18]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [catalina.jar:11.0.18]
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:756) [catalina.jar:11.0.18]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:339) [bootstrap.jar:11.0.18]
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:470) [bootstrap.jar:11.0.18]
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 changesets check sum
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-roles::George was: 9:20e1497b9b4e7070a32aa71ff19043b7 but is now: 9:87cf17c91665499990c5101594c73482
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-privileges::George was: 9:4ded8b8beadb50f029c85507f9f33e3f but is now: 9:3622b7ab346f182b9f28c9f31172aca9
+
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:259) ~[liquibase-core-4.27.0.jar:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 52 more
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 changesets check sum
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-roles::George was: 9:20e1497b9b4e7070a32aa71ff19043b7 but is now: 9:87cf17c91665499990c5101594c73482
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-privileges::George was: 9:4ded8b8beadb50f029c85507f9f33e3f but is now: 9:3622b7ab346f182b9f28c9f31172aca9
+
+	at liquibase.command.CommandScope.execute(CommandScope.java:257) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:245) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.lambda$child$0(Scope.java:190) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:199) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:189) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:168) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1436) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.update(Liquibase.java:234) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.update(Liquibase.java:212) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:297) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:249) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.lambda$child$0(Scope.java:190) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:199) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:189) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:168) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:256) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:242) ~[liquibase-core-4.27.0.jar:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 52 more
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 changesets check sum
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-roles::George was: 9:20e1497b9b4e7070a32aa71ff19043b7 but is now: 9:87cf17c91665499990c5101594c73482
+          db/changelog/changes/009-insert-roles-and-privileges.xml::009-insert-privileges::George was: 9:4ded8b8beadb50f029c85507f9f33e3f but is now: 9:3622b7ab346f182b9f28c9f31172aca9
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:358) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:92) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.command.CommandScope.execute(CommandScope.java:219) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:245) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.lambda$child$0(Scope.java:190) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:199) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:189) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:168) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1436) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.update(Liquibase.java:234) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Liquibase.update(Liquibase.java:212) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:297) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:249) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.lambda$child$0(Scope.java:190) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:199) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:189) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:168) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.Scope.child(Scope.java:256) ~[liquibase-core-4.27.0.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:242) ~[liquibase-core-4.27.0.jar:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 52 more
+2026-03-18 15:48:54.010 [Catalina-utility-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-03-18 15:48:54.688 [Catalina-utility-1] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-18 15:48:54.766 [Catalina-utility-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-18 15:48:54.800 [Catalina-utility-1] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-18 15:48:55.176 [Catalina-utility-1] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-18 15:48:55.432 [Catalina-utility-1] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-18 15:48:57.462 [Catalina-utility-1] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-18 15:48:57.467 [Catalina-utility-1] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-18 15:48:59.042 [Catalina-utility-1] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-18 15:48:59.312 [Catalina-utility-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext initialized in 5297 ms
+2026-03-18 15:48:59.322 [Catalina-utility-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2026-03-18 15:48:59.604 [Catalina-utility-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 281 ms
+2026-03-18 15:49:23.083 [http-nio-8080-exec-8] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:49:58.493 [http-nio-8080-exec-2] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:50:06.017 [http-nio-8080-exec-4] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:50:06.839 [http-nio-8080-exec-5] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:50:07.574 [http-nio-8080-exec-6] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:50:34.958 [http-nio-8080-exec-9] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:51:01.989 [http-nio-8080-exec-1] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.

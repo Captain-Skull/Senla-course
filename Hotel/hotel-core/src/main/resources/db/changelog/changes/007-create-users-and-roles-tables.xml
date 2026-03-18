@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="007-add-users-and-roles" author="George">
-        <comment>Создание таблицы комнат</comment>
+        <comment>Создание таблицы пользователей, привилегий и ролей</comment>
         <createTable tableName="roles">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>

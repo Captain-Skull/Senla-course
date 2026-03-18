@@ -59,7 +59,7 @@ public class GuestService {
     public List<Guest> getGuestsByRoom(int roomNumber) {
         if (!isAdmin()) {
             Guest myGuest = getMyGuest();
-            if (myGuest != null && myGuest.getRoomNumber() != roomNumber) {
+            if (myGuest != null && myGuest.getRoomNumber() != null && myGuest.getRoomNumber() != roomNumber) {
                 throw new AccessDeniedException("У вас нет прав на просмотр гостей комнаты" + roomNumber);
             }
         }

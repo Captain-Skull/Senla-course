@@ -6,12 +6,11 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="009-insert-roles" author="George">
+        <comment>Данные о ролях</comment>
         <insert tableName="roles">
-            <column name="id" valueNumeric="1"/>
             <column name="name" value="ROLE_ADMIN"/>
         </insert>
         <insert tableName="roles">
-            <column name="id" valueNumeric="2"/>
             <column name="name" value="ROLE_USER"/>
         </insert>
 
@@ -21,72 +20,56 @@
     </changeSet>
 
     <changeSet id="009-insert-privileges" author="George">
+        <comment>Данные о привилегиях</comment>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="1"/>
             <column name="name" value="ROOM_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="2"/>
             <column name="name" value="ROOM_CREATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="3"/>
             <column name="name" value="ROOM_UPDATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="4"/>
             <column name="name" value="ROOM_HISTORY_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="5"/>
             <column name="name" value="SERVICE_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="6"/>
             <column name="name" value="SERVICE_CREATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="7"/>
             <column name="name" value="SERVICE_UPDATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="8"/>
             <column name="name" value="GUEST_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="9"/>
             <column name="name" value="GUEST_CREATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="10"/>
             <column name="name" value="GUEST_UPDATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="11"/>
             <column name="name" value="CHECKIN"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="12"/>
             <column name="name" value="CHECKOUT"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="13"/>
             <column name="name" value="DATE_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="14"/>
             <column name="name" value="DATE_UPDATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="15"/>
             <column name="name" value="STATE_SAVE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="16"/>
             <column name="name" value="EXPORT"/>
         </insert>
         <insert tableName="privileges">
-            <column name="id" valueNumeric="17"/>
             <column name="name" value="IMPORT"/>
         </insert>
 
@@ -96,6 +79,7 @@
     </changeSet>
 
     <changeSet id="009-insert-role_privileges" author="George">
+        <comment>Данные о взаимоотношениях привилегий и ролей</comment>
         <insert tableName="role_privileges">
             <column name="role_id" valueNumeric="2"/>
             <column name="privilege_id" valueNumeric="1"/>
@@ -188,6 +172,7 @@
     </changeSet>
 
     <changeSet id="009-insert-users" author="George">
+        <comment>Базовый пользователь админ</comment>
         <insert tableName="users">
             <column name="id" valueNumeric="1"/>
             <column name="username" value="admin"/>
@@ -203,6 +188,7 @@
     </changeSet>
 
     <changeSet id="009-insert-user_roles" author="George">
+        <comment>Выдача роли пользователю админ</comment>
         <insert tableName="user_roles">
             <column name="user_id" valueNumeric="1"/>
             <column name="role_id" valueNumeric="1"/>

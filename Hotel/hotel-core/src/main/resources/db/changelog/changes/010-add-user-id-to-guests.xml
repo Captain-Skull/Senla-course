@@ -11,6 +11,7 @@
                 <columnExists tableName="guests" columnName="user_id"/>
             </not>
         </preConditions>
+        <comment>Добавление столбца с user id</comment>
 
         <addColumn tableName="guests">
             <column name="user_id" type="BIGINT">

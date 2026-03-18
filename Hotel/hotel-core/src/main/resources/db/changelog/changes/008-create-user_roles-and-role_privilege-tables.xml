@@ -6,6 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="008-create-user_roles-and-role_privileges" author="George">
+        <comment>Создание промежуточных таблиц user_roles и role_privileges</comment>
 
         <createTable tableName="user_roles">
             <column name="user_id" type="BIGINT">
