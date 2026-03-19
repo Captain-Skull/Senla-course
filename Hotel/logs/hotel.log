@@ -2206,3 +2206,4 @@ Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
 2026-03-18 15:50:07.574 [http-nio-8080-exec-6] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
 2026-03-18 15:50:34.958 [http-nio-8080-exec-9] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
 2026-03-18 15:51:01.989 [http-nio-8080-exec-1] ERROR hotel.security.JwtTokenProvider - Некорректный JWT: Compact JWT strings may not contain whitespace.
+2026-03-18 15:58:39.549 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

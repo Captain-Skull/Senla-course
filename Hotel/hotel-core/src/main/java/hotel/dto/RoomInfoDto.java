@@ -10,9 +10,6 @@ public class RoomInfoDto {
     private int capacity;
     private String status;
 
-    // null = нет доступа к списку гостей
-    // пустой список = гостей нет
-    // непустой список = вот гости
     private List<String> guests;
     private String guestsAccessMessage;
 

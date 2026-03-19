@@ -31,7 +31,6 @@ public class AppConfig {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-    // ObjectMapper в root-контексте: нужен SecurityConfig и другие бины в root
     @Bean
     public ObjectMapper objectMapper() {
         ObjectMapper mapper = new ObjectMapper();
