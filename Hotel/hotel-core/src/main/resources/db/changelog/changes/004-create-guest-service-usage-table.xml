@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="004-create-guest-service-usage-table" author="George">
+        <comment>Создание таблицы использования услуг гостями</comment>
+
+        <createTable tableName="guest_service_usage">
+            <column name="id" type="SERIAL" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="guest_id" type="VARCHAR(4)"/>
+            <column name="service_id" type="VARCHAR(3)"/>
+            <column name="usage_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="guest_service_usage"
+                baseColumnNames="guest_id"
+                referencedTableName="guests"
+                referencedColumnNames="id"
+                constraintName="fk_usage_guest"
+                onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint
+                baseTableName="guest_service_usage"
+                baseColumnNames="service_id"
+                referencedTableName="services"
+                referencedColumnNames="id"
+                constraintName="fk_usage_service"/>
+
+        <createIndex tableName="guest_service_usage" indexName="idx_usage_guest">
+            <column name="guest_id"/>
+        </createIndex>
+
+        <createIndex tableName="guest_service_usage" indexName="idx_usage_service">
+            <column name="service_id"/>
+        </createIndex>
+
+        <rollback>
+            <dropTable tableName="guest_service_usage"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

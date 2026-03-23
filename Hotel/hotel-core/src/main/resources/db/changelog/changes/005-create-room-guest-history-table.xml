@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="005-create-room-guest-history-table" author="George">
+        <comment>Создание таблицы истории гостей в комнатах</comment>
+
+        <createTable tableName="room_guest_history">
+            <column name="id" type="SERIAL" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="guest_id" type="VARCHAR(4)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstname" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="room_number" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="group_id" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="room_guest_history"
+                baseColumnNames="guest_id"
+                constraintName="fk_history_guest"
+                referencedTableName="guests"
+                referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint
+                baseTableName="room_guest_history"
+                baseColumnNames="room_number"
+                referencedTableName="rooms"
+                referencedColumnNames="number"
+                constraintName="fk_history_room"/>
+
+        <createIndex tableName="room_guest_history" indexName="idx_history_guest">
+            <column name="guest_id"/>
+        </createIndex>
+
+        <createIndex tableName="room_guest_history" indexName="idx_history_room">
+            <column name="room_number"/>
+        </createIndex>
+
+        <createIndex tableName="room_guest_history" indexName="idx_history_group">
+            <column name="group_id"/>
+        </createIndex>
+
+        <rollback>
+            <dropTable tableName="room_guest_history"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="003-create-services-sequence" author="George">
+        <comment>Создание последовательности для услуг</comment>
+
+        <createSequence sequenceName="services_seq"
+                        startValue="1"
+                        incrementBy="1"/>
+
+        <rollback>
+            <dropSequence sequenceName="services_seq"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="003-create-services-table" author="George">
+        <comment>Создание таблицы услуг</comment>
+
+        <createTable tableName="services">
+            <column name="id" type="VARCHAR(3)" defaultValueComputed="'S' || nextVal('services_seq')">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="services"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
