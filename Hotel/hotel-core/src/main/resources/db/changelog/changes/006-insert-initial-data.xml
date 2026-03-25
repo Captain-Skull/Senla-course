@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="006-insert-initial-rooms" author="George">
+        <comment>Начальные данные: комнаты</comment>
+
+        <insert tableName="rooms">
+            <column name="number" value="101"/>
+            <column name="room_type" value="ECONOM"/>
+            <column name="price" value="1000"/>
+            <column name="capacity" value="1"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="102"/>
+            <column name="room_type" value="ECONOM"/>
+            <column name="price" value="1000"/>
+            <column name="capacity" value="1"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="103"/>
+            <column name="room_type" value="ECONOM"/>
+            <column name="price" value="1000"/>
+            <column name="capacity" value="1"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="104"/>
+            <column name="room_type" value="STANDARD"/>
+            <column name="price" value="2500"/>
+            <column name="capacity" value="2"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="105"/>
+            <column name="room_type" value="STANDARD"/>
+            <column name="price" value="3000"/>
+            <column name="capacity" value="2"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="201"/>
+            <column name="room_type" value="STANDARD"/>
+            <column name="price" value="3000"/>
+            <column name="capacity" value="2"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="202"/>
+            <column name="room_type" value="STANDARD"/>
+            <column name="price" value="3200"/>
+            <column name="capacity" value="2"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="203"/>
+            <column name="room_type" value="STANDARD"/>
+            <column name="price" value="3500"/>
+            <column name="capacity" value="3"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="204"/>
+            <column name="room_type" value="LUXURY"/>
+            <column name="price" value="5000"/>
+            <column name="capacity" value="4"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="301"/>
+            <column name="room_type" value="LUXURY"/>
+            <column name="price" value="5200"/>
+            <column name="capacity" value="4"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="302"/>
+            <column name="room_type" value="LUXURY"/>
+            <column name="price" value="5500"/>
+            <column name="capacity" value="4"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="401"/>
+            <column name="room_type" value="PRESIDENTIAL"/>
+            <column name="price" value="11000"/>
+            <column name="capacity" value="6"/>
+        </insert>
+        <insert tableName="rooms">
+            <column name="number" value="501"/>
+            <column name="room_type" value="PRESIDENTIAL"/>
+            <column name="price" value="15000"/>
+            <column name="capacity" value="6"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="rooms"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="006-insert-initial-services" author="George">
+        <comment>Начальные данные: услуги</comment>
+
+        <insert tableName="services">
+            <column name="name" value="Завтрак"/>
+            <column name="price" value="200"/>
+            <column name="description" value="Завтрак в 8:00"/>
+        </insert>
+        <insert tableName="services">
+            <column name="name" value="Обед"/>
+            <column name="price" value="300"/>
+            <column name="description" value="Обед в 13:00"/>
+        </insert>
+        <insert tableName="services">
+            <column name="name" value="Ужин"/>
+            <column name="price" value="275"/>
+            <column name="description" value="Ужин в 20:00"/>
+        </insert>
+        <insert tableName="services">
+            <column name="name" value="Тренажерный зал"/>
+            <column name="price" value="200"/>
+            <column name="description" value="Пропуск в тренажерный зал на день"/>
+        </insert>
+        <insert tableName="services">
+            <column name="name" value="SPA-зона"/>
+            <column name="price" value="250"/>
+            <column name="description" value="Пропуск в зону спа на день"/>
+        </insert>
+        <insert tableName="services">
+            <column name="name" value="Бассейн"/>
+            <column name="price" value="150"/>
+            <column name="description" value="Пропуск в бассейн на день"/>
+        </insert>
+        <rollback>
+            <delete tableName="services"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
