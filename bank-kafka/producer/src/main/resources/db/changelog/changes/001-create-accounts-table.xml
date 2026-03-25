@@ -8,7 +8,7 @@
     <changeSet id="001-create-accounts-table" author="George">
         <comment>Создание таблицы счетов</comment>
         <createTable tableName="accounts">
-            <column name="id" type="BIGINT" autoIncrement="true">
+            <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"  />
             </column>
             <column name="balance" type="INTEGER">

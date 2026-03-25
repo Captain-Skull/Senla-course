@@ -15,7 +15,7 @@ public class TransferDao extends AbstractDao<Transfer, Long> {
 
     public long findMaxTransferId() {
         try {
-            Long maxId = entityManager.createQuery("SELECT MAX(t.transferId) FROM Transfer t", Long.class)
+            Long maxId = entityManager.createQuery("SELECT MAX(t.id) FROM Transfer t", Long.class)
                     .getSingleResult();
             return maxId != null ? maxId : 0L;
         } catch (Exception e) {

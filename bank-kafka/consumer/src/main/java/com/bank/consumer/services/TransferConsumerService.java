@@ -120,14 +120,14 @@ public class TransferConsumerService {
         TransactionStatus txStatus = transactionManager.getTransaction(txDef);
 
         try {
-            Optional<Account> fromOpt = accountDao.findById(message.getSenderAccountId());
+            Optional<Account> fromOpt = accountDao.findByIdForUpdate(message.getSenderAccountId());
             if (fromOpt.isEmpty()) {
                 log.error("Validation failed: sender account {} not found", message.getSenderAccountId());
                 transactionManager.rollback(txStatus);
                 return;
             }
 
-            Optional<Account> toOpt = accountDao.findById(message.getRecipientAccountId());
+            Optional<Account> toOpt = accountDao.findByIdForUpdate(message.getRecipientAccountId());
             if (toOpt.isEmpty()) {
                 log.error("Validation failed: recipient account {} not found", message.getRecipientAccountId());
                 transactionManager.rollback(txStatus);

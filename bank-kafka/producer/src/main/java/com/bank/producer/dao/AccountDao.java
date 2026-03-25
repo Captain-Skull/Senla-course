@@ -10,5 +10,4 @@ public class AccountDao extends AbstractDao<Account, Long> {
     protected Class<Account> getEntityClass() {
         return Account.class;
     }
-
 }

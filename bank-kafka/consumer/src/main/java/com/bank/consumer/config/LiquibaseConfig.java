@@ -1,10 +1,11 @@
 package com.bank.consumer.config;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
@@ -25,12 +26,14 @@ public class LiquibaseConfig {
 
     @Bean
     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(dbDriver);
-        dataSource.setUrl(dbUrl);
-        dataSource.setUsername(dbUser);
-        dataSource.setPassword(dbPassword);
-        return dataSource;
+        HikariConfig hikariConfig = new HikariConfig();
+        hikariConfig.setJdbcUrl(dbUrl);
+        hikariConfig.setUsername(dbUser);
+        hikariConfig.setPassword(dbPassword);
+        hikariConfig.setDriverClassName(dbDriver);
+        hikariConfig.setMaximumPoolSize(10);
+        hikariConfig.setMinimumIdle(2);
+        return new HikariDataSource(hikariConfig);
     }
 
     @Bean

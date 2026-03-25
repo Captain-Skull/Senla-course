@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.concurrent.CountDownLatch;
+
 public class ProducerApp {
 
     private static final Logger log = LogManager.getLogger(ProducerApp.class);
@@ -19,8 +21,11 @@ public class ProducerApp {
         producerService.init();
         log.info("Приложение Producer запущено успешно.");
 
+        CountDownLatch latch = new CountDownLatch(1);
+        Runtime.getRuntime().addShutdownHook(new Thread(latch::countDown));
+
         try {
-            Thread.currentThread().join();
+            latch.await();
         } catch (InterruptedException e) {
             log.error("Приложение Producer было прервано", e);
             Thread.currentThread().interrupt();

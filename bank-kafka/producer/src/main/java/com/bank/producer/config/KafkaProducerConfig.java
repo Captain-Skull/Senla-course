@@ -53,20 +53,24 @@ public class KafkaProducerConfig {
                 log.info("Kafka topic '{}' created: partitions={}, replication-factor={}", topicName, partitions, replicationFactor);
 
             }
+        } catch (InterruptedException e) {
+            log.error("Failed to create Kafka topic '{}' due to interruption", topicName, e);
+            Thread.currentThread().interrupt();
         } catch (Exception e) {
             log.error("Failed to create Kafka topic '{}'", topicName, e);
-            Thread.currentThread().interrupt();
         }
     }
 
     @Bean
     public KafkaProducer<String, String> kafkaProducer() {
+        String hostname = Optional.ofNullable(System.getenv("HOSTNAME")).orElse(UUID.randomUUID().toString());
+
         Properties producerProps = new Properties();
         producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         producerProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         producerProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         producerProps.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, "true");
-        producerProps.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "bank-producer-transactional-1");
+        producerProps.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "bank-producer-tx-" + hostname);
         producerProps.put(ProducerConfig.ACKS_CONFIG, "all");
         producerProps.put(ProducerConfig.RETRIES_CONFIG, 3);
         producerProps.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
