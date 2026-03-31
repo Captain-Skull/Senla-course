@@ -1,7 +1,7 @@
 package hotel.service;
 
 import enums.RoomStatus;
-import exceptions.ImportExportException;
+import exceptions.ValidationException;
 import hotel.RoomCSVConverter;
 import hotel.ServiceCSVConverter;
 import hotel.GuestCSVConverter;
@@ -10,7 +10,9 @@ import hotel.Service;
 import hotel.Room;
 import hotel.CSVService;
 import hotel.GuestServiceUsage;
+import hotel.dto.FailedImportItem;
 import hotel.dto.GuestWithServicesDto;
+import hotel.dto.ImportResult;
 import hotel.dto.RoomWithGuestsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,8 +48,10 @@ public class ImportExportService {
     }
 
     @Transactional
-    public int importRooms(String filePath) {
+    public ImportResult importRooms(String filePath) {
         List<RoomWithGuestsDto> importedRooms = CSVService.importFromCSV(filePath, roomCSVConverter);
+
+        ImportResult result = new hotel.dto.ImportResult(importedRooms.size(), importedRooms.size());
 
         for (RoomWithGuestsDto dto : importedRooms) {
             Room room = dto.getRoom();
@@ -61,18 +65,26 @@ public class ImportExportService {
             if (dto.hasGuests()) {
                 List<Guest> guests = dto.getGuests();
                 if (room.getStatus() == RoomStatus.AVAILABLE) {
-                    hotelFacade.checkIn(guests, room.getNumber(), room.getDaysUnderStatus());
+                    try {
+                        hotelFacade.checkIn(guests, room.getNumber(), room.getDaysUnderStatus());
+                    } catch (ValidationException ve) {
+                        result.setImported(result.getImported() - 1);
+                        result.addFailed(new FailedImportItem(room.getNumber(), ve.getMessage()));
+                    }
                 } else if (room.getStatus() == RoomStatus.OCCUPIED) {
                     if (areGuestGroupsIdentical(guests, guestService.getGuestsByRoom(room.getNumber()))) {
                         for (Guest guest : guests) {
                             guestService.updateGuest(guest);
                         }
+                    } else {
+                        result.setImported(result.getImported() - 1);
+                        result.addFailed(new hotel.dto.FailedImportItem(room.getNumber(), "занята другими"));
                     }
                 }
             }
         }
 
-        return importedRooms.size();
+        return result;
     }
 
     public void exportRooms(String filePath) {
@@ -86,11 +98,9 @@ public class ImportExportService {
     }
 
     @Transactional
-    public int importGuests(String filePath) {
+    public ImportResult importGuests(String filePath) {
         List<GuestWithServicesDto> importedGuests = CSVService.importFromCSV(filePath, guestCSVConverter);
-        int importedGuestsCount = importedGuests.size();
-        boolean isErrorOccurred = false;
-        StringBuilder errorRooms = new StringBuilder();
+        ImportResult result = new ImportResult(importedGuests.size(), importedGuests.size());
 
         Map<Integer, List<GuestWithServicesDto>> dtosByRoom = importedGuests.stream()
                 .filter(dto -> dto.getGuest().getRoomNumber() > 0)
@@ -101,9 +111,8 @@ public class ImportExportService {
             List<GuestWithServicesDto> roomDtos = entry.getValue();
 
             if (!roomService.isRoomExists(roomNumber)) {
-                isErrorOccurred = true;
-                errorRooms.append(roomNumber).append(" (не существует) ");
-                importedGuestsCount -= roomDtos.size();
+                result.setImported(result.getImported() - roomDtos.size());
+                result.addFailed(new FailedImportItem(roomNumber, "не существует"));
                 continue;
             }
 
@@ -113,12 +122,12 @@ public class ImportExportService {
                     .collect(Collectors.toList());
 
             if (room.getStatus() == RoomStatus.AVAILABLE) {
-                if (!hotelFacade.checkIn(guests, roomNumber, 1).isEmpty()) {
+                try {
+                    hotelFacade.checkIn(guests, roomNumber, 1);
                     saveGuestServices(roomDtos);
-                } else {
-                    isErrorOccurred = true;
-                    errorRooms.append(roomNumber).append(" ");
-                    importedGuestsCount -= roomDtos.size();
+                } catch (ValidationException ve) {
+                    result.setImported(result.getImported() - roomDtos.size());
+                    result.addFailed(new FailedImportItem(roomNumber, ve.getMessage()));
                 }
             } else if (room.getStatus() == RoomStatus.OCCUPIED) {
                 List<Guest> currentGuests = guestService.getGuestsByRoom(roomNumber);
@@ -129,22 +138,16 @@ public class ImportExportService {
                     }
                     saveGuestServices(roomDtos);
                 } else {
-                    isErrorOccurred = true;
-                    errorRooms.append(roomNumber).append(" (занята другими) ");
-                    importedGuestsCount -= roomDtos.size();
+                    result.setImported(result.getImported() - roomDtos.size());
+                    result.addFailed(new FailedImportItem(roomNumber, "занята другими"));
                 }
             } else {
-                isErrorOccurred = true;
-                errorRooms.append(roomNumber).append(" (недоступна) ");
-                importedGuestsCount -= roomDtos.size();
+                result.setImported(result.getImported() - roomDtos.size());
+                result.addFailed(new FailedImportItem(roomNumber, "недоступна"));
             }
         }
 
-        if (isErrorOccurred) {
-            throw new ImportExportException("Не удалось расселить постояльцев. Комнаты: " + errorRooms);
-        }
-
-        return importedGuestsCount;
+        return result;
     }
 
     public void exportGuests(String filePath) {

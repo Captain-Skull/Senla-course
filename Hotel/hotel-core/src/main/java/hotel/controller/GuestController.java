@@ -9,6 +9,7 @@ import hotel.dto.GuestDto;
 import hotel.mapper.DtoMapper;
 import hotel.service.GuestService;
 import hotel.service.ImportExportService;
+import hotel.dto.ImportResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -75,12 +76,9 @@ public class GuestController {
 
     @PostMapping("/import")
     @PreAuthorize("hasAuthority('IMPORT')")
-    public ResponseEntity<Map<String, Object>> importGuests(@RequestBody Map<String, String> body) {
-        int count = importExportService.importGuests(body.get("filePath"));
-        return ResponseEntity.ok(Map.of(
-                "message", "Гости импортированы",
-                "count", count
-        ));
+    public ResponseEntity<ImportResult> importGuests(@RequestBody Map<String, String> body) {
+        ImportResult result = importExportService.importGuests(body.get("filePath"));
+        return ResponseEntity.ok(result);
     }
 
     @PostMapping("/export")

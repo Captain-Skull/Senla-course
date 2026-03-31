@@ -52,32 +52,36 @@ public class RoomService {
     }
 
     public boolean isRoomExists(int roomNumber) {
-        return getRoomByNumber(roomNumber) != null;
+        return roomDao.findById(roomNumber).isPresent();
     }
 
     @Transactional
-    public void updateRoomPrice(int roomNumber, int price) {
+    public Room updateRoomPrice(int roomNumber, int price) {
         try {
             Room room = getRoomByNumber(roomNumber);
 
             room.setPrice(price);
             roomDao.update(room);
+
+            return room;
         } catch (Exception e) {
             throw new DaoException("Ошибка обновления цены комнаты", e);
         }
     }
 
     @Transactional
-    public void updateRoom(Room room) {
+    public Room updateRoom(Room room) {
         try {
             roomDao.update(room);
+
+            return room;
         } catch (Exception e) {
             throw new DaoException("Ошибка обновления комнаты", e);
         }
     }
 
     @Transactional
-    public boolean setRoomUnderMaintenance(int roomNumber, int days) {
+    public Room setRoomUnderMaintenance(int roomNumber, int days) {
         LocalDate date = hotelState.getCurrentDay();
 
         try {
@@ -85,17 +89,16 @@ public class RoomService {
 
             if (room.setUnderMaintenance(date, days)) {
                 roomDao.update(room);
-                return true;
             }
 
-            return false;
+            return room;
         } catch (Exception e) {
             throw new DaoException("Ошибка перевода комнаты на обслуживание", e);
         }
     }
 
     @Transactional
-    public boolean setRoomCleaning(int roomNumber) {
+    public Room setRoomCleaning(int roomNumber) {
         LocalDate date = hotelState.getCurrentDay();
 
         try {
@@ -103,26 +106,24 @@ public class RoomService {
 
             if (room.setCleaning(date)) {
                 roomDao.update(room);
-                return true;
             }
 
-            return false;
+            return room;
         } catch (Exception e) {
             throw new DaoException("Ошибка уборки комнаты", e);
         }
     }
 
     @Transactional
-    public boolean setRoomAvailable(int roomNumber) {
+    public Room setRoomAvailable(int roomNumber) {
         try {
             Room room = getRoomByNumber(roomNumber);
 
             if (room.setAvailable()) {
                 roomDao.update(room);
-                return true;
             }
 
-            return false;
+            return room;
         } catch (Exception e) {
             throw new DaoException("Ошибка перевода комнаты в доступный режим");
         }
