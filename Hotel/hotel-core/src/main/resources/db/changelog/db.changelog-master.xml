@@ -11,5 +11,9 @@
     <include file="db/changelog/changes/004-create-guest-service-usage-table.xml"/>
     <include file="db/changelog/changes/005-create-room-guest-history-table.xml"/>
     <include file="db/changelog/changes/006-insert-initial-data.xml"/>
+    <include file="db/changelog/changes/007-create-users-and-roles-tables.xml"/>
+    <include file="db/changelog/changes/008-create-user_roles-and-role_privilege-tables.xml"/>
+    <include file="db/changelog/changes/009-insert-roles-and-privileges.xml"/>
+    <include file="db/changelog/changes/010-add-user-id-to-guests.xml"/>
 
 </databaseChangeLog>

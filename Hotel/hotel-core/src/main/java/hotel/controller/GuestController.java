@@ -11,6 +11,7 @@ import hotel.service.GuestService;
 import hotel.service.ImportExportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,6 +39,7 @@ public class GuestController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('GUEST_READ')")
     public List<?> getGuests(@RequestParam(required = false) GuestSort sortBy, @RequestParam(required = false) SortDirection direction) {
         if (sortBy != null) {
             return guestService.getSortedGuests(sortBy, direction);
@@ -46,28 +48,33 @@ public class GuestController {
     }
 
     @GetMapping("/{guestId}")
+    @PreAuthorize("hasAuthority('GUEST_READ')")
     public GuestDto getGuestById(@PathVariable String guestId) {
         Guest guest = guestService.getGuestById(guestId);
         return dtoMapper.toGuestDto(guest);
     }
 
     @GetMapping("/count")
+    @PreAuthorize("hasAuthority('GUEST_READ')")
     public int getGuestsCount() {
         return guestService.getGuestsCount();
     }
 
     @GetMapping("/{guestId}/services")
+    @PreAuthorize("hasAuthority('GUEST_READ')")
     public List<GuestServiceUsage> getServiceUsage(@PathVariable String guestId, @RequestParam UsageServiceSort sortBy, @RequestParam SortDirection direction) {
         return guestService.getGuestServiceUsageList(guestId, sortBy, direction);
     }
 
     @PostMapping("/{guestId}/services")
+    @PreAuthorize("hasAuthority('GUEST_UPDATE')")
     public GuestServiceUsage addServiceToGuest(@PathVariable String guestId, @RequestBody Map<String, String> body) {
         GuestServiceUsage usage = guestService.addServiceToGuest(guestId, body.get("serviceId"));
         return usage;
     }
 
     @PostMapping("/import")
+    @PreAuthorize("hasAuthority('IMPORT')")
     public ResponseEntity<Map<String, Object>> importGuests(@RequestBody Map<String, String> body) {
         int count = importExportService.importGuests(body.get("filePath"));
         return ResponseEntity.ok(Map.of(
@@ -77,6 +84,7 @@ public class GuestController {
     }
 
     @PostMapping("/export")
+    @PreAuthorize("hasAuthority('EXPORT')")
     public ResponseEntity<Map<String, String>> exportGuests(@RequestBody Map<String, String> body) {
         importExportService.exportGuests(body.get("filePath"));
         return ResponseEntity.ok(Map.of(

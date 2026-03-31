@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="009-insert-roles" author="George">
+        <comment>Данные о ролях</comment>
+        <insert tableName="roles">
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="name" value="ROLE_USER"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="roles" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="009-insert-privileges" author="George">
+        <comment>Данные о привилегиях</comment>
+        <insert tableName="privileges">
+            <column name="name" value="ROOM_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="ROOM_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="ROOM_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="ROOM_HISTORY_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="SERVICE_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="SERVICE_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="SERVICE_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="GUEST_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="GUEST_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="GUEST_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="CHECKIN"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="CHECKOUT"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="DATE_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="DATE_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="STATE_SAVE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="EXPORT"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="IMPORT"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="privileges" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="009-insert-role_privileges" author="George">
+        <comment>Данные о взаимоотношениях привилегий и ролей</comment>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="privilege_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="privilege_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="privilege_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="privilege_id" valueNumeric="11"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="9"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="privilege_id" valueNumeric="17"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="role_privileges" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="009-insert-users" author="George">
+        <comment>Базовый пользователь админ</comment>
+        <insert tableName="users">
+            <column name="id" valueNumeric="1"/>
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$10$/AW3fJvhvYz6fR8W7h.oTurWl8UAQBSiaH5.ucPQpMM8VxasHCwkC"/>
+            <column name="email" value="admin@hotel.com"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="users" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="009-insert-user_roles" author="George">
+        <comment>Выдача роли пользователю админ</comment>
+        <insert tableName="user_roles">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="role_id" valueNumeric="1"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="user_roles" />
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

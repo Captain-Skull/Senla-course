@@ -7,6 +7,7 @@ import hotel.Room;
 import hotel.RoomGuestHistory;
 import hotel.dto.CheckInRequest;
 import hotel.dto.RoomDto;
+import hotel.dto.RoomInfoDto;
 import hotel.mapper.DtoMapper;
 import hotel.service.GuestService;
 import hotel.service.HotelServiceFacade;
@@ -15,6 +16,7 @@ import hotel.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,6 +51,7 @@ public class RoomController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ROOM_READ')")
     public List<?> getAllRooms(@RequestParam(required = false) RoomSort sortBy, @RequestParam(required = false) SortDirection direction) {
         List<?> rooms;
         if (sortBy != null) {
@@ -61,6 +64,7 @@ public class RoomController {
     }
 
     @GetMapping("/available")
+    @PreAuthorize("hasAuthority('ROOM_READ')")
     public List<?> getAvailableRooms(@RequestParam(required = false) RoomSort sortBy, @RequestParam(required = false) SortDirection direction) {
         List<?> rooms = sortBy != null ? hotelFacade.getSortedAvailableRooms(sortBy, direction) : roomService.getAvailableRooms();
 
@@ -68,46 +72,54 @@ public class RoomController {
     }
 
     @GetMapping("/available/by-date")
+    @PreAuthorize("hasAuthority('ROOM_READ')")
     public Map<Integer, RoomDto> getAvailableRoomsByDate(@RequestParam int days) {
         Map<Integer, Room> rooms = roomService.getAvailableRoomsByDate(days);
         return dtoMapper.toRoomDtoMap(rooms);
     }
 
     @GetMapping("/available/count")
+    @PreAuthorize("hasAuthority('ROOM_READ')")
     public int getAvailableRoomsCount() {
         return roomService.getAvailableRooms().size();
     }
 
     @GetMapping("/information/{roomNumber}")
-    public String getRoomInformation(@PathVariable int roomNumber) {
+    @PreAuthorize("hasAuthority('ROOM_READ')")
+    public RoomInfoDto getRoomInformation(@PathVariable int roomNumber) {
         return hotelFacade.getRoomInformation(roomNumber);
     }
 
     @PatchMapping("/{roomNumber}/price")
+    @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomPrice(@PathVariable int roomNumber, @RequestBody Map<String, Integer> body) {
         roomService.updateRoomPrice(roomNumber, body.get("price"));
         return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
     }
 
     @PatchMapping("/{roomNumber}/status/available")
+    @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomAvailable(@PathVariable int roomNumber) {
         roomService.setRoomAvailable(roomNumber);
         return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
     }
 
     @PatchMapping("/{roomNumber}/status/cleaning")
+    @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomCleaning(@PathVariable int roomNumber) {
         roomService.setRoomCleaning(roomNumber);
         return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
     }
 
     @PatchMapping("/{roomNumber}/status/maintenance")
+    @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomUnderMaintenance(@PathVariable int roomNumber, @RequestParam int days) {
         roomService.setRoomUnderMaintenance(roomNumber, days);
         return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ROOM_CREATE')")
     public ResponseEntity<RoomDto> addNewRoom(@RequestBody RoomDto roomDto) {
         Room room = dtoMapper.toRoom(roomDto);
         Room saved = roomService.saveRoom(room);
@@ -115,18 +127,16 @@ public class RoomController {
     }
 
     @GetMapping("/{roomNumber}/history")
+    @PreAuthorize("hasAuthority('ROOM_HISTORY_READ')")
     public List<List<RoomGuestHistory>> getRoomHistory(@PathVariable int roomNumber) {
         List<List<RoomGuestHistory>> guestGroups = roomService.getRoomHistory(roomNumber);
         return guestGroups;
     }
 
     @PostMapping("/{roomNumber}/checkIn")
+    @PreAuthorize("hasAuthority('CHECKIN')")
     public ResponseEntity<Map<String, Object>> checkIn(@PathVariable int roomNumber, @RequestBody CheckInRequest request) {
-        List<Guest> guests = request.getGuests().stream()
-                .map(dtoMapper::requestToGuest).toList();
-
-
-        List<Guest> checkedIn = hotelFacade.checkIn(guests, roomNumber, request.getDays());
+        List<Guest> checkedIn = hotelFacade.checkInRequest(request.getGuests(), roomNumber, request.getDays());
         boolean success = !checkedIn.isEmpty();
 
         Map<String, Object> response = new HashMap<>();
@@ -138,6 +148,7 @@ public class RoomController {
     }
 
     @PostMapping("/{roomNumber}/checkOut")
+    @PreAuthorize("hasAuthority('CHECKOUT')")
     public ResponseEntity<Map<String, Object>> checkOut(@PathVariable int roomNumber) {
         Room room = roomService.getRoomByNumber(roomNumber);
         List<Guest> guests = guestService.getGuestsByRoom(roomNumber);
@@ -162,6 +173,7 @@ public class RoomController {
     }
 
     @PostMapping("/import")
+    @PreAuthorize("hasAuthority('IMPORT')")
     public ResponseEntity<Map<String, Object>> importRooms(@RequestBody Map<String, String> body) {
         int count = importExportService.importRooms(body.get("filePath"));
         return ResponseEntity.ok(Map.of(
@@ -171,6 +183,7 @@ public class RoomController {
     }
 
     @PostMapping("/export")
+    @PreAuthorize("hasAuthority('EXPORT')")
     public ResponseEntity<Map<String, String>> exportRooms(@RequestBody Map<String, String> body) {
         importExportService.exportRooms(body.get("filePath"));
         return ResponseEntity.ok(Map.of(

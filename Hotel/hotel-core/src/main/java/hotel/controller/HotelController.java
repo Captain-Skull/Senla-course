@@ -4,6 +4,7 @@ import hotel.service.HotelServiceFacade;
 import hotel.service.HotelState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,17 +27,20 @@ public class HotelController {
     }
 
     @GetMapping("/date")
+    @PreAuthorize("hasAuthority('DATE_READ')")
     public Map<String, LocalDate> getCurrentDate() {
         return Map.of("currentDay", hotelState.getCurrentDay());
     }
 
     @PostMapping("/next-day")
+    @PreAuthorize("hasAuthority('DATE_UPDATE')")
     public Map<String, LocalDate> nextDay() {
         LocalDate newDay = hotelService.nextDay();
         return Map.of("currentDay", newDay);
     }
 
     @PostMapping("/save")
+    @PreAuthorize("hasAuthority('STATE_SAVE')")
     public ResponseEntity<Map<String, String>> saveState() {
         hotelState.save();
         return ResponseEntity.ok(Map.of("message", "Состояние сохранено"));
