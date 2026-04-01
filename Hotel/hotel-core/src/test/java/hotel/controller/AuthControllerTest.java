@@ -48,15 +48,15 @@ public class AuthControllerTest {
         AuthResponse response = new AuthResponse("jwt-token", "testUser", List.of("ROLE_USER"));
         when(authService.login(any())).thenReturn(response);
 
-        MvcResult result = mockMvc.perform(post("/api/auth/login")
+        mockMvc.perform(post("/api/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.token").value("jwt-token"))
+                .andExpect(jsonPath("$.username").value("testUser"))
                 .andReturn();
 
         verify(authService).login(any());
-        String body = result.getResponse().getContentAsString();
-        assertTrue(body.contains("jwt-token") || body.contains("testUser") || !body.isEmpty());
     }
 
     @Test
@@ -89,7 +89,8 @@ public class AuthControllerTest {
         mockMvc.perform(post("/api/auth/register")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isCreated());
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.token").value("jwt-token"));
 
         verify(authService).register(any());
     }

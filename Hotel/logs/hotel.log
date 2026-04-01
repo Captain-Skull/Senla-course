@@ -3348,3 +3348,4 @@ Caused by: org.postgresql.util.PSQLException: FATAL: role "hotel_app" does not e
   Подробности: Key (id)=(1) already exists.
 2026-04-01 02:17:36.665 [http-nio-8080-exec-1] ERROR hotel.controller.GlobalExceptionHandler - Ошибка: could not execute statement [ERROR: duplicate key value violates unique constraint "users_pkey"
   Подробности: Key (id)=(1) already exists.] [insert into users (created_at,email,enabled,password,username) values (?,?,?,?,?)]
+2026-04-01 06:36:55.131 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

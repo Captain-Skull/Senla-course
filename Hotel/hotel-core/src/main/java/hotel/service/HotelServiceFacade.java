@@ -117,7 +117,11 @@ public class HotelServiceFacade {
                     .orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
 
             if (!room.canCheckIn(guests.size())) {
-                throw new ValidationException("Невозможно заселить в комнату. Статус комнаты: " + room.getStatus() + "Вместимость комнаты: " + room.getCapacity() + "Количество гостей: " + guests.size());
+                StringBuilder errorMessage = new StringBuilder("Невозможно заселить в комнату. ");
+                errorMessage.append("Статус комнаты: ").append(room.getStatus()).append(". ");
+                errorMessage.append("Вместимость комнаты: ").append(room.getCapacity()).append(". ");
+                errorMessage.append("Количество гостей: ").append(guests.size()).append(".");
+                throw new ValidationException(errorMessage.toString());
             }
 
             room.markAsOccupied(currentDay, days);
@@ -244,6 +248,9 @@ public class HotelServiceFacade {
 
     private String getCurrentUsername() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return auth != null ? auth.getName() : null;
+        if (auth == null) {
+            throw new RuntimeException("Нет аутентификации в контексте безопасности");
+        }
+        return auth.getName();
     }
 }

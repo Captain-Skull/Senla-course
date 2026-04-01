@@ -1,6 +1,7 @@
 package hotel.service;
 
 import enums.RoomStatus;
+import exceptions.DaoException;
 import exceptions.ValidationException;
 import hotel.RoomCSVConverter;
 import hotel.ServiceCSVConverter;
@@ -51,7 +52,7 @@ public class ImportExportService {
     public ImportResult importRooms(String filePath) {
         List<RoomWithGuestsDto> importedRooms = CSVService.importFromCSV(filePath, roomCSVConverter);
 
-        ImportResult result = new hotel.dto.ImportResult(importedRooms.size(), importedRooms.size());
+        ImportResult result = new ImportResult(importedRooms.size(), importedRooms.size());
 
         for (RoomWithGuestsDto dto : importedRooms) {
             Room room = dto.getRoom();
@@ -164,10 +165,10 @@ public class ImportExportService {
     public int importServices(String filePath) {
         List<Service> importedServices = CSVService.importFromCSV(filePath, serviceCSVConverter);
         for (Service service : importedServices) {
-            Service existing = serviceService.getServiceById(service.getId());
-            if (existing != null) {
+            try {
+                serviceService.getServiceById(service.getId());
                 serviceService.updateService(service);
-            } else {
+            } catch (DaoException e) {
                 serviceService.saveService(service);
             }
         }

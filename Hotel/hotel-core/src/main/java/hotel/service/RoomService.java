@@ -125,7 +125,7 @@ public class RoomService {
 
             return room;
         } catch (Exception e) {
-            throw new DaoException("Ошибка перевода комнаты в доступный режим");
+            throw new DaoException("Ошибка перевода комнаты в доступный режим", e);
         }
     }
 
