@@ -8,6 +8,7 @@ import hotel.RoomGuestHistory;
 import hotel.dto.CheckInRequest;
 import hotel.dto.RoomDto;
 import hotel.dto.RoomInfoDto;
+import hotel.dto.ImportResult;
 import hotel.mapper.DtoMapper;
 import hotel.service.GuestService;
 import hotel.service.HotelServiceFacade;
@@ -93,29 +94,29 @@ public class RoomController {
     @PatchMapping("/{roomNumber}/price")
     @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomPrice(@PathVariable int roomNumber, @RequestBody Map<String, Integer> body) {
-        roomService.updateRoomPrice(roomNumber, body.get("price"));
-        return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
+        Room room = roomService.updateRoomPrice(roomNumber, body.get("price"));
+        return dtoMapper.toRoomDto(room);
     }
 
     @PatchMapping("/{roomNumber}/status/available")
     @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomAvailable(@PathVariable int roomNumber) {
-        roomService.setRoomAvailable(roomNumber);
-        return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
+        Room room = roomService.setRoomAvailable(roomNumber);
+        return dtoMapper.toRoomDto(room);
     }
 
     @PatchMapping("/{roomNumber}/status/cleaning")
     @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomCleaning(@PathVariable int roomNumber) {
-        roomService.setRoomCleaning(roomNumber);
-        return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
+        Room room = roomService.setRoomCleaning(roomNumber);
+        return dtoMapper.toRoomDto(room);
     }
 
     @PatchMapping("/{roomNumber}/status/maintenance")
     @PreAuthorize("hasAuthority('ROOM_UPDATE')")
     public RoomDto setRoomUnderMaintenance(@PathVariable int roomNumber, @RequestParam int days) {
-        roomService.setRoomUnderMaintenance(roomNumber, days);
-        return dtoMapper.toRoomDto(roomService.getRoomByNumber(roomNumber));
+        Room room = roomService.setRoomUnderMaintenance(roomNumber, days);
+        return dtoMapper.toRoomDto(room);
     }
 
     @PostMapping
@@ -174,12 +175,9 @@ public class RoomController {
 
     @PostMapping("/import")
     @PreAuthorize("hasAuthority('IMPORT')")
-    public ResponseEntity<Map<String, Object>> importRooms(@RequestBody Map<String, String> body) {
-        int count = importExportService.importRooms(body.get("filePath"));
-        return ResponseEntity.ok(Map.of(
-                "message", "Комнаты импортированы",
-                "count", count
-        ));
+    public ResponseEntity<ImportResult> importRooms(@RequestBody Map<String, String> body) {
+        ImportResult result = importExportService.importRooms(body.get("filePath"));
+        return ResponseEntity.ok(result);
     }
 
     @PostMapping("/export")

@@ -60,7 +60,7 @@ public class GuestService {
         if (!isAdmin()) {
             Guest myGuest = getMyGuest();
             if (myGuest != null && myGuest.getRoomNumber() != null && myGuest.getRoomNumber() != roomNumber) {
-                throw new AccessDeniedException("У вас нет прав на просмотр гостей комнаты" + roomNumber);
+                throw new AccessDeniedException("У вас нет прав на просмотр гостей комнаты " + roomNumber);
             }
         }
 
@@ -158,7 +158,7 @@ public class GuestService {
 
     @Transactional
     public GuestServiceUsage addServiceToGuest(String guestId, String serviceId) {
-        Guest guest = guestDao.findById(guestId).orElseThrow(() -> new DaoException("Гость не найден" + guestId));
+        Guest guest = guestDao.findById(guestId).orElseThrow(() -> new DaoException("Гость не найден: " + guestId));
         Service service = serviceService.getServiceById(serviceId);
 
         if (!isAdmin()) {
@@ -232,11 +232,19 @@ public class GuestService {
 
     private boolean isAdmin() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null) {
+            return false;
+        }
+
         return auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
     }
 
     private String getCurrentUsername() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null) {
+            throw new RuntimeException("Нет аутентификации в контексте безопасности");
+        }
+
         return auth.getName();
     }
 }

@@ -4,6 +4,7 @@ import enums.RoomSort;
 import enums.RoomStatus;
 import enums.SortDirection;
 import exceptions.DaoException;
+import exceptions.ValidationException;
 import hotel.Guest;
 import hotel.Room;
 import hotel.RoomGuestHistory;
@@ -101,8 +102,7 @@ public class HotelServiceFacade {
 
         List<RoomWithGuestsDto> result = new ArrayList<>();
         for (Room room : sortedRooms.values()) {
-            List<Guest> guests = guestService.getGuestsByRoom(room.getNumber());
-            result.add(new RoomWithGuestsDto(room, guests));
+            result.add(new RoomWithGuestsDto(room, List.of()));
         }
 
         return result;
@@ -110,14 +110,18 @@ public class HotelServiceFacade {
 
     @Transactional
     public List<Guest> checkIn(List<Guest> guests, int roomNumber, int days) {
-        try {
-            LocalDate currentDay = hotelState.getCurrentDay();
+        LocalDate currentDay = hotelState.getCurrentDay();
 
+        try {
             Room room = roomDao.findById(roomNumber)
                     .orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
 
             if (!room.canCheckIn(guests.size())) {
-                return new ArrayList<>();
+                StringBuilder errorMessage = new StringBuilder("Невозможно заселить в комнату. ");
+                errorMessage.append("Статус комнаты: ").append(room.getStatus()).append(". ");
+                errorMessage.append("Вместимость комнаты: ").append(room.getCapacity()).append(". ");
+                errorMessage.append("Количество гостей: ").append(guests.size()).append(".");
+                throw new ValidationException(errorMessage.toString());
             }
 
             room.markAsOccupied(currentDay, days);
@@ -131,6 +135,8 @@ public class HotelServiceFacade {
             }
 
             return savedGuests;
+        } catch (ValidationException ve) {
+            throw ve;
         } catch (Exception e) {
             throw new DaoException("Ошибка заселения", e);
         }
@@ -138,14 +144,14 @@ public class HotelServiceFacade {
 
     @Transactional
     public List<Guest> checkInRequest(List<GuestRequest> guestRequests, int roomNumber, int days) {
-        try {
-            LocalDate currentDay = hotelState.getCurrentDay();
+        LocalDate currentDay = hotelState.getCurrentDay();
 
+        try {
             Room room = roomDao.findById(roomNumber)
                     .orElseThrow(() -> new DaoException("Комната не найдена: " + roomNumber));
 
             if (!room.canCheckIn(guestRequests.size())) {
-                return new ArrayList<>();
+                throw new ValidationException("Невозможно заселить в комнату. Статус комнаты: " + room.getStatus() + "Вместимость комнаты: " + room.getCapacity() + "Количество гостей: " + guestRequests.size());
             }
 
             room.markAsOccupied(currentDay, days);
@@ -171,6 +177,9 @@ public class HotelServiceFacade {
             }
 
             return savedGuests;
+        } catch (ValidationException ve) {
+            logger.error("Ошибка при заселении в комнату {}: {}", roomNumber, ve.getMessage());
+            throw ve;
         } catch (Exception e) {
             logger.error("Ошибка при заселении в комнату {}: {}", roomNumber, e.getMessage());
             throw new DaoException("Ошибка заселения", e);
@@ -239,6 +248,9 @@ public class HotelServiceFacade {
 
     private String getCurrentUsername() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return auth != null ? auth.getName() : null;
+        if (auth == null) {
+            throw new RuntimeException("Нет аутентификации в контексте безопасности");
+        }
+        return auth.getName();
     }
 }
