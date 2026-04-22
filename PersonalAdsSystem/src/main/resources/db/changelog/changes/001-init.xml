@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.26.xsd">
+
+    <changeSet id="001-init" author="George">
+
+        <createTable tableName="users">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="uq_users_username"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="uq_users_email"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="about_me" type="VARCHAR(2000)"/>
+            <column name="average_raing" type="DECIMAL(3,2)" defaultValueNumeric="0.00">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <sql>
+            ALTER TABLE users ADD CONSTRAINT chk_average_rating CHECK (average_rating &gt;= 0 AND average_rating &lt;= 5);
+        </sql>
+
+        <createTable tableName="roles">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="uq_roles_name"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="privileges">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="uq_privileges_name"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="user_roles">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_user_roles_user" references="users(id)" deleteCascade="true"/>
+            </column>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_user_roles_role" references="roles(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="user_roles" columnNames="user_id, role_id" constraintName="pk_user_roles"/>
+
+        <createTable tableName="role_privileges">
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_role_privileges_role" references="roles(id)" deleteCascade="true"/>
+            </column>
+            <column name="privilege_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_role_privileges_priv" references="privileges(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="role_privileges" columnNames="role_id, privilege_id" constraintName="pk_role_privileges"/>
+
+
+        <createTable tableName="ads">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_ads_user" references="users(id)"/>
+            </column>
+            <column name="category" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(3000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOLEAN" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+
+        <createTable tableName="comments">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_comments_user" references="users(id)"/>
+            </column>
+            <column name="ad_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_comments_ad" references="ads(id)" deleteCascade="true"/>
+            </column>
+            <column name="content" type="VARCHAR(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="send_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="chats">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ad_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_chats_ad" references="ads(id)" deleteCascade="true"/>
+            </column>
+            <column name="buyer_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_chats_buyer" references="users(id)"/>
+            </column>
+            <column name="seller_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_chats_seller" references="users(id)"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addUniqueConstraint tableName="chats" columnNames="ad_id, buyer_id" constraintName="uq_chats_ad_buyer"/>
+
+        <createTable tableName="messages">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="chat_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_messages_chat" references="chats(id)" deleteCascade="true"/>
+            </column>
+            <column name="sender_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_messages_sender" references="users(id)"/>
+            </column>
+            <column name="content" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="send_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_read" type="BOOLEAN" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="ratings">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="recipient_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_ratings_recipient" references="users(id)"/>
+            </column>
+            <column name="reviewer_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_ratings_reviewer" references="users(id)"/>
+            </column>
+            <column name="rating" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <sql>ALTER TABLE ratings ADD CONSTRAINT chk_rating_range CHECK (rating &gt;= 1 AND rating &lt;= 5);</sql>
+        <addUniqueConstraint tableName="ratings" columnNames="recipient_id, reviewer_id" constraintName="uq_ratings_users"/>
+
+
+        <createTable tableName="payments">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ad_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_payments_ad" references="ads(id)" deleteCascade="true"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_payments_user" references="users(id)"/>
+            </column>
+            <column name="confirmed_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expire_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="sales_history">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ad_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_sales_ad" references="ads(id)"/>
+            </column>
+            <column name="seller_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_sales_seller" references="users(id)"/>
+            </column>
+            <column name="buyer_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_sales_buyer" references="users(id)"/>
+            </column>
+            <column name="description" type="VARCHAR(3000)"/>
+            <column name="price" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sold_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

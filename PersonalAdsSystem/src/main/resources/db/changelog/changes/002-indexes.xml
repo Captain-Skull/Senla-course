@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.26.xsd">
+
+    <changeSet id="002-indexes" author="George">
+
+        <createIndex indexName="idx_ads_user_id" tableName="ads">
+            <column name="user_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_ads_category" tableName="ads">
+            <column name="category"/>
+        </createIndex>
+
+        <createIndex indexName="idx_ads_is_active" tableName="ads">
+            <column name="is_active"/>
+        </createIndex>
+
+        <createIndex indexName="idx_ads_created_at" tableName="ads">
+            <column name="created_at"/>
+        </createIndex>
+
+        <createIndex indexName="idx_ads_category_active_created" tableName="ads">
+            <column name="category"/>
+            <column name="is_active"/>
+            <column name="created_at" descending="true"/>
+        </createIndex>
+
+        <createIndex indexName="idx_comments_ad_id" tableName="comments">
+            <column name="ad_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_messages_chat_id" tableName="messages">
+            <column name="chat_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_messages_sender_id" tableName="messages">
+            <column name="sender_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_chats_buyer_id" tableName="chats">
+            <column name="buyer_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_chats_seller_id" tableName="chats">
+            <column name="seller_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_ratings_recipient_id" tableName="ratings">
+            <column name="recipient_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_payments_ad_id" tableName="payments">
+            <column name="ad_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_payments_expire_at" tableName="payments">
+            <column name="expire_at"/>
+        </createIndex>
+
+        <createIndex indexName="idx_sales_seller_id" tableName="sales_history">
+            <column name="seller_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_sales_buyer_id" tableName="sales_history">
+            <column name="buyer_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
