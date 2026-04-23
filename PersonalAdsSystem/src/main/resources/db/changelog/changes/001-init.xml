@@ -201,16 +201,14 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="ad_id" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="fk_sales_ad" references="ads(id)"/>
-            </column>
+            <column name="ad_id" type="BIGINT" />
+            <column name="ad_title" type="VARCHAR(100)" />
             <column name="seller_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_sales_seller" references="users(id)"/>
             </column>
             <column name="buyer_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_sales_buyer" references="users(id)"/>
             </column>
-            <column name="description" type="VARCHAR(3000)"/>
             <column name="price" type="INT">
                 <constraints nullable="false"/>
             </column>
@@ -218,6 +216,14 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="sales_history"
+                baseColumnNames="ad_id"
+                referencedTableName="ads"
+                referencedColumnNames="id"
+                constraintName="fk_sales_ad"
+                onDelete="SET NULL"/>
 
     </changeSet>
 

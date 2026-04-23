@@ -23,11 +23,11 @@ public class Message {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sender_id", nullable = false)
-    private long sender;
+    private User sender;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chat_id", nullable = false)
-    private long chatId;
+    private Chat chat;
 
     @Column(name = "content", nullable = false)
     private String content;

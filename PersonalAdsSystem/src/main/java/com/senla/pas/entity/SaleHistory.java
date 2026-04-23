@@ -22,8 +22,11 @@ public class SaleHistory {
     private long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ad_id", nullable = false)
+    @JoinColumn(name = "ad_id")
     private Ad ad;
+
+    @Column(name = "ad_title", nullable = false)
+    private String adTitle;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id", nullable = false)
@@ -32,9 +35,6 @@ public class SaleHistory {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "buyer_id", nullable = false)
     private User buyer;
-
-    @Column(name = "description", nullable = false)
-    private String description;
 
     @Column(name = "price", nullable = false)
     private int price;
