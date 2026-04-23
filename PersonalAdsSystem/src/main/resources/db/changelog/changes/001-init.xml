@@ -21,7 +21,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="about_me" type="VARCHAR(2000)"/>
-            <column name="average_raing" type="DECIMAL(3,2)" defaultValueNumeric="0.00">
+            <column name="average_rating" type="DECIMAL(3,2)" defaultValueNumeric="0.00">
                 <constraints nullable="false"/>
             </column>
             <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
@@ -92,6 +92,9 @@
                 <constraints nullable="false"/>
             </column>
             <column name="is_active" type="BOOLEAN" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_premium" type="BOOLEAN" defaultValueBoolean="false">
                 <constraints nullable="false"/>
             </column>
             <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">

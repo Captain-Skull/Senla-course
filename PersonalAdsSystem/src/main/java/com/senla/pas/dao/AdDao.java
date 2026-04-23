@@ -7,15 +7,20 @@ import com.senla.pas.enums.SortDirection;
 import com.senla.pas.exception.DaoException;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
+import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class AdDao extends AbstractJpaDao<Ad, Long> {
 
     private static final String FIND_BY_CATEGORY_JPQL = "SELECT a FROM Ad a WHERE a.category = :category";
     private static final String FIND_BY_USER_ID_JPQL = "SELECT a FROM Ad a WHERE a.user.id = :userId";
     private static final String CHECK_OWNERSHIP_JPQL = "SELECT COUNT(a) FROM Ad a WHERE a.id = :adId AND a.user.id = :userId";
+    private static final String UPDATE_PREMIUM_STATUS_JPQL = "UPDATE Ad a SET a.isPremium = :isPremium WHERE a.id = :adId";
+    private static final String DEACTIVATE_EXPIRED_PREMIUM_JPQL = "UPDATE Ad a SET a.isPremium = false WHERE a.isPremium = true AND NOT EXISTS (SELECT p FROM Payment p WHERE p.ad.id = a.id AND p.expireAt > :now)";
 
     @Override
     protected Class<Ad> getEntityClass() {
@@ -66,10 +71,10 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
 
             cq.where(predicates.toArray(new Predicate[0]));
 
-            Order order = getOrder(cb, ad, user, sortBy, direction);
-            if (order != null) {
-                cq.orderBy(order);
-            }
+            AdSort effectiveSortBy = sortBy != null ? sortBy : AdSort.DATE;
+            SortDirection effectiveDirection = direction != null ? direction : SortDirection.DESC;
+
+            cq.orderBy(getOrders(cb, ad, user, effectiveSortBy, effectiveDirection));
 
             TypedQuery<Ad> query = entityManager.createQuery(cq);
             query.setFirstResult(page * size);
@@ -119,18 +124,52 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
         }
     }
 
-    private Order getOrder(CriteriaBuilder cb, Root<Ad> ad, Join<Object, Object> user, AdSort sortBy, SortDirection direction) {
-        if (sortBy == null) {
-            return cb.desc(ad.get("createdAt"));
+    public void updatePremiumStatus(Long adId, Boolean isPremium) {
+        try {
+            entityManager.createQuery(UPDATE_PREMIUM_STATUS_JPQL)
+                    .setParameter("isPremium", isPremium)
+                    .setParameter("adId", adId)
+                    .executeUpdate();
+        } catch (Exception e) {
+            logger.error("Ошибка обновления премиум статуса объявления. Ad ID: {}, isPremium: {}", adId, isPremium, e);
+            throw new DaoException("Ошибка обновления премиум статуса объявления. Ad ID: " + adId + ", isPremium: " + isPremium, e);
         }
+    }
+
+    public int deactivateExpiredPremium() {
+        try {
+            return entityManager.createQuery(DEACTIVATE_EXPIRED_PREMIUM_JPQL)
+                    .setParameter("now", LocalDateTime.now())
+                    .executeUpdate();
+        } catch (Exception e) {
+            logger.error("Ошибка деактивации просроченных премиум объявлений", e);
+            throw new DaoException("Ошибка деактивации просроченных премиум объявлений", e);
+        }
+    }
+
+    private List<Order> getOrders(CriteriaBuilder cb, Root<Ad> ad, Join<Object, Object> user, AdSort sortBy, SortDirection direction) {
+
+        List<Order> orders = new ArrayList<>();
+
+        orders.add(cb.desc(ad.get("isPremium")));
 
         Expression<?> field = sortBy.isUserField()
                 ? user.get(sortBy.getFieldName())
                 : ad.get(sortBy.getFieldName());
 
-        return direction == SortDirection.ASC
+        orders.add(direction == SortDirection.ASC
                 ? cb.asc(field)
-                : cb.desc(field);
+                : cb.desc(field));
+
+        if (sortBy != AdSort.RATING) {
+            orders.add(cb.desc(user.get("averageRating")));
+        }
+
+        if (sortBy != AdSort.DATE) {
+            orders.add(cb.desc(ad.get("createdAt")));
+        }
+
+        return orders;
     }
 
     private List<Predicate> buildPredicates(CriteriaBuilder cb, Root<Ad> ad, AdCategory category, String searchText, Integer minPrice, Integer maxPrice, Boolean isActive) {

@@ -29,6 +29,10 @@
             <column name="created_at" descending="true"/>
         </createIndex>
 
+        <createIndex indexName="idx_ads_is_premium" tableName="ads">
+            <column name="is_premium"/>
+        </createIndex>
+
         <createIndex indexName="idx_comments_ad_id" tableName="comments">
             <column name="ad_id"/>
         </createIndex>

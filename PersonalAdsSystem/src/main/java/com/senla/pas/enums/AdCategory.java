@@ -1,5 +1,8 @@
 package com.senla.pas.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum AdCategory {
     ELECTRONICS("Электроника"),
     TRANSPORT("Транспорт"),
@@ -18,7 +21,4 @@ public enum AdCategory {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
 }

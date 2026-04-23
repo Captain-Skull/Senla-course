@@ -2,7 +2,9 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Rating;
 import com.senla.pas.exception.DaoException;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class RatingDao extends AbstractJpaDao<Rating, Long> {
 
     private static final String EXISTS_BY_REVIEWER_AND_RECIPIENT_JPQL = "SELECT COUNT(r) FROM Rating r WHERE r.reviewer.id = :reviewerId AND r.recipient.id = :recipientId";

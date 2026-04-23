@@ -2,10 +2,12 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Chat;
 import com.senla.pas.exception.DaoException;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class ChatDao extends AbstractJpaDao<Chat, Long> {
 
     private static final String FIND_BY_USER_ID_JPQL = "SELECT c FROM Chat c WHERE c.buyer.id = :userId OR c.seller.id = :userId";

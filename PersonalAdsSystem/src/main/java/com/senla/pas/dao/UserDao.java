@@ -2,9 +2,11 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.User;
 import com.senla.pas.exception.DaoException;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Repository
 public class UserDao extends AbstractJpaDao<User, Long> {
 
     private static final String FIND_BY_USERNAME_JPQL = "SELECT u FROM users u WHERE u.username = :username";
