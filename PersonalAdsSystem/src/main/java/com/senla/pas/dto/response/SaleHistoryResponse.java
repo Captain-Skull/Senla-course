@@ -13,6 +13,7 @@ public class SaleHistoryResponse {
 
     private Long id;
     private Long adId;
+    private String adTitle;
     private UserShortResponse seller;
     private UserShortResponse buyer;
     private Integer price;
