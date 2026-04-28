@@ -1,10 +1,14 @@
 package com.senla.pas.dao;
 
 import com.senla.pas.entity.User;
+import com.senla.pas.enums.SortDirection;
 import com.senla.pas.exception.DaoException;
 import jakarta.persistence.NoResultException;
+import jakarta.persistence.criteria.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -17,6 +21,7 @@ public class UserDao extends AbstractJpaDao<User, Long> {
     private static final String EXISTS_BY_USERNAME_JPQL = "SELECT COUNT(u) FROM User u WHERE u.username = :username";
     private static final String EXISTS_BY_EMAIL_JPQL = "SELECT COUNT(u) FROM User u WHERE u.email = :email";
     private static final String UPDATE_AVERAGE_RATING_JPQL = "UPDATE User u SET u.averageRating = :averageRating WHERE u.id = :userId";
+    private static final String UPDATE_ABOUT_ME_JPQL = "UPDATE User u SET u.aboutMe = :aboutMe WHERE u.id = :userId";
 
     @Override
     protected Class<User> getEntityClass() {
@@ -76,6 +81,38 @@ public class UserDao extends AbstractJpaDao<User, Long> {
         } catch (Exception e) {
             logger.error("Ошибка получения пользователя по почте или имени: {}", usernameOrEmail, e);
             throw new DaoException("Ошибка получения пользователя по почте или имени: " + usernameOrEmail, e);
+        }
+    }
+
+    public List<User> findFiltered(SortDirection direction, Double minPrice, Double maxPrice) {
+        try {
+            CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+            CriteriaQuery<User> cq = cb.createQuery(User.class);
+            Root<User> user = cq.from(User.class);
+            List<Predicate> predicates = new ArrayList<>();
+
+            if (minPrice != null) {
+                predicates.add(cb.greaterThanOrEqualTo(user.get("averageRating"), minPrice));
+            }
+
+            if (maxPrice != null) {
+                predicates.add(cb.lessThanOrEqualTo(user.get("averageRating"), maxPrice));
+            }
+
+            cq.where(predicates.toArray(new Predicate[0]));
+
+            List<Order> orders = new ArrayList<>();
+            orders.add(direction == SortDirection.DESC || direction == null
+                    ? cb.desc(user.get("averageRating"))
+                    : cb.asc(user.get("averageRating"))
+            );
+
+            cq.orderBy(orders);
+
+            return entityManager.createQuery(cq).getResultList();
+        } catch (Exception e) {
+            logger.error("Ошибка при получении отфильтрованных пользователей.", e);
+            throw new DaoException("Ошибка при полуении отфильтрованных пользователей.", e);
         }
     }
 
