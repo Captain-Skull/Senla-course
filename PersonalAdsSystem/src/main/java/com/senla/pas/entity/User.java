@@ -18,6 +18,15 @@ import java.util.Set;
 @AllArgsConstructor
 public class User {
 
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.aboutMe = "";
+        this.averageRating = 0.0;
+        this.createdAt = LocalDateTime.now();
+    }
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,4 +57,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
+
+    public void addRole(Role role) {
+        this.roles.add(role);
+    }
 }

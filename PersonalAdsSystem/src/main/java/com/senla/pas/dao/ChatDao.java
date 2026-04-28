@@ -2,6 +2,7 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Chat;
 import com.senla.pas.exception.DaoException;
+import jakarta.persistence.NoResultException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -26,6 +27,8 @@ public class ChatDao extends AbstractJpaDao<Chat, Long> {
                     .setParameter("buyerId", buyerId)
                     .getSingleResult();
             return Optional.of(chat);
+        } catch (NoResultException e) {
+            return Optional.empty();
         } catch (Exception e) {
             logger.error("Ошибка получения чата по adId и buyerId. Ad ID: {}, Buyer ID: {}", adId, buyerId, e);
             throw new DaoException("Ошибка получения чата по adId и buyerId. Ad ID: " + adId + ", Buyer ID: " + buyerId, e);

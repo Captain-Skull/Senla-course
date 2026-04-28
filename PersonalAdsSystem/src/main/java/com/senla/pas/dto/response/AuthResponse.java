@@ -12,4 +12,9 @@ public class AuthResponse {
     private String accessToken;
     private String tokenType = "Bearer";
     private UserResponse user;
+
+    public AuthResponse(String accessToken, UserResponse userResponse) {
+        this.accessToken = accessToken;
+        this.user = userResponse;
+    }
 }
