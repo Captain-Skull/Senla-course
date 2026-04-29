@@ -77,10 +77,10 @@ public class AdService {
         Ad ad = adMapper.toEntity(request);
         ad.setUser(user);
 
-        Ad savedAd = adDao.save(ad);
+        adDao.save(ad);
 
-        logger.info("Создано объявление {}. Пользователь {}", savedAd.getId(), userId);
-        return adMapper.toResponse(savedAd);
+        logger.info("Создано объявление {}. Пользователь {}", ad.getId(), userId);
+        return adMapper.toResponse(ad);
     }
 
     @Transactional
@@ -93,10 +93,10 @@ public class AdService {
         }
         adMapper.updateEntity(request, ad);
 
-        Ad updatedAd = adDao.update(ad);
+        adDao.update(ad);
 
         logger.info("Объявление {} обновлено", adId);
-        return adMapper.toResponse(updatedAd);
+        return adMapper.toResponse(ad);
     }
 
     @Transactional
