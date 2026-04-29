@@ -31,9 +31,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String jwt = extractToken(request);
 
             if (jwt != null && jwtTokenProvider.validateToken(jwt)) {
+                Long userId = jwtTokenProvider.getUserIdFromToken(jwt);
                 String username = jwtTokenProvider.getUsernameFromToken(jwt);
                 List<String> authorities = jwtTokenProvider.getAuthoritiesFromToken(jwt);
-                Long userId = jwtTokenProvider.getUserIdFromToken(jwt);
 
                 List<SimpleGrantedAuthority> grantedAuthorities = authorities.stream()
                         .map(SimpleGrantedAuthority::new)
