@@ -50,17 +50,18 @@ public class JwtTokenProvider {
         Date expiry = new Date(now.getTime() + jwtExpirationMs);
 
         return Jwts.builder()
-                .subject(username)
+                .subject(String.valueOf(userId))
                 .claim("authorities", authorities)
-                .claim("userId", userId)
+                .claim("username", username)
                 .issuedAt(now)
                 .expiration(expiry)
                 .signWith(key)
                 .compact();
     }
 
-    public String getUsernameFromToken(String token) {
-        return parseClaims(token).getSubject();
+    public Long getUserIdFromToken(String token) {
+        String subject = parseClaims(token).getSubject();
+        return Long.parseLong(subject);
     }
 
     @SuppressWarnings("unchecked")
@@ -68,8 +69,8 @@ public class JwtTokenProvider {
         return parseClaims(token).get("authorities", List.class);
     }
 
-    public Long getUserIdFromToken(String token) {
-        return parseClaims(token).get("userId", Long.class);
+    public String getUsernameFromToken(String token) {
+        return parseClaims(token).get("username", String.class);
     }
 
     public boolean validateToken(String token) {
