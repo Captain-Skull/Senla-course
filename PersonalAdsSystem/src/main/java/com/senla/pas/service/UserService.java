@@ -85,11 +85,12 @@ public class UserService {
         }
         userDao.update(user);
 
+        logger.info("Пользователь {} обновлен", userId);
         return userMapper.toResponse(user);
     }
 
     @Transactional
-    public void deleteUser(Long targetUserId) {
+    public UserResponse deleteUser(Long targetUserId) {
         Long currentUserId = SecurityUtils.getCurrentUserId();
         logger.info("Удаление пользователя: {}", targetUserId);
 
@@ -101,5 +102,6 @@ public class UserService {
 
         userDao.delete(targetUserId);
         logger.info("Пользователь {} успешно удалён", targetUserId);
+        return userMapper.toResponse(user);
     }
 }
