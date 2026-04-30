@@ -1,5 +1,6 @@
 package com.senla.pas.dto.request;
 
+import com.senla.pas.enums.PromotionPlan;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,4 +13,7 @@ public class PaymentRequest {
 
     @NotNull(message = "ID объявления не может быть null")
     private Long adId;
+
+    @NotNull(message = "Тариф не может быть null")
+    private PromotionPlan plan;
 }

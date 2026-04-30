@@ -1,8 +1,10 @@
 package com.senla.pas.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum AdSort {
     DATE("createdAt", false),
     PRICE("price", false),
@@ -11,10 +13,4 @@ public enum AdSort {
 
     private final String fieldName;
     private final boolean isUserField;
-
-    AdSort(String fieldName, boolean isUserField) {
-        this.fieldName = fieldName;
-        this.isUserField = isUserField;
-    }
-
 }

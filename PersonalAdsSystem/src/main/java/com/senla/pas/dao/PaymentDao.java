@@ -6,11 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class PaymentDao extends AbstractJpaDao<Payment, Long> {
 
     private static final String FIND_ACTIVE_BY_AD_ID_JPQL = "SELECT p FROM Payment p WHERE p.ad.id = :adId AND p.expireAt > :now";
+    private static final String FIND_BY_AD_ID_JPQL = "SELECT p FROM Payment p WHERE p.ad.id = :adId";
     private static final String FIND_BY_USER_ID_JPQL = "SELECT p FROM Payment p WHERE p.user.id = :userId";
 
     @Override
@@ -18,12 +20,23 @@ public class PaymentDao extends AbstractJpaDao<Payment, Long> {
         return Payment.class;
     }
 
-    public List<Payment> findActiveByAdId(Long adId) {
+    public List<Payment> findByAdId(Long adId) {
         try {
-            return entityManager.createQuery(FIND_ACTIVE_BY_AD_ID_JPQL, Payment.class)
+            return entityManager.createQuery(FIND_BY_AD_ID_JPQL, Payment.class)
+                    .setParameter("adId", adId)
+                    .getResultList();
+        } catch (Exception e) {
+            logger.error("Ошибка получения платежей по adId: {}", adId, e);
+            throw new DaoException("Ошибка получения платежей по adId: " + adId, e);
+        }
+    }
+
+    public Optional<Payment> findActiveByAdId(Long adId) {
+        try {
+            return Optional.of(entityManager.createQuery(FIND_ACTIVE_BY_AD_ID_JPQL, Payment.class)
                     .setParameter("adId", adId)
                     .setParameter("now", LocalDateTime.now())
-                    .getResultList();
+                    .getSingleResult());
         } catch (Exception e) {
             logger.error("Ошибка получения активных платежей по adId: {}", adId, e);
             throw new DaoException("Ошибка получения активных платежей по adId: " + adId, e);

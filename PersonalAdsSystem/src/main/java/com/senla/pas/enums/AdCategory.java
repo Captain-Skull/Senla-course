@@ -1,8 +1,10 @@
 package com.senla.pas.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum AdCategory {
     ELECTRONICS("Электроника"),
     TRANSPORT("Транспорт"),
@@ -16,9 +18,4 @@ public enum AdCategory {
     OTHER("Другое");
 
     private final String displayName;
-
-    AdCategory(String displayName) {
-        this.displayName = displayName;
-    }
-
 }

@@ -1,5 +1,6 @@
 package com.senla.pas.entity;
 
+import com.senla.pas.enums.PromotionPlan;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +29,13 @@ public class Payment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "plan", nullable = false)
+    private PromotionPlan plan;
+
+    @Column(name = "amount", nullable = false)
+    private Integer amount;
 
     @Column(name = "confirmed_at", nullable = false)
     private LocalDateTime confirmedAt;

@@ -11,13 +11,6 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = UserMapper.class)
 public interface PaymentMapper {
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "ad", ignore = true)
-    @Mapping(target = "user", ignore = true)
-    @Mapping(target = "confirmedAt", expression = "java(java.time.LocalDateTime.now())")
-    @Mapping(target = "expireAt", ignore = true)
-    Payment toEntity(PaymentRequest paymentRequest);
-
     @Mapping(target = "adId", source = "ad.id")
     @Mapping(target = "user", source = "user")
     PaymentResponse toResponse(Payment payment);
