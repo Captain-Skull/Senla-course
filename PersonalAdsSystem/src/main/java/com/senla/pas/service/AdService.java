@@ -58,7 +58,7 @@ public class AdService {
         return adMapper.toResponse(adDao.findById(adId).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + adId)));
     }
 
-    public List<AdResponse> getAdsByUserId(long userId) {
+    public List<AdResponse> getAdsByUser(long userId) {
         logger.info("Получение объявлений пользователя с ID: {} ", userId);
         return adMapper.toResponseList(adDao.findByUserId(userId));
     }

@@ -38,7 +38,7 @@ public class CommentService {
         this.commentMapper = commentMapper;
     }
 
-    public List<CommentResponse> getCommentsByAdId(Long adId) {
+    public List<CommentResponse> getCommentsByAd(Long adId) {
         logger.info("Получение комментариев объявления {}", adId);
         return commentMapper.toResponseList(commentDao.getCommentsByAdId(adId));
     }
