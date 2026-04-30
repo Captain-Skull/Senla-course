@@ -11,10 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SaleHistoryRequest {
 
-    @NotNull(message = "ID объявления не может быть пустым")
-    private Long adId;
-
-    @NotNull(message = "Цена не может быть пустой")
-    @Min(value = 0, message = "Цена не может быть отрицательной")
+    @Min(value = 1, message = "Цена должна быть больше 0")
     private Integer price;
 }

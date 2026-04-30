@@ -15,7 +15,7 @@ public interface MessageMapper {
     @Mapping(target = "sender" , ignore = true)
     @Mapping(target = "chat" , ignore = true)
     @Mapping(target = "sendAt" , expression = "java(java.time.LocalDateTime.now())")
-    @Mapping(target = "isRead" , constant = "false")
+    @Mapping(target = "read" , constant = "false")
     Message toEntity(MessageRequest messageDto);
 
     @Mapping(target = "senderUsername", source = "sender.username")
