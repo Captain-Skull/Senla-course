@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.26.xsd">
+
+    <changeSet id="003-init-roles-and-privileges" author="George">
+
+        <insert tableName="privileges">
+            <column name="name" value="READ_PRIVILEGE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="WRITE_PRIVILEGE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="DELETE_PRIVILEGE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="ADMIN_PRIVILEGE"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="name" value="ROLE_USER"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'READ_PRIVILEGE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'WRITE_PRIVILEGE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'READ_PRIVILEGE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'WRITE_PRIVILEGE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'DELETE_PRIVILEGE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADMIN_PRIVILEGE')"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

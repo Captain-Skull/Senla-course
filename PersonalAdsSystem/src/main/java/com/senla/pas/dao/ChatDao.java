@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ChatDao extends AbstractJpaDao<Chat, Long> {
 
     private static final String FIND_BY_USER_ID_JPQL = "SELECT c FROM Chat c WHERE c.buyer.id = :userId OR c.seller.id = :userId";
-    private static final String CHECK_USER_ACCESS_JPQL = "SELECT COUNT(c) FROM Chat c WHERE c.user.id = :userId AND c.id = :chatId";
+    private static final String CHECK_USER_ACCESS_JPQL = "SELECT COUNT(c) FROM Chat c WHERE (c.buyer.id = :userId OR c.seller.id = :userId)/ AND c.id = :chatId";
     private static final String FIND_BY_AD_AND_BUYER_JPQL = "SELECT c FROM Chat c WHERE c.ad.id = :adId AND c.buyer.id = :buyerId";
 
     @Override

@@ -69,7 +69,7 @@ public class UserService {
             }
             user.setUsername(request.getNewUsername());
         }
-        if (request.getNewUsername() != null && !request.getNewEmail().equals(user.getEmail())){
+        if (request.getNewEmail() != null && !request.getNewEmail().equals(user.getEmail())){
             if (userDao.existsByEmail(request.getNewEmail())) {
                 throw new ResourceAlreadyExistsException(
                         "Пользователь с почтой '" + request.getNewEmail() + "' уже существует"

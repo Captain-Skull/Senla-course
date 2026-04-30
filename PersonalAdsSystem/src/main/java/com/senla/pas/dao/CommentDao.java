@@ -2,9 +2,11 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Comment;
 import com.senla.pas.exception.DaoException;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class CommentDao extends AbstractJpaDao<Comment, Long>{
 
     private static final String FIND_BY_AD_ID_JPQL = "SELECT c FROM Comment c WHERE c.ad.id = :adId";

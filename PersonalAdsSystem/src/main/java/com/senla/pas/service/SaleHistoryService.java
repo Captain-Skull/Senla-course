@@ -31,7 +31,7 @@ public class SaleHistoryService {
     private final SaleHistoryDao saleHistoryDao;
     private final AdDao adDao;
     private final UserDao userDao;
-    private final ChatDao chatDao
+    private final ChatDao chatDao;
     private final SaleHistoryMapper saleHistoryMapper;
     private static final Logger logger = LoggerFactory.getLogger(SaleHistoryService.class);
 

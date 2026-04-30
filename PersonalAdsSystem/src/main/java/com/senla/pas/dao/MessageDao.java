@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class MessageDao extends AbstractJpaDao<Message, Long> {
 
-    private static final String FIND_BY_CHAT_ID_JPQL = "SELECT m FROM Message m WHERE m.chat.id = :chatId ORDER BY m.timestamp ASC";
+    private static final String FIND_BY_CHAT_ID_JPQL = "SELECT m FROM Message m WHERE m.chat.id = :chatId ORDER BY m.sendAt ASC";
 
     @Override
     protected Class<Message> getEntityClass() {

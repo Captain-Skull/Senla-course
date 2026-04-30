@@ -2,9 +2,11 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.SaleHistory;
 import com.senla.pas.exception.DaoException;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class SaleHistoryDao extends AbstractJpaDao<SaleHistory, Long>{
 
     private static final String FIND_BY_SELLER_ID_JPQL = "SELECT h FROM SaleHistory h WHERE h.seller.id = :sellerId ORDER BY h.soldAt DESC";

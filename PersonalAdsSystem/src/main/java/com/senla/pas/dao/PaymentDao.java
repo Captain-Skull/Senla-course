@@ -2,6 +2,7 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Payment;
 import com.senla.pas.exception.DaoException;
+import jakarta.persistence.NoResultException;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -37,6 +38,8 @@ public class PaymentDao extends AbstractJpaDao<Payment, Long> {
                     .setParameter("adId", adId)
                     .setParameter("now", LocalDateTime.now())
                     .getSingleResult());
+        } catch (NoResultException e) {
+            return Optional.empty();
         } catch (Exception e) {
             logger.error("Ошибка получения активных платежей по adId: {}", adId, e);
             throw new DaoException("Ошибка получения активных платежей по adId: " + adId, e);

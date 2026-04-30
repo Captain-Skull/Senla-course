@@ -10,7 +10,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @ComponentScan(basePackages = "com.senla.pas")
 @PropertySources({
         @PropertySource("classpath:application.properties"),
-        @PropertySource("classpath:database.properties")
+        @PropertySource("classpath:database.properties"),
+        @PropertySource("classpath:security.properties")
 })
 @Import({DatabaseConfig.class})
 public class AppConfig {
