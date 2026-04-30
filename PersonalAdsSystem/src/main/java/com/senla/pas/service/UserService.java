@@ -40,7 +40,7 @@ public class UserService {
         return userMapper.toResponseList(userDao.findAll());
     }
 
-    public UserResponse getUserById(long userId) {
+    public UserResponse getUserById(Long userId) {
         logger.info("Получение пользователя по ID: {}", userId);
         return userMapper.toResponse(userDao.findById(userId).orElseThrow(() -> new ResourceNotFoundException("Пользователь не найден: " + userId)));
     }

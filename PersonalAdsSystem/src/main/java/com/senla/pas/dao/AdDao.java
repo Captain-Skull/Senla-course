@@ -38,7 +38,7 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
         }
     }
 
-    public List<Ad> findByUserId(long userId) {
+    public List<Ad> findByUserId(Long userId) {
         try {
             return entityManager.createQuery(FIND_BY_USER_ID_JPQL, Ad.class)
                     .setParameter("userId", userId)
