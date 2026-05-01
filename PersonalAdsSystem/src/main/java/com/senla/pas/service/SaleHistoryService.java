@@ -15,6 +15,7 @@ import com.senla.pas.exception.ForbiddenException;
 import com.senla.pas.exception.ResourceNotFoundException;
 import com.senla.pas.mapper.SaleHistoryMapper;
 import com.senla.pas.security.SecurityUtils;
+import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,7 +84,7 @@ public class SaleHistoryService {
             throw new ForbiddenException("Завершить сделку может только покупатель");
         }
 
-        Ad ad = chat.getAd();
+        Ad ad = adDao.findByIdWithLock(chat.getAd().getId()).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + chat.getAd().getId()));
 
         validateAdForSale(ad, buyerId);
 
@@ -96,7 +97,12 @@ public class SaleHistoryService {
         }
 
         SaleHistory sale = buildSale(ad, chat.getBuyer(), chat.getSeller(), finalPrice);
-        saleHistoryDao.save(sale);
+
+        try {
+            saleHistoryDao.save(sale);
+        } catch (ConstraintViolationException e) {
+            throw new BadRequestException("По этому объявлению уже была совершена продажа");
+        }
 
         ad.setIsActive(false);
         adDao.update(ad);
@@ -109,14 +115,19 @@ public class SaleHistoryService {
     public SaleHistoryResponse buyDirectly(Long adId) {
         Long buyerId = SecurityUtils.getCurrentUserId();
 
-        Ad ad = adDao.findById(adId).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + adId));
+        Ad ad = adDao.findByIdWithLock(adId).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + adId));
 
         validateAdForSale(ad, buyerId);
 
         User buyer = userDao.findById(buyerId).orElseThrow(() -> new ResourceNotFoundException("Пользователь не найден: " + buyerId));
 
         SaleHistory sale = buildSale(ad, buyer, ad.getUser(), ad.getPrice());
-        saleHistoryDao.save(sale);
+
+        try {
+            saleHistoryDao.save(sale);
+        } catch (ConstraintViolationException e) {
+            throw new BadRequestException("По этому объявлению уже была совершена продажа");
+        }
 
         ad.setIsActive(false);
         adDao.update(ad);

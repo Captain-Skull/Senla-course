@@ -89,7 +89,7 @@ public class PaymentService {
     public PaymentResponse createPayment(PaymentRequest request) {
         Long userId = SecurityUtils.getCurrentUserId();
 
-        Ad ad = adDao.findById(request.getAdId()).orElseThrow(() -> new ResourceNotFoundException("Объявление для продвижения не найдено: " + request.getAdId()));
+        Ad ad = adDao.findByIdWithLock(request.getAdId()).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + request.getAdId()));
 
         if (!userId.equals(ad.getUser().getId())) {
             throw new ForbiddenException("Продвигать можно только свое объявление");

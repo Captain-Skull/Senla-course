@@ -143,4 +143,19 @@ public abstract class AbstractJpaDao<T, K> implements GenericDao<T, K> {
             throw new DaoException("Ошибка выполнения запроса", e);
         }
     }
+
+    protected Optional<T> getSingleResult(TypedQuery<T> query) {
+        List<T> results = query.getResultList();
+
+        if (results.isEmpty()) {
+            return Optional.empty();
+        }
+
+        if (results.size() > 1) {
+            logger.error("Ожидался один результат, получено: {}.", results.size());
+            throw new DaoException("Ожидалось ровно один результат, получено: " + results.size());
+        }
+
+        return Optional.of(results.get(0));
+    }
 }

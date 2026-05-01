@@ -2,7 +2,7 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Role;
 import com.senla.pas.exception.DaoException;
-import jakarta.persistence.NoResultException;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -18,12 +18,10 @@ public class RoleDao extends AbstractJpaDao<Role, Long>{
 
     public Optional<Role> findByName(String name) {
         try {
-            Role role = entityManager.createQuery(FIND_BY_NAME_JPQL, Role.class)
-                    .setParameter("name", name)
-                    .getSingleResult();
-            return Optional.of(role);
-        } catch (NoResultException e) {
-            return Optional.empty();
+            TypedQuery<Role> query = entityManager.createQuery(FIND_BY_NAME_JPQL, Role.class)
+                    .setParameter("name", name);
+
+            return getSingleResult(query);
         } catch (Exception e) {
             logger.error("Ошибка при поиске роли по названию: {}", name, e);
             throw new DaoException("Ошибка при поиске роли по названию: " + name, e);

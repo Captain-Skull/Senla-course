@@ -3,7 +3,7 @@ package com.senla.pas.dao;
 import com.senla.pas.entity.User;
 import com.senla.pas.enums.SortDirection;
 import com.senla.pas.exception.DaoException;
-import jakarta.persistence.NoResultException;
+import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 import org.springframework.stereotype.Repository;
 
@@ -15,13 +15,11 @@ import java.util.Optional;
 public class UserDao extends AbstractJpaDao<User, Long> {
 
     private static final String FIND_BY_USERNAME_JPQL = "SELECT u FROM User u WHERE u.username = :username";
-    private static final String FIND_BY_USERNAME_WITH_ROLES_JPQL = "SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.username = :username";
-    private static final String FIND_BY_EMAIL_JPQL = "SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.email = :email";
-    private static final String FIND_BY_USERNAME_OR_EMAIL_JPQL = "SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.username = :usernameOrEmail OR u.email = :usernameOrEmail";
+    private static final String FIND_BY_USERNAME_WITH_ROLES_JPQL = "SELECT DISTINCT u FROM User u LEFT JOIN FETCH u.roles r LEFT JOIN FETCH r.privileges WHERE u.username = :username";
+    private static final String FIND_BY_EMAIL_JPQL = "SELECT DISTINCT u FROM User u LEFT JOIN FETCH u.roles r LEFT JOIN FETCH r.privileges WHERE u.email = :email";
     private static final String EXISTS_BY_USERNAME_JPQL = "SELECT COUNT(u) FROM User u WHERE u.username = :username";
     private static final String EXISTS_BY_EMAIL_JPQL = "SELECT COUNT(u) FROM User u WHERE u.email = :email";
     private static final String UPDATE_AVERAGE_RATING_JPQL = "UPDATE User u SET u.averageRating = :averageRating WHERE u.id = :userId";
-    private static final String UPDATE_ABOUT_ME_JPQL = "UPDATE User u SET u.aboutMe = :aboutMe WHERE u.id = :userId";
 
     @Override
     protected Class<User> getEntityClass() {
@@ -30,12 +28,10 @@ public class UserDao extends AbstractJpaDao<User, Long> {
 
     public Optional<User> findByUsernameWithRoles(String username) {
         try {
-            User user = entityManager.createQuery(FIND_BY_USERNAME_WITH_ROLES_JPQL, User.class)
-                    .setParameter("username", username)
-                    .getSingleResult();
-            return Optional.of(user);
-        } catch (NoResultException e) {
-            return Optional.empty();
+            TypedQuery<User> query = entityManager.createQuery(FIND_BY_USERNAME_WITH_ROLES_JPQL, User.class)
+                    .setParameter("username", username);
+
+            return getSingleResult(query);
         } catch (Exception e) {
             logger.error("Ошибка поиска пользователя по имени с ролями: {}", username, e);
             throw new DaoException("Ошибка поиска пользователя по имени с ролями: " + username, e);
@@ -44,12 +40,10 @@ public class UserDao extends AbstractJpaDao<User, Long> {
 
     public Optional<User> findByUsername(String username) {
         try {
-            User user = entityManager.createQuery(FIND_BY_USERNAME_JPQL, User.class)
-                    .setParameter("username", username)
-                    .getSingleResult();
-            return Optional.of(user);
-        } catch (NoResultException e) {
-            return Optional.empty();
+            TypedQuery<User> query = entityManager.createQuery(FIND_BY_USERNAME_JPQL, User.class)
+                    .setParameter("username", username);
+
+            return getSingleResult(query);
         } catch (Exception e) {
             logger.error("Ошибка поиска пользователя по имени: {}", username, e);
             throw new DaoException("Ошибка поиска пользователя по имени: " + username, e);
@@ -58,12 +52,10 @@ public class UserDao extends AbstractJpaDao<User, Long> {
 
     public Optional<User> findByEmail(String email) {
         try {
-            User user = entityManager.createQuery(FIND_BY_EMAIL_JPQL, User.class)
-                    .setParameter("email", email)
-                    .getSingleResult();
-            return Optional.of(user);
-        } catch (NoResultException e) {
-            return Optional.empty();
+            TypedQuery<User> query = entityManager.createQuery(FIND_BY_EMAIL_JPQL, User.class)
+                    .setParameter("email", email);
+
+            return getSingleResult(query);
         } catch (Exception e) {
             logger.error("Ошибка поиска пользователя по email: {}", email, e);
             throw new DaoException("Ошибка поиска пользователя по email: " + email, e);
@@ -72,12 +64,18 @@ public class UserDao extends AbstractJpaDao<User, Long> {
 
     public Optional<User> findByUsernameOrEmail(String usernameOrEmail) {
         try {
-            User user = entityManager.createQuery(FIND_BY_USERNAME_OR_EMAIL_JPQL, User.class)
-                    .setParameter("usernameOrEmail", usernameOrEmail)
-                    .getSingleResult();
-            return Optional.of(user);
-        } catch (NoResultException e) {
-            return Optional.empty();
+            List<User> byUsername = entityManager.createQuery(FIND_BY_USERNAME_WITH_ROLES_JPQL, User.class)
+                    .setParameter("username", usernameOrEmail)
+                    .getResultList();
+
+            if (!byUsername.isEmpty()) {
+                return Optional.of(byUsername.get(0));
+            }
+
+            TypedQuery<User> emailQuery = entityManager.createQuery(FIND_BY_EMAIL_JPQL, User.class)
+                    .setParameter("value", usernameOrEmail);
+
+            return getSingleResult(emailQuery);
         } catch (Exception e) {
             logger.error("Ошибка получения пользователя по почте или имени: {}", usernameOrEmail, e);
             throw new DaoException("Ошибка получения пользователя по почте или имени: " + usernameOrEmail, e);

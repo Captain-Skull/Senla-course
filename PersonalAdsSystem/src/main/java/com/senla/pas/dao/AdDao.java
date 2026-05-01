@@ -1,10 +1,12 @@
 package com.senla.pas.dao;
 
 import com.senla.pas.entity.Ad;
+import com.senla.pas.entity.User;
 import com.senla.pas.enums.AdCategory;
 import com.senla.pas.enums.AdSort;
 import com.senla.pas.enums.SortDirection;
 import com.senla.pas.exception.DaoException;
+import jakarta.persistence.LockModeType;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 import org.springframework.stereotype.Repository;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class AdDao extends AbstractJpaDao<Ad, Long> {
@@ -49,6 +52,16 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
         }
     }
 
+    public Optional<Ad> findByIdWithLock(Long adId) {
+        try {
+            Ad ad = entityManager.find(Ad.class, adId, LockModeType.PESSIMISTIC_WRITE);
+            return Optional.ofNullable(ad);
+        } catch (Exception e) {
+            logger.error("Ошибка получения объявления с блокировкой {}", adId, e);
+            throw new DaoException("Ошибка получения объявления", e);
+        }
+    }
+
     public List<Ad> findWithFilter(
             AdCategory category,
             String searchText,
@@ -65,7 +78,9 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
             CriteriaQuery<Ad> cq = cb.createQuery(Ad.class);
             Root<Ad> ad = cq.from(Ad.class);
 
-            Join<Object, Object> user = ad.join("user", JoinType.LEFT);
+            ad.fetch("user");
+
+            Path<Object> userPath = ad.get("user");
 
             List<Predicate> predicates = buildPredicates(cb, ad, category, searchText, minPrice, maxPrice, isActive);
 
@@ -74,7 +89,7 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
             AdSort effectiveSortBy = sortBy != null ? sortBy : AdSort.DATE;
             SortDirection effectiveDirection = direction != null ? direction : SortDirection.DESC;
 
-            cq.orderBy(getOrders(cb, ad, user, effectiveSortBy, effectiveDirection));
+            cq.orderBy(getOrders(cb, ad, userPath, effectiveSortBy, effectiveDirection));
 
             TypedQuery<Ad> query = entityManager.createQuery(cq);
             query.setFirstResult(page * size);
@@ -130,6 +145,11 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
                     .setParameter("isPremium", isPremium)
                     .setParameter("adId", adId)
                     .executeUpdate();
+
+            entityManager.flush();
+            entityManager.clear();
+
+            logger.debug("Обновлён премиум статус объявления {}: {}", adId, isPremium);
         } catch (Exception e) {
             logger.error("Ошибка обновления премиум статуса объявления. Ad ID: {}, isPremium: {}", adId, isPremium, e);
             throw new DaoException("Ошибка обновления премиум статуса объявления. Ad ID: " + adId + ", isPremium: " + isPremium, e);
@@ -138,23 +158,31 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
 
     public int deactivateExpiredPremium() {
         try {
-            return entityManager.createQuery(DEACTIVATE_EXPIRED_PREMIUM_JPQL)
+            int updated = entityManager.createQuery(DEACTIVATE_EXPIRED_PREMIUM_JPQL)
                     .setParameter("now", LocalDateTime.now())
                     .executeUpdate();
+
+            if (updated > 0) {
+                entityManager.flush();
+                entityManager.clear();
+                logger.info("Деактивировано {} просроченных премиум объявлений", updated);
+            }
+
+            return updated;
         } catch (Exception e) {
             logger.error("Ошибка деактивации просроченных премиум объявлений", e);
             throw new DaoException("Ошибка деактивации просроченных премиум объявлений", e);
         }
     }
 
-    private List<Order> getOrders(CriteriaBuilder cb, Root<Ad> ad, Join<Object, Object> user, AdSort sortBy, SortDirection direction) {
+    private List<Order> getOrders(CriteriaBuilder cb, Root<Ad> ad, Path<Object> userPath, AdSort sortBy, SortDirection direction) {
 
         List<Order> orders = new ArrayList<>();
 
         orders.add(cb.desc(ad.get("isPremium")));
 
         Expression<?> field = sortBy.isUserField()
-                ? user.get(sortBy.getFieldName())
+                ? userPath.get(sortBy.getFieldName())
                 : ad.get(sortBy.getFieldName());
 
         orders.add(direction == SortDirection.ASC
@@ -162,7 +190,7 @@ public class AdDao extends AbstractJpaDao<Ad, Long> {
                 : cb.desc(field));
 
         if (sortBy != AdSort.RATING) {
-            orders.add(cb.desc(user.get("averageRating")));
+            orders.add(cb.desc(userPath.get("averageRating")));
         }
 
         if (sortBy != AdSort.DATE) {

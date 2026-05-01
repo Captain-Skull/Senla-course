@@ -1,5 +1,6 @@
 package com.senla.pas.dto.request;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ public class UpdateUserRequest {
     @Size(max = 255, message = "Имя пользователя не может превышать 255 символов")
     private String newUsername;
 
+    @Email
     @Size(max = 255, message = "Почта не может превышать 255 символов")
     private String newEmail;
 

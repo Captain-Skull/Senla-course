@@ -11,7 +11,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -29,9 +31,16 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userDao.findByUsernameOrEmail(usernameOrEmail)
                 .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден: " + usernameOrEmail));
 
-        List<SimpleGrantedAuthority> authorities = user.getRoles().stream()
+        Set<String> authorityNames = new LinkedHashSet<>();
+
+        user.getRoles().forEach(role -> authorityNames.add(role.getName()));
+        user.getRoles().stream()
                 .flatMap(role -> role.getPrivileges().stream())
-                .map(privilege -> new SimpleGrantedAuthority(privilege.getName()))
+                .map(privilege -> privilege.getName())
+                .forEach(authorityNames::add);
+
+        List<SimpleGrantedAuthority> authorities = authorityNames.stream()
+                .map(SimpleGrantedAuthority::new)
                 .toList();
 
         return new CustomUserDetails(

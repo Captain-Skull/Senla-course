@@ -20,7 +20,7 @@ public class Ad {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -52,5 +52,6 @@ public class Ad {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
         if (isActive == null) isActive = true;
+        if (isPremium == null) isPremium = false;
     }
 }

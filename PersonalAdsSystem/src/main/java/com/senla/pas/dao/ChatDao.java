@@ -2,7 +2,7 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Chat;
 import com.senla.pas.exception.DaoException;
-import jakarta.persistence.NoResultException;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ChatDao extends AbstractJpaDao<Chat, Long> {
 
     private static final String FIND_BY_USER_ID_JPQL = "SELECT c FROM Chat c WHERE c.buyer.id = :userId OR c.seller.id = :userId";
-    private static final String CHECK_USER_ACCESS_JPQL = "SELECT COUNT(c) FROM Chat c WHERE (c.buyer.id = :userId OR c.seller.id = :userId)/ AND c.id = :chatId";
+    private static final String CHECK_USER_ACCESS_JPQL = "SELECT COUNT(c) FROM Chat c WHERE (c.buyer.id = :userId OR c.seller.id = :userId) AND c.id = :chatId";
     private static final String FIND_BY_AD_AND_BUYER_JPQL = "SELECT c FROM Chat c WHERE c.ad.id = :adId AND c.buyer.id = :buyerId";
 
     @Override
@@ -22,13 +22,11 @@ public class ChatDao extends AbstractJpaDao<Chat, Long> {
 
     public Optional<Chat> findByAdAndBuyer(Long adId, Long buyerId) {
         try {
-            Chat chat = entityManager.createQuery(FIND_BY_AD_AND_BUYER_JPQL, Chat.class)
+            TypedQuery<Chat> query = entityManager.createQuery(FIND_BY_AD_AND_BUYER_JPQL, Chat.class)
                     .setParameter("adId", adId)
-                    .setParameter("buyerId", buyerId)
-                    .getSingleResult();
-            return Optional.of(chat);
-        } catch (NoResultException e) {
-            return Optional.empty();
+                    .setParameter("buyerId", buyerId);
+
+            return getSingleResult(query);
         } catch (Exception e) {
             logger.error("Ошибка получения чата по adId и buyerId. Ad ID: {}, Buyer ID: {}", adId, buyerId, e);
             throw new DaoException("Ошибка получения чата по adId и buyerId. Ad ID: " + adId + ", Buyer ID: " + buyerId, e);

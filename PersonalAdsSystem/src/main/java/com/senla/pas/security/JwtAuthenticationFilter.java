@@ -35,6 +35,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 String username = jwtTokenProvider.getUsernameFromToken(jwt);
                 List<String> authorities = jwtTokenProvider.getAuthoritiesFromToken(jwt);
 
+                if (authorities.isEmpty()) {
+                    logger.warn("JWT токен не содержит authorities для пользователя: {}", username);
+                    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Token missing authorities");
+                    return;
+                }
+
                 List<SimpleGrantedAuthority> grantedAuthorities = authorities.stream()
                         .map(SimpleGrantedAuthority::new)
                         .toList();

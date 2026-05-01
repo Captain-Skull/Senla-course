@@ -15,10 +15,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class JwtTokenProvider {
@@ -35,8 +36,12 @@ public class JwtTokenProvider {
 
     @PostConstruct
     public void init() {
-        byte[] keyBytes = Base64.getDecoder().decode(jwtSecret);
-        this.key = Keys.hmacShaKeyFor(keyBytes);
+        try {
+            byte[] keyBytes = Base64.getDecoder().decode(jwtSecret);
+            this.key = Keys.hmacShaKeyFor(keyBytes);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalStateException("JWT секрет неправильный", e);
+        }
     }
 
     public String generateToken(Authentication authentication, Long userId) {
@@ -64,9 +69,35 @@ public class JwtTokenProvider {
         return Long.parseLong(subject);
     }
 
-    @SuppressWarnings("unchecked")
     public List<String> getAuthoritiesFromToken(String token) {
-        return parseClaims(token).get("authorities", List.class);
+        Object rawAuthorities = parseClaims(token).get("authorities");
+
+        if (rawAuthorities == null) {
+            return List.of();
+        }
+
+        if (rawAuthorities instanceof Collection<?> collection) {
+            List<String> authorities = new ArrayList<>();
+            for (Object authority : collection) {
+                if (authority != null) {
+                    String authorityName = authority.toString().trim();
+                    if (!authorityName.isEmpty()) {
+                        authorities.add(authorityName);
+                    }
+                }
+            }
+            return authorities;
+        }
+
+        if (rawAuthorities instanceof String authoritiesAsString) {
+            String trimmed = authoritiesAsString.trim();
+            if (trimmed.isEmpty()) {
+                return List.of();
+            }
+            return List.of(trimmed.split("\\s*,\\s*"));
+        }
+
+        return List.of();
     }
 
     public String getUsernameFromToken(String token) {

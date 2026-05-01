@@ -16,13 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 public class AuthService {
@@ -68,10 +66,6 @@ public class AuthService {
 
         userDao.save(user);
 
-        List<SimpleGrantedAuthority> authorities = List.of(
-                new SimpleGrantedAuthority("ROLE_USER")
-        );
-
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getUsername(),
@@ -94,8 +88,7 @@ public class AuthService {
                 )
         );
 
-        User user = userDao.findByUsernameOrEmail(request.getUsernameOrEmail())
-                .orElseThrow(() -> new PasException("Пользователь с таким именем или почтой не найден"));
+        User user = userDao.findByUsernameOrEmail(request.getUsernameOrEmail()).orElseThrow(() -> new PasException("Пользователь с таким именем или почтой не найден"));
 
         String jwtToken = jwtTokenProvider.generateToken(authentication, user.getId());
 

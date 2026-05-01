@@ -210,7 +210,9 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="ad_id" type="BIGINT" />
+            <column name="ad_id" type="BIGINT" >
+                <constraints unique="true" />
+            </column>
             <column name="ad_title" type="VARCHAR(100)" />
             <column name="seller_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_sales_seller" references="users(id)"/>

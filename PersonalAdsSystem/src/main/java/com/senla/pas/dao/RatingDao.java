@@ -2,7 +2,7 @@ package com.senla.pas.dao;
 
 import com.senla.pas.entity.Rating;
 import com.senla.pas.exception.DaoException;
-import jakarta.persistence.NoResultException;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -33,12 +33,11 @@ public class RatingDao extends AbstractJpaDao<Rating, Long> {
 
     public Optional<Rating> findByReviewerIdAndRecipientId(Long reviewerId, Long recipientId) {
         try {
-            return Optional.of(entityManager.createQuery(FIND_BY_REVIEWER_AND_RECIPIENT_JPQL, Rating.class)
+            TypedQuery<Rating> query =  entityManager.createQuery(FIND_BY_REVIEWER_AND_RECIPIENT_JPQL, Rating.class)
                     .setParameter("reviewerId", reviewerId)
-                    .setParameter("recipientId", recipientId)
-                    .getSingleResult());
-        } catch (NoResultException e) {
-            return Optional.empty();
+                    .setParameter("recipientId", recipientId);
+
+            return getSingleResult(query);
         } catch (Exception e) {
             logger.error("Ошибка проверки существования рейтинга от пользователя {} к пользователю {}", reviewerId, recipientId, e);
             throw new DaoException("Ошибка проверки существования рейтинга от пользователя " + reviewerId + " к пользователю " + recipientId, e);
