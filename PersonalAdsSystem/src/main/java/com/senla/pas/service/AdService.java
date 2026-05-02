@@ -49,8 +49,12 @@ public class AdService {
             int page,
             int size
     ) {
+        Boolean effectiveIsActive = SecurityUtils.hasRole("ROLE_ADMIN")
+                ? isActive
+                : true;
+
         logger.info("Получение отфильтрованных объявлений");
-        return adMapper.toResponseList(adDao.findWithFilter(category, searchText, minPrice, maxPrice, isActive, sortBy, sortDirection, page, size));
+        return adMapper.toResponseList(adDao.findWithFilter(category, searchText, minPrice, maxPrice, effectiveIsActive, sortBy, sortDirection, page, size));
     }
 
     public AdResponse getAdById(Long adId) {
