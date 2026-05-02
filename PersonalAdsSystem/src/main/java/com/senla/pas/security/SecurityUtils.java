@@ -1,6 +1,6 @@
 package com.senla.pas.security;
 
-import com.senla.pas.exception.SecurityException;
+import com.senla.pas.exception.AuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -11,7 +11,7 @@ public class SecurityUtils {
     public static String getCurrentUsername() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null || !auth.isAuthenticated()) {
-            throw new SecurityException("Пользователь не аутентифицирован");
+            throw new AuthenticationException("Пользователь не аутентифицирован");
         }
 
         return auth.getName();
@@ -20,14 +20,14 @@ public class SecurityUtils {
     public static Long getCurrentUserId() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null || !auth.isAuthenticated()) {
-            throw new SecurityException("Пользователь не аутентифицирован");
+            throw new AuthenticationException("Пользователь не аутентифицирован");
         }
 
         if (auth.getPrincipal() instanceof CustomUserDetails userDetails) {
             return userDetails.getId();
         }
 
-        throw new SecurityException("Не удалось получить ID пользователя");
+        throw new AuthenticationException("Не удалось получить ID пользователя");
     }
 
     public static boolean hasRole(String role) {
