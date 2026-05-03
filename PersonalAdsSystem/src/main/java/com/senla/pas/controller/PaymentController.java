@@ -3,6 +3,8 @@ package com.senla.pas.controller;
 import com.senla.pas.dto.request.PaymentRequest;
 import com.senla.pas.dto.response.PaymentResponse;
 import com.senla.pas.service.PaymentService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/payments")
+@Tag(name = "Управление платежами", description = "Создание и просмотр платежей")
 public class PaymentController {
 
     private final PaymentService paymentService;
@@ -26,30 +29,35 @@ public class PaymentController {
     }
 
     @GetMapping("/my")
+    @Operation(summary = "Получить список моих платежей")
     public ResponseEntity<List<PaymentResponse>> getMyPayments() {
         logger.info("Получение платежей текущего пользователя");
         return ResponseEntity.ok(paymentService.getMyPayments());
     }
 
     @GetMapping("/{paymentId}")
+    @Operation(summary = "Получить платеж по ID")
     public ResponseEntity<PaymentResponse> getPaymentById(@PathVariable Long paymentId) {
         logger.info("Получение платежа по ID: {}", paymentId);
         return ResponseEntity.ok(paymentService.getPaymentById(paymentId));
     }
 
     @GetMapping("/ad/{adId}")
+    @Operation(summary = "Получить список платежей объявления по ID")
     public ResponseEntity<List<PaymentResponse>> getPaymentsByAd(@PathVariable Long adId) {
         logger.info("Запрос платежей объявления: {}", adId);
         return ResponseEntity.ok(paymentService.getPaymentsByAd(adId));
     }
 
     @GetMapping("/ad/{adId}/active")
+    @Operation(summary = "Получить активный платеж объявления по ID")
     public ResponseEntity<PaymentResponse> getActivePayment(@PathVariable Long adId) {
         logger.info("Запрос активного продвижения объявления: {}", adId);
         return ResponseEntity.ok(paymentService.getActivePaymentByAd(adId));
     }
 
     @PostMapping
+    @Operation(summary = "Создать платеж")
     public ResponseEntity<PaymentResponse> createPayment(
             @Valid @RequestBody PaymentRequest request
     ) {

@@ -4,6 +4,8 @@ import com.senla.pas.dto.request.LoginRequest;
 import com.senla.pas.dto.request.RegisterRequest;
 import com.senla.pas.dto.response.AuthResponse;
 import com.senla.pas.service.AuthService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "авторизация", description = "Регистрация и вход пользователей")
 public class AuthController {
 
     private final AuthService authService;
@@ -27,6 +30,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
+    @Operation(summary = "Регистрация пользователя")
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
         logger.info("Запрос на регистрацию пользователя: {}", request.getUsername());
         AuthResponse response = authService.register(request);
@@ -35,6 +39,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
+    @Operation(summary = "Вход пользователя")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
         logger.info("Запрос на вход пользователя: {}", request.getUsernameOrEmail());
         AuthResponse response = authService.login(request);

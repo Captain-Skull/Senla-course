@@ -3,6 +3,8 @@ package com.senla.pas.controller;
 import com.senla.pas.dto.request.SaleHistoryRequest;
 import com.senla.pas.dto.response.SaleHistoryResponse;
 import com.senla.pas.service.SaleHistoryService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/sales")
+@Tag(name = "Управление историей объявлений", description = "Просмотр истории и совершение сделок")
 public class SaleHistoryController {
 
     private final SaleHistoryService saleHistoryService;
@@ -26,24 +29,28 @@ public class SaleHistoryController {
     }
 
     @GetMapping("/my-sales")
+    @Operation(summary = "Получить список моих продаж")
     public ResponseEntity<List<SaleHistoryResponse>> getMySales() {
         logger.info("Получение продаж текущего пользователя");
         return ResponseEntity.ok(saleHistoryService.getMySales());
     }
 
     @GetMapping("/my-purchases")
+    @Operation(summary = "Получить список моих покупок")
     public ResponseEntity<List<SaleHistoryResponse>> getMyPurchases() {
         logger.info("Получение покупок текущего пользователя");
         return ResponseEntity.ok(saleHistoryService.getMyPurchases());
     }
 
     @GetMapping("/{saleId}")
+    @Operation(summary = "Получить истории о сделке по ID")
     public ResponseEntity<SaleHistoryResponse> getSaleById(@PathVariable Long saleId) {
         logger.info("Получить историю покупки по ID: {}", saleId);
         return ResponseEntity.ok(saleHistoryService.getSaleById(saleId));
     }
 
     @PostMapping("/ad/{adId}/buy")
+    @Operation(summary = "Купить напрямую из объявления")
     public ResponseEntity<SaleHistoryResponse> buyDirectly(@PathVariable Long adId) {
         logger.info("Запрос на покупку напрямую из объявления {}", adId);
         SaleHistoryResponse response = saleHistoryService.buyDirectly(adId);
@@ -52,6 +59,7 @@ public class SaleHistoryController {
     }
 
     @PostMapping("/chat/{chatId}/buy")
+    @Operation(summary = "Купить из чата с возможностью договорной цены")
     public ResponseEntity<SaleHistoryResponse> buyViaChat(@PathVariable Long chatId, @Valid @RequestBody SaleHistoryRequest request) {
         logger.info("Запрос на покупку из чата {}", chatId);
         SaleHistoryResponse response = saleHistoryService.buyViaChat(chatId, request);
