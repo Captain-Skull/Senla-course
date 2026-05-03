@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Configuration
 @ComponentScan(basePackages = "com.senla.pas")
@@ -14,6 +15,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
         @PropertySource("classpath:security.properties")
 })
 @Import({DatabaseConfig.class})
+@EnableScheduling
 public class AppConfig {
 
     @Bean
