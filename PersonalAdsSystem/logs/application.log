@@ -1,0 +1,495 @@
+2026-05-06 15:54:42.653 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 15:54:42.665 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 15:54:42.670 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 15:54:42.674 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 15:54:42.685 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 15:54:42.697 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 15:54:42.733 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 15:54:42.734 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 15:54:42.735 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 15:54:42.738 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 15:54:42.740 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 15:54:42.741 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 15:54:42.742 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 15:54:42.743 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 15:54:42.744 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 15:54:42.748 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 15:54:42.750 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 15:54:42.751 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 15:54:42.752 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 15:54:42.754 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 15:54:42.755 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 15:54:42.756 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 15:54:42.779 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 15:54:42.781 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 15:54:42.782 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 15:54:42.784 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 15:54:42.784 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 15:54:42.811 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 15:54:42.818 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 15:54:42.819 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 15:54:42.821 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 15:54:42.823 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 15:54:42.824 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 15:54:42.826 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 15:54:42.827 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 15:54:42.828 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 15:54:42.829 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 15:54:42.831 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 15:54:42.833 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 15:54:42.846 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 15:54:42.846 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 15:54:42.848 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 15:54:42.849 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 15:54:42.850 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 15:54:42.851 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 15:54:42.851 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 15:54:42.852 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 15:54:42.853 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 15:54:42.875 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 15:54:42.876 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 15:54:42.877 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 15:54:42.880 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 15:54:42.880 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 15:54:42.882 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 15:54:42.908 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 15:54:42.910 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 15:54:42.912 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 15:54:42.912 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 15:54:42.915 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 15:54:42.916 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 15:54:42.917 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 15:54:42.919 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 15:54:42.920 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 15:54:42.941 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 15:54:42.942 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 15:54:42.944 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 15:54:42.944 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 15:54:42.945 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 15:54:42.947 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 15:54:42.948 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 15:54:42.949 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 15:55:12.093 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 15:55:12.109 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 15:55:12.114 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 15:55:12.118 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 15:55:12.126 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 15:55:12.139 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 15:55:12.166 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 15:55:12.166 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 15:55:12.168 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 15:55:12.170 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 15:55:12.171 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 15:55:12.172 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 15:55:12.174 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 15:55:12.175 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 15:55:12.176 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 15:55:12.179 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 15:55:12.182 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 15:55:12.183 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 15:55:12.185 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 15:55:12.186 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 15:55:12.187 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 15:55:12.188 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 15:55:12.212 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 15:55:12.214 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 15:55:12.216 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 15:55:12.218 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 15:55:12.219 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 15:55:12.245 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 15:55:12.246 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 15:55:12.249 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 15:55:12.250 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 15:55:12.253 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 15:55:12.254 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 15:55:12.255 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 15:55:12.256 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 15:55:12.257 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 15:55:12.258 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 15:55:12.259 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 15:55:12.261 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 15:55:12.262 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 15:55:12.266 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 15:55:12.279 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 15:55:12.280 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 15:55:12.282 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 15:55:12.283 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 15:55:12.284 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 15:55:12.284 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 15:55:12.285 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 15:55:12.286 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 15:55:12.287 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 15:55:12.310 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 15:55:12.311 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 15:55:12.312 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 15:55:12.316 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 15:55:12.319 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 15:55:12.324 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 15:55:12.361 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 15:55:12.363 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 15:55:12.366 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 15:55:12.367 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 15:55:12.369 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 15:55:12.370 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 15:55:12.372 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 15:55:12.373 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 15:55:12.374 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 15:55:12.396 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 15:55:12.397 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 15:55:12.399 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 15:55:12.400 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 15:55:12.400 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 15:55:12.402 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 15:55:12.404 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 15:55:12.404 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 16:03:00.994 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 16:03:01.009 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.018 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:01.021 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.023 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:01.030 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 16:03:01.035 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 16:03:01.037 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 16:03:01.039 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.040 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.042 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.042 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.042 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.043 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.043 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.044 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.044 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.044 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:01.047 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 16:03:01.048 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 16:03:01.050 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 16:03:01.051 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:01.056 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:09.647 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 16:03:09.660 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 16:03:09.665 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 16:03:09.670 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 16:03:09.677 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 16:03:09.688 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 16:03:09.715 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 16:03:09.716 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 16:03:09.718 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:09.719 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:09.721 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:09.722 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 16:03:09.723 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 16:03:09.725 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 16:03:09.726 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 16:03:09.730 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 16:03:09.732 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 16:03:09.733 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:09.734 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:09.735 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 16:03:09.737 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:09.737 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 16:03:09.762 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 16:03:09.763 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 16:03:09.764 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 16:03:09.766 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 16:03:09.766 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 16:03:09.795 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 16:03:09.800 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.808 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:09.810 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.811 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:09.814 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 16:03:09.816 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 16:03:09.818 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 16:03:09.822 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.823 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.824 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.824 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.824 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.825 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.826 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.826 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.827 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.827 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:09.829 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 16:03:09.830 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 16:03:09.832 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 16:03:09.832 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:09.835 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:09.849 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 16:03:09.849 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 16:03:09.851 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 16:03:09.852 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 16:03:09.853 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 16:03:09.853 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 16:03:09.854 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 16:03:09.855 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 16:03:09.856 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 16:03:09.880 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 16:03:09.881 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 16:03:09.882 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 16:03:09.884 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 16:03:09.885 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 16:03:09.887 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 16:03:09.920 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:09.922 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 16:03:09.924 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 16:03:09.925 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 16:03:09.928 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:09.929 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:09.931 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:09.932 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:09.933 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:09.957 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 16:03:09.958 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:09.960 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 16:03:09.961 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:09.961 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 16:03:09.963 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:09.965 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 16:03:09.965 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 16:03:32.525 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 16:03:32.537 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 16:03:32.544 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 16:03:32.548 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 16:03:32.556 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 16:03:32.571 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 16:03:32.600 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 16:03:32.600 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 16:03:32.602 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:32.604 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:32.605 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:32.606 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 16:03:32.607 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 16:03:32.609 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 16:03:32.611 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 16:03:32.617 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 16:03:32.619 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 16:03:32.620 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:32.621 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:32.622 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 16:03:32.624 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:32.626 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 16:03:32.652 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 16:03:32.653 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 16:03:32.654 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 16:03:32.656 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 16:03:32.656 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 16:03:32.687 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 16:03:32.689 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.693 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:32.694 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.696 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:32.698 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 16:03:32.702 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 16:03:32.704 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 16:03:32.706 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.707 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.708 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.708 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.709 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.709 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.709 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.709 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.710 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.710 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:32.711 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 16:03:32.714 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 16:03:32.715 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 16:03:32.716 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:32.720 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:32.732 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 16:03:32.732 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 16:03:32.734 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 16:03:32.735 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 16:03:32.738 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 16:03:32.738 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 16:03:32.739 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 16:03:32.739 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 16:03:32.740 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 16:03:32.766 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 16:03:32.766 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 16:03:32.767 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 16:03:32.770 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 16:03:32.771 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 16:03:32.774 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 16:03:32.804 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:32.806 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 16:03:32.808 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 16:03:32.809 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 16:03:32.811 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:32.813 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:32.814 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:32.816 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:32.817 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:32.841 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 16:03:32.842 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:32.844 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 16:03:32.844 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:32.845 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 16:03:32.847 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:32.849 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 16:03:32.849 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 16:03:51.166 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 16:03:51.178 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 16:03:51.183 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 16:03:51.188 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 16:03:51.197 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 16:03:51.209 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 16:03:51.238 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 16:03:51.238 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 16:03:51.240 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:51.242 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:51.243 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:51.244 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 16:03:51.245 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 16:03:51.247 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 16:03:51.248 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 16:03:51.250 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 16:03:51.253 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 16:03:51.255 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:51.257 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 16:03:51.258 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 16:03:51.259 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 16:03:51.260 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 16:03:51.285 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 16:03:51.286 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 16:03:51.287 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 16:03:51.289 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 16:03:51.289 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 16:03:51.320 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 16:03:51.321 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.325 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:51.327 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.328 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:51.331 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 16:03:51.333 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 16:03:51.334 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 16:03:51.335 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.336 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.337 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.338 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.338 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.338 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.338 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.339 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.339 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.339 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 16:03:51.341 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 16:03:51.342 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 16:03:51.343 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 16:03:51.344 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 16:03:51.348 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 16:03:51.362 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 16:03:51.363 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 16:03:51.364 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 16:03:51.365 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 16:03:51.367 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 16:03:51.367 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 16:03:51.368 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 16:03:51.369 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 16:03:51.370 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 16:03:51.397 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 16:03:51.397 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 16:03:51.398 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 16:03:51.400 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 16:03:51.401 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 16:03:51.403 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 16:03:51.432 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:51.434 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 16:03:51.436 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 16:03:51.437 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 16:03:51.439 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:51.440 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:51.442 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:51.444 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 16:03:51.447 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 16:03:51.472 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 16:03:51.472 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:51.474 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 16:03:51.475 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:51.476 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 16:03:51.478 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 16:03:51.480 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 16:03:51.481 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 19:05:55.225 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 19:05:55.238 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 19:05:55.243 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 19:05:55.248 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 19:05:55.255 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 19:05:55.267 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 19:05:55.293 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 19:05:55.293 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 19:05:55.295 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 19:05:55.297 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 19:05:55.298 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 19:05:55.299 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 19:05:55.300 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 19:05:55.302 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 19:05:55.303 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 19:05:55.306 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 19:05:55.308 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 19:05:55.309 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 19:05:55.310 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 19:05:55.311 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 19:05:55.312 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 19:05:55.313 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 19:05:55.334 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 19:05:55.335 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 19:05:55.336 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 19:05:55.339 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 19:05:55.339 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 19:05:55.367 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 19:05:55.368 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.372 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 19:05:55.372 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.373 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 19:05:55.375 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 19:05:55.377 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 19:05:55.378 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 19:05:55.379 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.380 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.381 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.381 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.381 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.382 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.382 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.382 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.383 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.383 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 19:05:55.384 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 19:05:55.385 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 19:05:55.387 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 19:05:55.387 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 19:05:55.391 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 19:05:55.403 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 19:05:55.403 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 19:05:55.405 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 19:05:55.406 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 19:05:55.408 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 19:05:55.408 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 19:05:55.409 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 19:05:55.410 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 19:05:55.411 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 19:05:55.433 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 19:05:55.434 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 19:05:55.435 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 19:05:55.437 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 19:05:55.438 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 19:05:55.440 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 19:05:55.466 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 19:05:55.468 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 19:05:55.470 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 19:05:55.471 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 19:05:55.473 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 19:05:55.474 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 19:05:55.475 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 19:05:55.477 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 19:05:55.478 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 19:05:55.501 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 19:05:55.502 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 19:05:55.504 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 19:05:55.505 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 19:05:55.505 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 19:05:55.507 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 19:05:55.509 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 19:05:55.509 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
