@@ -72,6 +72,10 @@ public class RatingService {
 
         updateUserAverageRating(recipientId);
 
+        User updatedRecipient = userDao.findById(recipientId).orElseThrow(() -> new ResourceNotFoundException("Пользователь не найден"));
+
+        rating.setRecipient(updatedRecipient);
+
         logger.info("Новый отзыв {} от пользователя {} к пользователю {}. Рейтинг: {}", rating.getId(), reviewerId, recipientId, request.getRating());
         return ratingMapper.toResponse(rating);
     }

@@ -11,9 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MessageRequest {
 
-    @NotNull(message = "ID чата не может быть пустым")
-    private Long chatId;
-
     @NotBlank(message = "Содержание сообщения не может быть пустым")
     private String content;
 }

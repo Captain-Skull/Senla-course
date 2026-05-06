@@ -10,10 +10,12 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.LockedException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.List;
 
@@ -143,6 +145,30 @@ public class GlobalExceptionHandler {
                         HttpStatus.NOT_FOUND.value(),
                         "Not Found",
                         ex.getMessage()
+                ));
+    }
+
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ResponseEntity<ErrorResponse> handleNoHandlerFound(NoHandlerFoundException ex) {
+        logger.warn("Эндпоинт не найден: {} {}", ex.getHttpMethod(), ex.getRequestURL());
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorResponse(
+                        HttpStatus.NOT_FOUND.value(),
+                        "Not Found",
+                        "Эндпоинт не найден: " + ex.getRequestURL()
+                ));
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<ErrorResponse> handleMethodNotSupported(HttpRequestMethodNotSupportedException ex) {
+        logger.warn("Метод не поддерживается: {}", ex.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.METHOD_NOT_ALLOWED)
+                .body(new ErrorResponse(
+                        HttpStatus.METHOD_NOT_ALLOWED.value(),
+                        "Method Not Allowed",
+                        "Метод " + ex.getMethod() + " не поддерживается для этого эндпоинта"
                 ));
     }
 

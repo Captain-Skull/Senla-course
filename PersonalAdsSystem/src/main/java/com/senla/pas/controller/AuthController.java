@@ -6,6 +6,7 @@ import com.senla.pas.dto.response.AuthResponse;
 import com.senla.pas.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class AuthController {
 
     @PostMapping("/register")
     @Operation(summary = "Регистрация пользователя")
-    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
         logger.info("Запрос на регистрацию пользователя: {}", request.getUsername());
         AuthResponse response = authService.register(request);
         logger.info("Пользователь успешно зарегистрирован: {}", request.getUsername());
@@ -40,7 +41,7 @@ public class AuthController {
 
     @PostMapping("/login")
     @Operation(summary = "Вход пользователя")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         logger.info("Запрос на вход пользователя: {}", request.getUsernameOrEmail());
         AuthResponse response = authService.login(request);
         logger.info("Пользователь успешно вошел: {}", request.getUsernameOrEmail());

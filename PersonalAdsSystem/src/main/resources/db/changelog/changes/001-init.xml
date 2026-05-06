@@ -21,7 +21,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="about_me" type="VARCHAR(2000)"/>
-            <column name="average_rating" type="DECIMAL(3,2)" defaultValueNumeric="0.00">
+            <column name="average_rating" type="DOUBLE PRECISION" defaultValueNumeric="0.00">
                 <constraints nullable="false"/>
             </column>
             <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">

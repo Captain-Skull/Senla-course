@@ -1,11 +1,9 @@
 package com.senla.pas.controller;
 
-import com.senla.pas.dto.request.ChatRequest;
 import com.senla.pas.dto.response.ChatResponse;
 import com.senla.pas.service.ChatService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +39,10 @@ public class ChatController {
         return ResponseEntity.ok(chatService.getChatById(chatId));
     }
 
-    @PostMapping
+    @PostMapping("/ad/{adId}")
     @Operation(summary = "Создать или открыть чат")
-    public ResponseEntity<ChatResponse> getOrCreateChat(@Valid @RequestBody ChatRequest request) {
+    public ResponseEntity<ChatResponse> getOrCreateChat(@PathVariable Long adId) {
         logger.info("Получение или создания чата");
-        return ResponseEntity.ok(chatService.getOrCreateChat(request));
+        return ResponseEntity.ok(chatService.getOrCreateChat(adId));
     }
 }

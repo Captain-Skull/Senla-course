@@ -6,17 +6,22 @@ import com.senla.pas.enums.SortDirection;
 import com.senla.pas.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
+@Validated
 @Tag(name = "Управление пользователями", description = "Создание, изменение, удаление пользователей")
 public class UserController {
 
@@ -54,8 +59,8 @@ public class UserController {
     @Operation(summary = "Получить список отфильтрованных пользователей")
     public ResponseEntity<List<UserResponse>> getUsersFilteredByRating(
             @RequestParam(defaultValue = "DESC") SortDirection direction,
-            @RequestParam(required = false) Double minRating,
-            @RequestParam(required = false) Double maxRating
+            @Min(0) @Max(5) @RequestParam(required = false) Double minRating,
+            @Min(0) @Max(5) @RequestParam(required = false) Double maxRating
             ) {
         logger.info("Запрос пользователей с фильтрацией по рейтингу");
         return ResponseEntity.ok(userService.getUsersFilteredByRating(direction, minRating, maxRating));
@@ -63,7 +68,7 @@ public class UserController {
 
     @PutMapping("/me")
     @Operation(summary = "Обновить мой профиль")
-    public ResponseEntity<UserResponse> updateMyProfile(@RequestBody UpdateUserRequest request) {
+    public ResponseEntity<UserResponse> updateMyProfile(@Valid @RequestBody UpdateUserRequest request) {
         logger.info("Запрос на обновление текущего пользователя");
         return ResponseEntity.ok(userService.updateUser(request));
     }

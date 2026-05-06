@@ -73,7 +73,7 @@ public class UserDao extends AbstractJpaDao<User, Long> {
             }
 
             TypedQuery<User> emailQuery = entityManager.createQuery(FIND_BY_EMAIL_JPQL, User.class)
-                    .setParameter("value", usernameOrEmail);
+                    .setParameter("email", usernameOrEmail);
 
             return getSingleResult(emailQuery);
         } catch (Exception e) {

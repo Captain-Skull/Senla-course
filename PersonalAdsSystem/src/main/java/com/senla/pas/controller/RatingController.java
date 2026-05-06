@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user/{userId}/ratings")
+@RequestMapping("/api/users/{userId}/ratings")
 @Tag(name = "Управление рейтингом", description = "Создание, изменение, удаление и просмотр рейтингов")
 public class RatingController {
 

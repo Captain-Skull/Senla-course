@@ -9,18 +9,21 @@ import com.senla.pas.enums.SortDirection;
 import com.senla.pas.service.AdService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/ads")
+@Validated
 @Tag(name = "Объявления", description = "Создание, изменение, удаление и просмотр объявлений")
 public class AdController {
 
@@ -74,7 +77,7 @@ public class AdController {
 
     @PostMapping
     @Operation(summary = "Создать новое объявление")
-    public ResponseEntity<AdResponse> createAd(@RequestBody CreateAdRequest request) {
+    public ResponseEntity<AdResponse> createAd(@Valid @RequestBody CreateAdRequest request) {
         logger.info("Запрос на создание нового объявления");
         AdResponse response = adService.createAd(request);
         logger.info("Объявление {} успешно создано", response.getId());
@@ -83,7 +86,7 @@ public class AdController {
 
     @PutMapping("/{adId}")
     @Operation(summary = "Обновить объявление по ID")
-    public ResponseEntity<AdResponse> updateAd(@PathVariable Long adId, @RequestBody UpdateAdRequest request) {
+    public ResponseEntity<AdResponse> updateAd(@PathVariable Long adId, @Valid @RequestBody UpdateAdRequest request) {
         logger.info("Запрос обновления объявления {} ,", adId);
         return ResponseEntity.ok(adService.updateAd(adId, request));
     }

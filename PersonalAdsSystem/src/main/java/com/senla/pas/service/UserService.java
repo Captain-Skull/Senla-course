@@ -100,8 +100,10 @@ public class UserService {
 
         User user = userDao.findById(targetUserId).orElseThrow(() -> new ResourceNotFoundException("Пользователь не найден: " + targetUserId));
 
+        UserResponse response = userMapper.toResponse(user);
+
         userDao.delete(targetUserId);
         logger.info("Пользователь {} успешно удалён", targetUserId);
-        return userMapper.toResponse(user);
+        return response;
     }
 }

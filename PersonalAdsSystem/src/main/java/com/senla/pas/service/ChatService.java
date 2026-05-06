@@ -3,7 +3,6 @@ package com.senla.pas.service;
 import com.senla.pas.dao.AdDao;
 import com.senla.pas.dao.ChatDao;
 import com.senla.pas.dao.UserDao;
-import com.senla.pas.dto.request.ChatRequest;
 import com.senla.pas.dto.response.ChatResponse;
 import com.senla.pas.entity.Ad;
 import com.senla.pas.entity.Chat;
@@ -19,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,19 +62,19 @@ public class ChatService {
     }
 
     @Transactional
-    public ChatResponse getOrCreateChat(ChatRequest request) {
+    public ChatResponse getOrCreateChat(Long adId) {
         Long buyerId = SecurityUtils.getCurrentUserId();
-        logger.info("Получение или создание чата для объявления {} покупателем {}", request.getAdId(), buyerId);
+        logger.info("Получение или создание чата для объявления {} покупателем {}", adId, buyerId);
 
         Optional<Chat> existingChat = chatDao.findByAdAndBuyer(
-                request.getAdId(), buyerId
+                adId, buyerId
         );
         if (existingChat.isPresent()) {
             logger.info("Найден существующий чат: {}", existingChat.get().getId());
             return chatMapper.toResponse(existingChat.get());
         }
 
-        Ad ad = adDao.findById(request.getAdId()).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + request.getAdId()));
+        Ad ad = adDao.findById(adId).orElseThrow(() -> new ResourceNotFoundException("Объявление не найдено: " + adId));
 
         if (buyerId.equals(ad.getUser().getId())) {
             throw new ForbiddenException("Нельзя создать чат по своему объявлению");
@@ -87,13 +87,14 @@ public class ChatService {
         User buyer = userDao.findById(buyerId).orElseThrow(() -> new ResourceNotFoundException("Пользователь не найден: " + buyerId));
 
         Chat chat = new Chat();
+        chat.setCreatedAt(LocalDateTime.now());
         chat.setAd(ad);
         chat.setBuyer(buyer);
         chat.setSeller(ad.getUser());
 
         chatDao.save(chat);
 
-        logger.info("Создан чат {} для объявления {} между покупателем {} и продавцом {}", chat.getId(), request.getAdId(), buyerId, ad.getUser().getId());
+        logger.info("Создан чат {} для объявления {} между покупателем {} и продавцом {}", chat.getId(), adId, buyerId, ad.getUser().getId());
 
         return chatMapper.toResponse(chat);
     }

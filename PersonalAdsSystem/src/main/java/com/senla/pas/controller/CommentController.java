@@ -9,13 +9,14 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ad/{adId}/comments")
+@RequestMapping("/api/ads/{adId}/comments")
 @Tag(name = "Управление комментариями", description = "Создание, изменение, удаление, просмотр комментариев")
 public class CommentController {
 
@@ -40,7 +41,7 @@ public class CommentController {
         logger.info("Запрос на отправку комментария к посту {}", adId);
         CommentResponse response = commentService.addCommentToAd(adId, request);
         logger.info("Комментарий {} к посту {} успешно отправлен", response.getId(), adId);
-        return ResponseEntity.ok(commentService.addCommentToAd(adId, request));
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{commentId}")

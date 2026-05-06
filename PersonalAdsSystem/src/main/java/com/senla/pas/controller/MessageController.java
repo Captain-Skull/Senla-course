@@ -60,8 +60,8 @@ public class MessageController {
 
     @PatchMapping("/{messageId}/read")
     @Operation(summary = "Прочитать сообщение")
-    public ResponseEntity<MessageResponse> readMessage(@PathVariable Long messageId) {
-        logger.info("Запрос отметки сообщения {} как прочитанного", messageId);
+    public ResponseEntity<MessageResponse> readMessage(@PathVariable Long chatId, @PathVariable Long messageId) {
+        logger.info("Запрос отметки сообщения {} как прочитанного в чате {}", messageId, chatId);
         return ResponseEntity.ok(messageService.readMessage(messageId));
     }
 
