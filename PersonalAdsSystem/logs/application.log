@@ -493,3 +493,1934 @@
 2026-05-06 19:05:55.507 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
 2026-05-06 19:05:55.509 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
 2026-05-06 19:05:55.509 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 20:01:22.588 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 20:01:22.604 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 20:01:22.618 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 20:01:22.624 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 20:01:22.629 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 20:01:22.631 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 20:01:22.632 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 20:01:22.634 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 20:01:22.636 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 20:01:22.637 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 20:01:22.639 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 20:01:22.640 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 20:01:22.642 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 20:01:22.643 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 20:01:22.644 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 20:01:22.645 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 20:01:22.647 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 20:01:22.648 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 20:01:22.673 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: null
+2026-05-06 20:01:22.674 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: null
+2026-05-06 20:01:22.675 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 20:01:22.677 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: null
+2026-05-06 20:01:22.678 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 1
+2026-05-06 20:01:22.679 [main] INFO  c.s.pas.controller.PaymentController - Запрос платежей объявления: 3
+2026-05-06 20:01:22.681 [main] INFO  c.s.pas.controller.PaymentController - Запрос активного продвижения объявления: 4
+2026-05-06 20:01:22.682 [main] INFO  c.s.pas.controller.PaymentController - Запрос платежей объявления: 3
+2026-05-06 20:01:22.683 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: null
+2026-05-06 20:01:22.684 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: null
+2026-05-06 20:01:22.685 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: null
+2026-05-06 20:01:22.686 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 20:01:22.687 [main] INFO  c.s.pas.controller.PaymentController - Запрос активного продвижения объявления: 4
+2026-05-06 20:01:22.689 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 20:01:22.690 [main] INFO  c.s.pas.controller.PaymentController - Запрос платежей объявления: null
+2026-05-06 20:01:22.691 [main] INFO  c.s.pas.controller.PaymentController - Запрос активного продвижения объявления: null
+2026-05-06 20:01:22.692 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 1
+2026-05-06 20:01:22.709 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: null
+2026-05-06 20:01:22.711 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений текущего пользователя
+2026-05-06 20:01:22.712 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 5 ,
+2026-05-06 20:01:22.713 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений пользователя null
+2026-05-06 20:01:22.714 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений текущего пользователя
+2026-05-06 20:01:22.715 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений пользователя 2
+2026-05-06 20:01:22.716 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 20:01:22.716 [main] INFO  c.senla.pas.controller.AdController - Объявление null успешно создано
+2026-05-06 20:01:22.716 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления null ,
+2026-05-06 20:01:22.717 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений текущего пользователя
+2026-05-06 20:01:22.718 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 6
+2026-05-06 20:01:22.719 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 20:01:22.719 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 1
+2026-05-06 20:01:22.720 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 6
+2026-05-06 20:01:22.721 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 20:01:22.721 [main] INFO  c.senla.pas.controller.AdController - Объявление null успешно создано
+2026-05-06 20:01:22.723 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=1
+2026-05-06 20:01:22.725 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=ELECTRONICS, search=iphone, page=0, size=20
+2026-05-06 20:01:22.726 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 5 ,
+2026-05-06 20:01:22.726 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 1
+2026-05-06 20:01:22.727 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=ELECTRONICS, search=iphone, page=0, size=20
+2026-05-06 20:01:22.729 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, null
+2026-05-06 20:01:22.729 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений пользователя 2
+2026-05-06 20:01:22.745 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 20:01:22.746 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 20:01:22.746 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 20:01:22.747 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 20:01:22.748 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 20:01:22.749 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 20:01:22.750 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 20:01:22.750 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 20:01:22.750 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 20:01:22.750 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 20:01:22.751 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 20:01:22.752 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 20:01:22.752 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 20:01:22.753 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 20:01:22.753 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 20:01:22.754 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 20:01:22.755 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 20:01:22.756 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 20:01:22.756 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 20:01:22.770 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 4 в чате 1
+2026-05-06 20:01:22.771 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 3 как прочитанного в чате 1
+2026-05-06 20:01:22.772 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 2
+2026-05-06 20:01:22.773 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения null как прочитанного в чате null
+2026-05-06 20:01:22.774 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения null в чате null
+2026-05-06 20:01:22.775 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 20:01:22.776 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 3 как прочитанного в чате 1
+2026-05-06 20:01:22.777 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 2
+2026-05-06 20:01:22.778 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 20:01:22.779 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 2 из чата 1
+2026-05-06 20:01:22.780 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 2 из чата 1
+2026-05-06 20:01:22.781 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения null в чате null
+2026-05-06 20:01:22.782 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения null из чата null
+2026-05-06 20:01:22.783 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: null
+2026-05-06 20:01:22.783 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 20:01:22.784 [main] INFO  c.s.pas.controller.MessageController - Сообщение null отправлено в чат 1
+2026-05-06 20:01:22.784 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 20:01:22.785 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 20:01:22.785 [main] INFO  c.s.pas.controller.MessageController - Сообщение null отправлено в чат 1
+2026-05-06 20:01:22.786 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 4 в чате 1
+2026-05-06 20:01:22.799 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 20:01:22.800 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 20:01:22.801 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 20:01:22.801 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 20:01:22.802 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 20:01:22.803 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 20:01:22.803 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 20:01:22.804 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 20:01:22.805 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 20:01:22.806 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 20:01:22.807 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 20:01:22.808 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 20:01:22.808 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 20:01:22.808 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 20:01:22.820 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 20:01:22.820 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 20:01:22.821 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 20:01:22.821 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 20:01:22.821 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 20:01:22.822 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 20:01:22.822 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 20:01:22.823 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 20:01:22.823 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 20:01:22.824 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 20:01:22.835 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 20:01:22.836 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 1
+2026-05-06 20:01:22.836 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 20:01:22.837 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 1
+2026-05-06 20:01:22.838 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 20:01:22.838 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 20:01:22.839 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: null
+2026-05-06 20:01:22.840 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 20:01:22.840 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 20:01:22.851 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 20:01:22.852 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 20:01:22.852 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 20:01:22.853 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 20:01:22.853 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 20:01:22.854 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 20:01:22.854 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 20:01:22.854 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 20:01:50.330 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 20:01:50.343 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 20:01:50.349 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 20:01:50.352 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 20:01:50.360 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 20:01:50.361 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 20:01:50.363 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 20:01:50.365 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 20:01:50.367 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 20:01:50.368 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 20:01:50.369 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 20:01:50.371 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 20:01:50.374 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 20:01:50.377 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 20:01:50.379 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 20:01:50.380 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 20:01:50.381 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 20:01:50.382 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 20:01:50.406 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: null
+2026-05-06 20:01:50.406 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: null
+2026-05-06 20:01:50.408 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 20:01:50.411 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: null
+2026-05-06 20:01:50.412 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 1
+2026-05-06 20:01:50.413 [main] INFO  c.s.pas.controller.PaymentController - Запрос платежей объявления: 3
+2026-05-06 20:01:50.415 [main] INFO  c.s.pas.controller.PaymentController - Запрос активного продвижения объявления: 4
+2026-05-06 20:01:50.416 [main] INFO  c.s.pas.controller.PaymentController - Запрос платежей объявления: 3
+2026-05-06 20:01:50.417 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: null
+2026-05-06 20:01:50.420 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: null
+2026-05-06 20:01:50.420 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: null
+2026-05-06 20:01:50.421 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 20:01:50.423 [main] INFO  c.s.pas.controller.PaymentController - Запрос активного продвижения объявления: 4
+2026-05-06 20:01:50.425 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 20:01:50.426 [main] INFO  c.s.pas.controller.PaymentController - Запрос платежей объявления: null
+2026-05-06 20:01:50.428 [main] INFO  c.s.pas.controller.PaymentController - Запрос активного продвижения объявления: null
+2026-05-06 20:01:50.429 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 1
+2026-05-06 20:01:50.452 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: null
+2026-05-06 20:01:50.455 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений текущего пользователя
+2026-05-06 20:01:50.459 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 5 ,
+2026-05-06 20:01:50.462 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений пользователя null
+2026-05-06 20:01:50.464 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений текущего пользователя
+2026-05-06 20:01:50.465 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений пользователя 2
+2026-05-06 20:01:50.466 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 20:01:50.467 [main] INFO  c.senla.pas.controller.AdController - Объявление null успешно создано
+2026-05-06 20:01:50.469 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления null ,
+2026-05-06 20:01:50.476 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений текущего пользователя
+2026-05-06 20:01:50.484 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 6
+2026-05-06 20:01:50.499 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 20:01:50.503 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 1
+2026-05-06 20:01:50.508 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 6
+2026-05-06 20:01:50.511 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 20:01:50.511 [main] INFO  c.senla.pas.controller.AdController - Объявление null успешно создано
+2026-05-06 20:01:50.515 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=1
+2026-05-06 20:01:50.519 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=ELECTRONICS, search=iphone, page=0, size=20
+2026-05-06 20:01:50.521 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 5 ,
+2026-05-06 20:01:50.524 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 1
+2026-05-06 20:01:50.527 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=ELECTRONICS, search=iphone, page=0, size=20
+2026-05-06 20:01:50.531 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, null
+2026-05-06 20:01:50.533 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений пользователя 2
+2026-05-06 20:01:50.591 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 20:01:50.594 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 20:01:50.594 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 20:01:50.596 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 20:01:50.600 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 20:01:50.604 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 20:01:50.609 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 20:01:50.609 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 20:01:50.611 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 20:01:50.611 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 20:01:50.612 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 20:01:50.613 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 20:01:50.613 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 20:01:50.615 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 20:01:50.618 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 20:01:50.620 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 20:01:50.621 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 20:01:50.622 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 20:01:50.624 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 20:01:50.647 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 4 в чате 1
+2026-05-06 20:01:50.649 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 3 как прочитанного в чате 1
+2026-05-06 20:01:50.651 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 2
+2026-05-06 20:01:50.653 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения null как прочитанного в чате null
+2026-05-06 20:01:50.654 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения null в чате null
+2026-05-06 20:01:50.655 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 20:01:50.657 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 3 как прочитанного в чате 1
+2026-05-06 20:01:50.660 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 2
+2026-05-06 20:01:50.663 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 20:01:50.664 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 2 из чата 1
+2026-05-06 20:01:50.665 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 2 из чата 1
+2026-05-06 20:01:50.666 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения null в чате null
+2026-05-06 20:01:50.666 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения null из чата null
+2026-05-06 20:01:50.667 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: null
+2026-05-06 20:01:50.667 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 20:01:50.668 [main] INFO  c.s.pas.controller.MessageController - Сообщение null отправлено в чат 1
+2026-05-06 20:01:50.668 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 20:01:50.669 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 20:01:50.669 [main] INFO  c.s.pas.controller.MessageController - Сообщение null отправлено в чат 1
+2026-05-06 20:01:50.670 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 4 в чате 1
+2026-05-06 20:01:50.694 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 20:01:50.695 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 20:01:50.696 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 20:01:50.696 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 20:01:50.696 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 20:01:50.697 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 20:01:50.698 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 20:01:50.699 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 20:01:50.699 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 20:01:50.700 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 20:01:50.701 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 20:01:50.702 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 20:01:50.703 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 20:01:50.703 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 20:01:50.720 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 20:01:50.721 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 20:01:50.723 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 20:01:50.724 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 20:01:50.725 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 20:01:50.725 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 20:01:50.727 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 20:01:50.728 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 20:01:50.728 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 20:01:50.729 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 20:01:50.744 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 20:01:50.746 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 1
+2026-05-06 20:01:50.748 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 20:01:50.749 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 1
+2026-05-06 20:01:50.749 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 20:01:50.750 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 20:01:50.751 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: null
+2026-05-06 20:01:50.752 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 20:01:50.753 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 20:01:50.770 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 20:01:50.771 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 20:01:50.773 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 20:01:50.775 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 20:01:50.776 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 20:01:50.777 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 20:01:50.778 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 20:01:50.778 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 20:01:50.861 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 20:01:50.863 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 20:01:50.865 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 20:01:50.867 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 20:01:50.871 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 20:01:50.880 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 20:01:50.905 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 20:01:50.906 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 20:01:50.908 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 20:01:50.908 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 20:01:50.909 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 20:01:50.910 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 20:01:50.911 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 20:01:50.912 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 20:01:50.912 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 20:01:50.916 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 20:01:50.918 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 20:01:50.919 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 20:01:50.920 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 20:01:50.920 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 20:01:50.922 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 20:01:50.923 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 20:01:50.947 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 20:01:50.948 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 20:01:50.949 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 20:01:50.951 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 20:01:50.951 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 20:01:50.981 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 20:01:50.982 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.985 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 20:01:50.986 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.987 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 20:01:50.988 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 20:01:50.990 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 20:01:50.991 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 20:01:50.992 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.992 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.993 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.993 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.994 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.994 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.994 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.994 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.995 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.995 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 20:01:50.997 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 20:01:50.998 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 20:01:50.999 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 20:01:50.999 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 20:01:51.002 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 20:01:51.016 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 20:01:51.016 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 20:01:51.018 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 20:01:51.019 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 20:01:51.021 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 20:01:51.021 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 20:01:51.022 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 20:01:51.023 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 20:01:51.024 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 20:01:51.050 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 20:01:51.051 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 20:01:51.052 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 20:01:51.054 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 20:01:51.054 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 20:01:51.056 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 20:01:51.083 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 20:01:51.085 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 20:01:51.086 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 20:01:51.087 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 20:01:51.089 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 20:01:51.090 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 20:01:51.091 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 20:01:51.093 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 20:01:51.098 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 20:01:51.125 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 20:01:51.126 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 20:01:51.127 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 20:01:51.127 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 20:01:51.128 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 20:01:51.130 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 20:01:51.131 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 20:01:51.131 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
+2026-05-06 21:39:26.923 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:39:26.937 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:39:26.944 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 21:39:26.946 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:39:26.951 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:39:26.952 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:39:26.954 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 21:39:26.955 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:39:26.957 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:39:26.959 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:39:26.961 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:39:26.962 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:39:26.964 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:39:26.965 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:39:26.966 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:39:26.968 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:39:26.969 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:39:26.971 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:39:27.091 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 21:39:27.241 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:39:27.242 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:39:27.242 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:39:27.243 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:39:27.244 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:39:27.245 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:39:27.246 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:39:27.246 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:39:27.247 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:39:27.247 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 21:39:27.248 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:39:27.249 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 21:39:27.249 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 21:39:27.250 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:39:27.251 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:39:27.252 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:39:27.252 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:39:27.253 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:39:27.254 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 21:39:27.305 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 21:39:27.306 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:39:27.307 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:39:27.307 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:39:27.308 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 21:39:27.309 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:39:27.310 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:39:27.310 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:39:27.311 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:39:27.312 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 21:39:27.313 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:39:27.314 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:39:27.314 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:39:27.314 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:39:27.336 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:39:27.337 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:39:27.338 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:39:27.338 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:39:27.340 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:39:27.340 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:39:27.343 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:39:27.345 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:39:27.345 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:39:27.346 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:39:27.382 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 21:39:27.383 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:39:27.383 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:39:27.384 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:39:27.385 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:39:27.385 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:39:27.385 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:39:27.386 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:40:41.145 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:40:41.158 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:40:41.164 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 21:40:41.166 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:40:41.170 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:40:41.172 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:40:41.174 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 21:40:41.175 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:40:41.177 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:40:41.178 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:40:41.180 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:40:41.181 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:40:41.182 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:40:41.183 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:40:41.185 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:40:41.186 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:40:41.188 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:40:41.189 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:40:41.306 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 21:40:41.387 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.387 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.388 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-05-06 21:40:41.415 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 2
+2026-05-06 21:40:41.444 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.444 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.444 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.445 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 21:40:41.452 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.452 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.452 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.467 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: 5
+2026-05-06 21:40:41.467 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: 5
+2026-05-06 21:40:41.493 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.494 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.494 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.495 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 99
+2026-05-06 21:40:41.496 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no ad
+2026-05-06 21:40:41.502 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.502 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.502 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.505 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 11 ,
+2026-05-06 21:40:41.510 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.511 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.511 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.513 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 21:40:41.513 [main] INFO  c.senla.pas.controller.AdController - Объявление 10 успешно создано
+2026-05-06 21:40:41.518 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.518 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.518 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.519 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 21:40:41.520 [main] ERROR c.s.p.e.GlobalExceptionHandler - Необработанное исключение: Cannot invoke "com.senla.pas.dto.response.AdResponse.getId()" because "response" is null
+java.lang.NullPointerException: Cannot invoke "com.senla.pas.dto.response.AdResponse.getId()" because "response" is null
+	at com.senla.pas.controller.AdController.createAd(AdController.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:547)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at com.senla.pas.controller.AdControllerTest.createAd_validationFail(AdControllerTest.java:98)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2026-05-06 21:40:41.526 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.526 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.526 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.528 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=20
+2026-05-06 21:40:41.531 [main] ERROR c.s.p.e.GlobalExceptionHandler - Необработанное исключение: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getAdsWithFilters' method:
+    adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    DATE,
+    DESC,
+    0,
+    20
+);
+    -> at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+ - has following stubbing(s) with different arguments:
+    1. adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    20
+);
+      -> at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:50)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getAdsWithFilters' method:
+    adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    DATE,
+    DESC,
+    0,
+    20
+);
+    -> at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+ - has following stubbing(s) with different arguments:
+    1. adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    20
+);
+      -> at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:50)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at com.senla.pas.service.AdService.getAdsWithFilters(AdService.java:52)
+	at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2026-05-06 21:40:41.537 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.537 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.537 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.538 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 12
+2026-05-06 21:40:41.545 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.545 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.545 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.546 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 2
+2026-05-06 21:40:41.563 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:40:41.564 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:40:41.564 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:40:41.565 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:40:41.566 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:40:41.567 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:40:41.567 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:40:41.567 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:40:41.568 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:40:41.568 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 21:40:41.569 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:40:41.569 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 21:40:41.570 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 21:40:41.570 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:40:41.571 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:40:41.571 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:40:41.572 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:40:41.573 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:40:41.578 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 21:40:41.596 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.596 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.596 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.597 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 13 в чате 1
+2026-05-06 21:40:41.602 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.602 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.602 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.603 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 11
+2026-05-06 21:40:41.607 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.607 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.607 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.608 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 21:40:41.608 [main] INFO  c.s.pas.controller.MessageController - Сообщение 10 отправлено в чат 1
+2026-05-06 21:40:41.613 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.613 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.613 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.613 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 12 как прочитанного в чате 1
+2026-05-06 21:40:41.617 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.617 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.617 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.618 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 99 из чата 1
+2026-05-06 21:40:41.618 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no msg
+2026-05-06 21:40:41.622 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.622 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.622 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.623 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 21:40:41.636 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 21:40:41.637 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:40:41.638 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:40:41.638 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:40:41.639 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 21:40:41.639 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:40:41.640 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:40:41.641 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:40:41.641 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:40:41.642 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 21:40:41.643 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:40:41.643 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:40:41.644 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:40:41.644 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:40:41.657 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:40:41.657 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:40:41.658 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:40:41.658 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:40:41.659 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:40:41.659 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:40:41.660 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:40:41.661 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:40:41.661 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:40:41.661 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:40:41.675 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.675 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.675 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.676 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 2
+2026-05-06 21:40:41.680 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.680 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.680 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.680 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 21:40:41.683 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:40:41.684 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:40:41.684 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:40:41.684 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 21:40:41.697 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 21:40:41.698 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:40:41.699 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:40:41.700 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:40:41.700 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:40:41.700 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:40:41.701 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:40:41.701 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:46:41.615 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:46:41.628 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:46:41.636 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 21:46:41.638 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:46:41.644 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:46:41.646 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:46:41.647 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 21:46:41.649 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:46:41.650 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:46:41.652 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:46:41.654 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:46:41.656 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:46:41.657 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:46:41.659 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:46:41.660 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:46:41.662 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:46:41.663 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:46:41.665 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:46:41.771 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 21:46:41.822 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:46:41.823 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:46:41.823 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:46:41.824 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:46:41.825 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:46:41.826 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:46:41.827 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:46:41.827 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:46:41.828 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:46:41.828 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 21:46:41.829 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:46:41.830 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 21:46:41.830 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 21:46:41.832 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:46:41.832 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:46:41.833 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:46:41.834 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:46:41.835 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:46:41.836 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 21:46:41.866 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 21:46:41.867 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:46:41.868 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:46:41.868 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:46:41.869 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 21:46:41.870 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:46:41.871 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:46:41.872 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:46:41.872 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:46:41.873 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 21:46:41.874 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:46:41.874 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:46:41.875 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:46:41.875 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:46:41.887 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:46:41.887 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:46:41.888 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:46:41.888 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:46:41.889 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:46:41.889 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:46:41.889 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:46:41.890 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:46:41.890 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:46:41.891 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:46:41.914 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 21:46:41.916 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:46:41.917 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:46:41.918 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:46:41.919 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:46:41.919 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:46:41.920 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:46:41.920 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:52:40.081 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:52:40.095 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:52:40.101 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 21:52:40.103 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:52:40.109 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:52:40.111 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:52:40.113 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 21:52:40.114 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:52:40.115 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:52:40.117 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:52:40.119 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:52:40.120 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:52:40.122 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:52:40.123 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:52:40.124 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:52:40.126 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:52:40.128 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:52:40.129 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:52:40.236 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 21:52:40.291 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:52:40.292 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:52:40.293 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:52:40.293 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:52:40.294 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:52:40.295 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:52:40.296 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:52:40.296 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:52:40.297 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:52:40.297 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 21:52:40.298 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:52:40.299 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 21:52:40.299 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 21:52:40.299 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:52:40.300 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:52:40.301 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:52:40.302 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:52:40.302 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:52:40.303 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 21:52:40.334 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 21:52:40.335 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:52:40.336 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:52:40.336 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:52:40.337 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 21:52:40.338 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:52:40.338 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:52:40.339 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:52:40.340 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:52:40.341 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 21:52:40.341 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:52:40.342 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:52:40.343 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:52:40.343 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:52:40.355 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:52:40.355 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:52:40.356 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:52:40.356 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:52:40.357 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:52:40.357 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:52:40.359 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:52:40.360 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:52:40.360 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:52:40.361 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:52:40.386 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 21:52:40.387 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:52:40.388 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:52:40.389 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:52:40.389 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:52:40.390 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:52:40.390 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:52:40.390 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:55:29.297 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:55:29.310 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:55:29.316 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 21:55:29.319 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:55:29.323 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:55:29.326 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:55:29.327 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 21:55:29.329 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:55:29.330 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:55:29.332 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:55:29.333 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:55:29.335 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:55:29.336 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:55:29.337 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:55:29.339 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:55:29.341 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:55:29.342 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:55:29.343 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:55:29.474 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 21:55:29.529 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:55:29.530 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:55:29.530 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:55:29.531 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:55:29.532 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:55:29.533 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:55:29.534 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:55:29.534 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:55:29.535 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:55:29.535 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 21:55:29.536 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:55:29.537 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 21:55:29.537 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 21:55:29.537 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:55:29.538 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:55:29.539 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:55:29.540 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:55:29.541 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:55:29.541 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 21:55:29.574 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 21:55:29.575 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:55:29.576 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:55:29.576 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:55:29.577 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 21:55:29.578 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:55:29.579 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:55:29.579 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:55:29.580 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:55:29.581 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 21:55:29.582 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:55:29.582 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:55:29.583 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:55:29.583 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:55:29.596 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:55:29.597 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:55:29.598 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:55:29.598 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:55:29.598 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:55:29.598 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:55:29.599 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:55:29.600 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:55:29.600 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:55:29.601 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:55:29.626 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 21:55:29.627 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:55:29.628 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:55:29.629 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:55:29.629 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:55:29.629 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:55:29.630 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:55:29.630 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:56:08.497 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:56:08.511 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:56:08.516 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 21:56:08.519 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:56:08.523 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:56:08.525 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:56:08.527 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 21:56:08.528 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:56:08.530 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:56:08.531 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 21:56:08.532 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:56:08.534 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 21:56:08.536 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:56:08.537 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:56:08.538 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 21:56:08.540 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 21:56:08.541 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 21:56:08.542 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 21:56:08.666 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 21:56:08.786 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.787 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.787 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.804 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 2
+2026-05-06 21:56:08.839 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.839 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.839 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.840 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 21:56:08.849 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.849 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.849 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.896 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: 5
+2026-05-06 21:56:08.896 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: 5
+2026-05-06 21:56:08.921 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.921 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.921 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.922 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 99
+2026-05-06 21:56:08.923 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no ad
+2026-05-06 21:56:08.931 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.931 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.931 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.936 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 11 ,
+2026-05-06 21:56:08.942 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.942 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.942 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.946 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 21:56:08.946 [main] INFO  c.senla.pas.controller.AdController - Объявление 10 успешно создано
+2026-05-06 21:56:08.953 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.953 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.953 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.963 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ошибка валидации: [FieldErrorDetail[field=price, message=Цена объявления не может быть отрицательной], FieldErrorDetail[field=title, message=Название объявления не может быть пустым], FieldErrorDetail[field=category, message=Категория объявления не может быть пустой], FieldErrorDetail[field=description, message=Описание объявления не может быть пустым]]
+2026-05-06 21:56:08.972 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.972 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.972 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.975 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=20
+2026-05-06 21:56:08.977 [main] ERROR c.s.p.e.GlobalExceptionHandler - Необработанное исключение: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getAdsWithFilters' method:
+    adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    DATE,
+    DESC,
+    0,
+    20
+);
+    -> at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+ - has following stubbing(s) with different arguments:
+    1. adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    20
+);
+      -> at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:50)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getAdsWithFilters' method:
+    adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    DATE,
+    DESC,
+    0,
+    20
+);
+    -> at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+ - has following stubbing(s) with different arguments:
+    1. adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    20
+);
+      -> at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:50)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at com.senla.pas.service.AdService.getAdsWithFilters(AdService.java:52)
+	at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2026-05-06 21:56:08.985 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.985 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.985 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.986 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 12
+2026-05-06 21:56:08.990 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:08.990 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:08.990 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:08.991 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 2
+2026-05-06 21:56:09.008 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:56:09.010 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:56:09.010 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:56:09.010 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:56:09.011 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:56:09.012 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:56:09.013 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:56:09.013 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 21:56:09.013 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 21:56:09.013 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 21:56:09.014 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:56:09.015 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 21:56:09.015 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 21:56:09.015 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 21:56:09.016 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:56:09.017 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 21:56:09.017 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 21:56:09.018 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 21:56:09.019 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 21:56:09.038 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.038 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.038 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.039 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 13 в чате 1
+2026-05-06 21:56:09.045 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.045 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.045 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.047 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 11
+2026-05-06 21:56:09.052 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.052 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.052 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.054 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 21:56:09.054 [main] INFO  c.s.pas.controller.MessageController - Сообщение 10 отправлено в чат 1
+2026-05-06 21:56:09.059 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.060 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.060 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.060 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 12 как прочитанного в чате 1
+2026-05-06 21:56:09.065 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.065 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.065 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.066 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 99 из чата 1
+2026-05-06 21:56:09.066 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no msg
+2026-05-06 21:56:09.071 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.071 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.071 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.071 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 21:56:09.086 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 21:56:09.087 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:56:09.088 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:56:09.088 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:56:09.088 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 21:56:09.089 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:56:09.089 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 21:56:09.090 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:56:09.091 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 21:56:09.092 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 21:56:09.092 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:56:09.093 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 21:56:09.094 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 21:56:09.094 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 21:56:09.107 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:56:09.107 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:56:09.108 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:56:09.108 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:56:09.108 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:56:09.108 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 21:56:09.109 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 21:56:09.110 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:56:09.110 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 21:56:09.110 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 21:56:09.124 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.124 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.124 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.125 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 2
+2026-05-06 21:56:09.129 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.129 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.130 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.130 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 21:56:09.134 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 21:56:09.134 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 21:56:09.134 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 21:56:09.135 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 21:56:09.148 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 21:56:09.149 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:56:09.150 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:56:09.150 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 21:56:09.151 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:56:09.151 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 21:56:09.153 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 21:56:09.153 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 22:08:07.877 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 22:08:08.007 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:08:08.007 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:08:08.008 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-05-06 22:08:08.034 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=20
+2026-05-06 22:08:08.038 [main] ERROR c.s.p.e.GlobalExceptionHandler - Необработанное исключение: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getAdsWithFilters' method:
+    adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    DATE,
+    DESC,
+    0,
+    20
+);
+    -> at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+ - has following stubbing(s) with different arguments:
+    1. adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    20
+);
+      -> at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:50)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getAdsWithFilters' method:
+    adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    DATE,
+    DESC,
+    0,
+    20
+);
+    -> at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+ - has following stubbing(s) with different arguments:
+    1. adService.getAdsWithFilters(
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    20
+);
+      -> at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:50)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at com.senla.pas.service.AdService.getAdsWithFilters(AdService.java:52)
+	at com.senla.pas.controller.AdController.getAds(AdController.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at com.senla.pas.controller.AdControllerTest.getAds_happy(AdControllerTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2026-05-06 22:09:40.203 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 22:09:40.336 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:40.336 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:40.337 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-05-06 22:09:40.363 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=20
+2026-05-06 22:09:55.173 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 22:09:55.186 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 22:09:55.192 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 22:09:55.194 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 22:09:55.198 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 22:09:55.200 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 22:09:55.202 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 22:09:55.203 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 22:09:55.205 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 22:09:55.206 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 22:09:55.208 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 22:09:55.209 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 22:09:55.211 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 22:09:55.212 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 22:09:55.214 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 22:09:55.215 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 22:09:55.217 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 22:09:55.218 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 22:09:55.338 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 22:09:55.453 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.453 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.454 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-05-06 22:09:55.471 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 2
+2026-05-06 22:09:55.512 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.512 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.512 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.513 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 22:09:55.521 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.521 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.521 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.558 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: 5
+2026-05-06 22:09:55.558 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: 5
+2026-05-06 22:09:55.583 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.583 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.583 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.584 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 99
+2026-05-06 22:09:55.585 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no ad
+2026-05-06 22:09:55.592 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.592 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.592 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.597 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 11 ,
+2026-05-06 22:09:55.603 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.603 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.603 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.607 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 22:09:55.607 [main] INFO  c.senla.pas.controller.AdController - Объявление 10 успешно создано
+2026-05-06 22:09:55.613 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.613 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.613 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.623 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ошибка валидации: [FieldErrorDetail[field=price, message=Цена объявления не может быть отрицательной], FieldErrorDetail[field=title, message=Название объявления не может быть пустым], FieldErrorDetail[field=category, message=Категория объявления не может быть пустой], FieldErrorDetail[field=description, message=Описание объявления не может быть пустым]]
+2026-05-06 22:09:55.632 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.632 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.632 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.634 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=20
+2026-05-06 22:09:55.641 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.642 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.642 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.642 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 12
+2026-05-06 22:09:55.647 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.647 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.647 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.648 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 2
+2026-05-06 22:09:55.665 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 22:09:55.666 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 22:09:55.666 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 22:09:55.667 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 22:09:55.668 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 22:09:55.669 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 22:09:55.669 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 22:09:55.669 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 22:09:55.670 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 22:09:55.670 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 22:09:55.671 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 22:09:55.672 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 22:09:55.672 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 22:09:55.673 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 22:09:55.673 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 22:09:55.674 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 22:09:55.675 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 22:09:55.676 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 22:09:55.676 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 22:09:55.697 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.698 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.698 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.699 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 13 в чате 1
+2026-05-06 22:09:55.704 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.704 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.704 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.706 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 11
+2026-05-06 22:09:55.711 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.711 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.711 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.713 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 22:09:55.713 [main] INFO  c.s.pas.controller.MessageController - Сообщение 10 отправлено в чат 1
+2026-05-06 22:09:55.717 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.718 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.718 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.718 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 12 как прочитанного в чате 1
+2026-05-06 22:09:55.723 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.723 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.723 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.723 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 99 из чата 1
+2026-05-06 22:09:55.724 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no msg
+2026-05-06 22:09:55.728 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.729 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.729 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.729 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 22:09:55.745 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 22:09:55.747 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 22:09:55.748 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 22:09:55.748 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 22:09:55.748 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 22:09:55.749 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 22:09:55.750 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 22:09:55.751 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 22:09:55.751 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 22:09:55.752 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 22:09:55.752 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 22:09:55.753 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 22:09:55.754 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 22:09:55.754 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 22:09:55.769 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 22:09:55.770 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 22:09:55.770 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 22:09:55.771 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 22:09:55.771 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 22:09:55.771 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 22:09:55.772 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 22:09:55.773 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 22:09:55.773 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 22:09:55.774 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 22:09:55.789 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.789 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.789 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.790 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 2
+2026-05-06 22:09:55.794 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.794 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.794 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.794 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 22:09:55.798 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:09:55.798 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:09:55.798 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:09:55.798 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 22:09:55.811 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 22:09:55.812 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 22:09:55.812 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 22:09:55.813 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 22:09:55.814 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 22:09:55.814 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 22:09:55.814 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 22:09:55.814 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 22:16:30.351 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 22:16:30.365 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 22:16:30.373 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: null
+2026-05-06 22:16:30.376 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 22:16:30.381 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 22:16:30.383 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 22:16:30.384 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: null
+2026-05-06 22:16:30.385 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 22:16:30.388 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 22:16:30.389 [main] INFO  c.s.pas.controller.UserController - Запрос пользователя по ID: 1
+2026-05-06 22:16:30.391 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 22:16:30.392 [main] INFO  c.s.pas.controller.UserController - Запрос профиля текущего пользователя
+2026-05-06 22:16:30.394 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 22:16:30.395 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 22:16:30.397 [main] INFO  c.s.pas.controller.UserController - Запрос пользователей с фильтрацией по рейтингу
+2026-05-06 22:16:30.398 [main] INFO  c.s.pas.controller.UserController - Запрос на удаление пользователя: 10
+2026-05-06 22:16:30.399 [main] INFO  c.s.pas.controller.UserController - Запрос на обновление текущего пользователя
+2026-05-06 22:16:30.400 [main] INFO  c.s.pas.controller.UserController - Запрос всех пользователей
+2026-05-06 22:16:30.526 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-06 22:16:30.641 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.641 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.642 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-05-06 22:16:30.665 [main] INFO  c.s.pas.controller.PaymentController - Получение платежа по ID: 2
+2026-05-06 22:16:30.706 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.706 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.706 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.707 [main] INFO  c.s.pas.controller.PaymentController - Получение платежей текущего пользователя
+2026-05-06 22:16:30.714 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.714 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.714 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.750 [main] INFO  c.s.pas.controller.PaymentController - Запрос продвижения объявления: 5
+2026-05-06 22:16:30.751 [main] INFO  c.s.pas.controller.PaymentController - Продвижение создано для объявления: 5
+2026-05-06 22:16:30.776 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.776 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.776 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.777 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 99
+2026-05-06 22:16:30.778 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no ad
+2026-05-06 22:16:30.785 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.785 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.785 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.790 [main] INFO  c.senla.pas.controller.AdController - Запрос обновления объявления 11 ,
+2026-05-06 22:16:30.796 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.796 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.796 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.800 [main] INFO  c.senla.pas.controller.AdController - Запрос на создание нового объявления
+2026-05-06 22:16:30.800 [main] INFO  c.senla.pas.controller.AdController - Объявление 10 успешно создано
+2026-05-06 22:16:30.806 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.806 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.806 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.815 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ошибка валидации: [FieldErrorDetail[field=title, message=Название объявления не может быть пустым], FieldErrorDetail[field=description, message=Описание объявления не может быть пустым], FieldErrorDetail[field=category, message=Категория объявления не может быть пустой], FieldErrorDetail[field=price, message=Цена объявления не может быть отрицательной]]
+2026-05-06 22:16:30.823 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.824 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.824 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.826 [main] INFO  c.senla.pas.controller.AdController - Запрос объявлений: category=null, search=null, page=0, size=20
+2026-05-06 22:16:30.831 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.831 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.831 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.832 [main] INFO  c.senla.pas.controller.AdController - Запрос удаления объявления, 12
+2026-05-06 22:16:30.836 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.836 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.836 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.837 [main] INFO  c.senla.pas.controller.AdController - Запрос объявления: 2
+2026-05-06 22:16:30.854 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 22:16:30.855 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 22:16:30.855 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 22:16:30.856 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 22:16:30.857 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 22:16:30.858 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 22:16:30.858 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 22:16:30.858 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3 успешно отработал. ID: null
+2026-05-06 22:16:30.859 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления 2
+2026-05-06 22:16:30.859 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку 2 успешно отработал. ID: null
+2026-05-06 22:16:30.860 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 22:16:30.860 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку напрямую из объявления null
+2026-05-06 22:16:30.860 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку null успешно отработал. ID: null
+2026-05-06 22:16:30.861 [main] INFO  c.s.p.c.SaleHistoryController - Запрос на покупку из чата 3
+2026-05-06 22:16:30.862 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 22:16:30.862 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: 1
+2026-05-06 22:16:30.863 [main] INFO  c.s.p.c.SaleHistoryController - Получение покупок текущего пользователя
+2026-05-06 22:16:30.864 [main] INFO  c.s.p.c.SaleHistoryController - Получение продаж текущего пользователя
+2026-05-06 22:16:30.864 [main] INFO  c.s.p.c.SaleHistoryController - Получить историю покупки по ID: null
+2026-05-06 22:16:30.882 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.882 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.882 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.883 [main] INFO  c.s.pas.controller.MessageController - Запрос на удаление сообещения 13 в чате 1
+2026-05-06 22:16:30.888 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.888 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.888 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.890 [main] INFO  c.s.pas.controller.MessageController - Запрос на обновление сообщения 1 в чате 11
+2026-05-06 22:16:30.895 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.895 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.895 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.897 [main] INFO  c.s.pas.controller.MessageController - Запрос на отправку сообщения в чат 1
+2026-05-06 22:16:30.897 [main] INFO  c.s.pas.controller.MessageController - Сообщение 10 отправлено в чат 1
+2026-05-06 22:16:30.901 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.901 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.901 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.902 [main] INFO  c.s.pas.controller.MessageController - Запрос отметки сообщения 12 как прочитанного в чате 1
+2026-05-06 22:16:30.906 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.906 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.906 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.907 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщения 99 из чата 1
+2026-05-06 22:16:30.907 [main] ERROR c.s.p.e.GlobalExceptionHandler - Ресурс не найден: no msg
+2026-05-06 22:16:30.911 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.911 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.911 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.912 [main] INFO  c.s.pas.controller.MessageController - Запрос на получение сообщений из чата: 1
+2026-05-06 22:16:30.925 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария null к посту null
+2026-05-06 22:16:30.926 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 22:16:30.926 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 22:16:30.927 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 22:16:30.927 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария null в объявлении null
+2026-05-06 22:16:30.928 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 22:16:30.929 [main] INFO  c.s.pas.controller.CommentController - Запрос на изменение комментария 4 к посту 3
+2026-05-06 22:16:30.929 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 22:16:30.930 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста 1
+2026-05-06 22:16:30.930 [main] INFO  c.s.pas.controller.CommentController - Запрос на получение комментариев поста null
+2026-05-06 22:16:30.931 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 22:16:30.932 [main] INFO  c.s.pas.controller.CommentController - Запрос на удаление комментария 5 в объявлении 7
+2026-05-06 22:16:30.932 [main] INFO  c.s.pas.controller.CommentController - Запрос на отправку комментария к посту 2
+2026-05-06 22:16:30.932 [main] INFO  c.s.pas.controller.CommentController - Комментарий null к посту 2 успешно отправлен
+2026-05-06 22:16:30.946 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 22:16:30.946 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 22:16:30.948 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 22:16:30.948 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 22:16:30.948 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 22:16:30.948 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно вошел: null
+2026-05-06 22:16:30.950 [main] INFO  c.s.pas.controller.AuthController - Запрос на вход пользователя: null
+2026-05-06 22:16:30.951 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 22:16:30.951 [main] INFO  c.s.pas.controller.AuthController - Пользователь успешно зарегистрирован: null
+2026-05-06 22:16:30.951 [main] INFO  c.s.pas.controller.AuthController - Запрос на регистрацию пользователя: null
+2026-05-06 22:16:30.965 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.965 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.965 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.966 [main] INFO  c.s.pas.controller.ChatController - Запрос чата по ID: 2
+2026-05-06 22:16:30.970 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.970 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.970 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.971 [main] INFO  c.s.pas.controller.ChatController - Запрос всех чатов текущего пользователя
+2026-05-06 22:16:30.975 [main] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-05-06 22:16:30.975 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-05-06 22:16:30.975 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-05-06 22:16:30.976 [main] INFO  c.s.pas.controller.ChatController - Получение или создания чата
+2026-05-06 22:16:30.988 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя null
+2026-05-06 22:16:30.989 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 22:16:30.990 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 22:16:30.991 [main] INFO  c.s.pas.controller.RatingController - Запрос на получение отзывов пользователя 1
+2026-05-06 22:16:30.991 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 22:16:30.991 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 22:16:30.992 [main] INFO  c.s.pas.controller.RatingController - Запрос на добавление рейтинга пользователю 2
+2026-05-06 22:16:30.992 [main] INFO  c.s.pas.controller.RatingController - Отзыв null успешно добавлен пользователю 2
+2026-05-06 22:16:31.055 [main] INFO  c.senla.pas.service.MessageService - Сообщение 6 в чате 11 удалено пользователем 2
+2026-05-06 22:16:31.057 [main] INFO  c.senla.pas.service.MessageService - Сообщение 7 в чате 8 прочитано пользователем 3
+2026-05-06 22:16:31.062 [main] INFO  c.senla.pas.service.MessageService - Обновление сообщения 1 в чате 10 пользователем 2
+2026-05-06 22:16:31.064 [main] INFO  c.senla.pas.service.MessageService - Получение сообщения по id: 1
+2026-05-06 22:16:31.067 [main] INFO  c.senla.pas.service.MessageService - Получение сообщений из чата 4
+2026-05-06 22:16:31.074 [main] INFO  c.senla.pas.service.MessageService - Отправка сообщения null в чат 4 пользователем 2
+2026-05-06 22:16:31.101 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 1
+2026-05-06 22:16:31.102 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 успешно удалён
+2026-05-06 22:16:31.103 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 22:16:31.104 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 22:16:31.109 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 22:16:31.110 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: null
+2026-05-06 22:16:31.111 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 22:16:31.112 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 22:16:31.113 [main] INFO  com.senla.pas.service.UserService - Получение профиля пользователя: 2
+2026-05-06 22:16:31.115 [main] INFO  com.senla.pas.service.UserService - Получение пользователя по ID: 5
+2026-05-06 22:16:31.117 [main] INFO  com.senla.pas.service.UserService - Пользователь 1 обновлен
+2026-05-06 22:16:31.117 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 22:16:31.118 [main] INFO  com.senla.pas.service.UserService - Получение пользователей отфильтрованных по рейтингу
+2026-05-06 22:16:31.119 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: null
+2026-05-06 22:16:31.119 [main] INFO  com.senla.pas.service.UserService - Получение всех пользователей
+2026-05-06 22:16:31.120 [main] INFO  com.senla.pas.service.UserService - Удаление пользователя: 2
+2026-05-06 22:16:31.146 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 22:16:31.147 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя null
+2026-05-06 22:16:31.148 [main] INFO  com.senla.pas.service.RatingService - Получение отзывов пользователя 1
+2026-05-06 22:16:31.149 [main] INFO  com.senla.pas.service.RatingService - Обновлён средний рейтинг пользователя 5: 4.5
+2026-05-06 22:16:31.149 [main] INFO  com.senla.pas.service.RatingService - Новый отзыв null от пользователя 2 к пользователю 5. Рейтинг: 4
+2026-05-06 22:16:31.176 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: null
+2026-05-06 22:16:31.177 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.179 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 22:16:31.180 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.181 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 22:16:31.182 [main] INFO  com.senla.pas.service.AdService - Объявление 7 обновлено
+2026-05-06 22:16:31.184 [main] INFO  com.senla.pas.service.AdService - Получение своих объявленией пользователем с ID: 5
+2026-05-06 22:16:31.184 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: null 
+2026-05-06 22:16:31.185 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.185 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.186 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.186 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.186 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.187 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.187 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.187 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.187 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.187 [main] INFO  com.senla.pas.service.AdService - Получение отфильтрованных объявлений
+2026-05-06 22:16:31.188 [main] INFO  com.senla.pas.service.AdService - Объявление 2 успешно удалено
+2026-05-06 22:16:31.189 [main] INFO  com.senla.pas.service.AdService - Создано объявление 100. Пользователь 1
+2026-05-06 22:16:31.190 [main] INFO  com.senla.pas.service.AdService - Создано объявление null. Пользователь 1
+2026-05-06 22:16:31.190 [main] INFO  com.senla.pas.service.AdService - Получение объявления с ID: 1
+2026-05-06 22:16:31.192 [main] INFO  com.senla.pas.service.AdService - Получение объявлений пользователя с ID: 1 
+2026-05-06 22:16:31.208 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления null покупателем 3
+2026-05-06 22:16:31.208 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 22:16:31.210 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 22:16:31.210 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 22:16:31.211 [main] INFO  com.senla.pas.service.ChatService - Получение или создание чата для объявления 9 покупателем 3
+2026-05-06 22:16:31.212 [main] INFO  com.senla.pas.service.ChatService - Найден существующий чат: null
+2026-05-06 22:16:31.212 [main] INFO  com.senla.pas.service.ChatService - Получение чата 5 пользователем 1
+2026-05-06 22:16:31.213 [main] INFO  com.senla.pas.service.ChatService - Получение чата null пользователем 1
+2026-05-06 22:16:31.214 [main] INFO  com.senla.pas.service.ChatService - Получение чатов пользователя: 2
+2026-05-06 22:16:31.238 [main] INFO  c.senla.pas.service.CommentService - Комментарий 10 объявления 5 удален пользователем 2
+2026-05-06 22:16:31.239 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления null
+2026-05-06 22:16:31.240 [main] INFO  c.senla.pas.service.CommentService - Комментарий 3 объявления 100 обновлен пользователем 2
+2026-05-06 22:16:31.241 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 22:16:31.242 [main] INFO  c.senla.pas.service.CommentService - Получение комментариев объявления 1
+2026-05-06 22:16:31.243 [main] INFO  c.senla.pas.service.CommentService - Добавлен комментарий null к объявлению 7, пользователем 2
+2026-05-06 22:16:31.268 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 22:16:31.270 [main] INFO  c.s.pas.service.SaleHistoryService - Покупка через чат 5. Объявление: 8, покупатель: 2, цена: 90
+2026-05-06 22:16:31.272 [main] INFO  c.s.pas.service.SaleHistoryService - Прямая покупка. Объявление: 8, покупатель: 2, цена: 100
+2026-05-06 22:16:31.272 [main] INFO  c.s.pas.service.SaleHistoryService - Получена запись о продаже 10 пользователем 2
+2026-05-06 22:16:31.274 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 22:16:31.275 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 22:16:31.276 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 22:16:31.277 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории покупок пользователя: 1
+2026-05-06 22:16:31.278 [main] INFO  c.s.pas.service.SaleHistoryService - Получение истории продаж пользователя: 1
+2026-05-06 22:16:31.306 [main] INFO  c.senla.pas.service.PaymentService - Создан платёж для объявления 10 пользователем 1. Тариф: DAY, срок: 1 дней
+2026-05-06 22:16:31.307 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 22:16:31.309 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 22:16:31.310 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 22:16:31.310 [main] INFO  c.senla.pas.service.PaymentService - Получение активного продвижения объявления 3
+2026-05-06 22:16:31.312 [main] INFO  c.senla.pas.service.PaymentService - Получение собственных продвижений пользователем: 4
+2026-05-06 22:16:31.313 [main] INFO  c.senla.pas.service.PaymentService - Получение всех продвижений объявления: 3
+2026-05-06 22:16:31.314 [main] INFO  c.senla.pas.service.PaymentService - Получение продвижения по ID: 9
