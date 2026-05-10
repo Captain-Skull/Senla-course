@@ -7,9 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.http.converter.ResourceHttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.nio.charset.StandardCharsets;
 
 import java.util.List;
 
@@ -30,12 +35,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
         MappingJackson2HttpMessageConverter jsonConverter = new MappingJackson2HttpMessageConverter();
         jsonConverter.setObjectMapper(objectMapper);
         converters.add(jsonConverter);
+
+        converters.add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
+        converters.add(new ByteArrayHttpMessageConverter());
+        converters.add(new ResourceHttpMessageConverter());
     }
 
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer
                 .favorParameter(false)
-                .defaultContentType(MediaType.APPLICATION_JSON);
+                .defaultContentType(MediaType.ALL);
     }
 }
