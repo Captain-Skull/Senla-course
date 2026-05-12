@@ -282,19 +282,3 @@ mvn -Dit.use.testcontainers=false \
     -Dtest.db.password=pas_password \
     verify
 ```
-
-## 12. Полезные команды
-
-```bash
-# Полный запуск среды
-docker compose up --build -d
-
-# Логи приложения
-docker compose logs -f app
-
-# Полный прогон тестов
-mvn verify
-
-# Быстрый health-check
-curl http://localhost:8081/api/health
-```
