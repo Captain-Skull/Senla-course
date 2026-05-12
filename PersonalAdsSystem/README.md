@@ -186,26 +186,16 @@ mvn verify
 
 ### Интеграционные тесты и Testcontainers
 
-По умолчанию интеграционные тесты пытаются использовать Testcontainers:
+Интеграционные тесты всегда поднимают PostgreSQL через Testcontainers и применяют тестовый Liquibase changelog.
 
 ```bash
-mvn -Dit.use.testcontainers=true verify
+mvn verify
 ```
 
-Если Docker недоступен, тестовая конфигурация делает fallback на внешний PostgreSQL:
-
-- `test.db.url` (по умолчанию `jdbc:postgresql://localhost:5433/pas_db`)
-- `test.db.username` (по умолчанию `pas_user`)
-- `test.db.password` (по умолчанию `pas_password`)
-
-Пример принудительного запуска без Testcontainers:
+Если нужен быстрый запуск только unit-тестов:
 
 ```bash
-mvn -Dit.use.testcontainers=false \
-    -Dtest.db.url=jdbc:postgresql://localhost:5433/pas_db \
-    -Dtest.db.username=pas_user \
-    -Dtest.db.password=pas_password \
-    verify
+mvn test
 ```
 
 ## 9. Основные API маршруты

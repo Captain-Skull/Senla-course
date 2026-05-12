@@ -29,7 +29,7 @@ class UserControllerIntegrationTest extends BaseIntegrationTest {
     @DisplayName("GET /api/users — negative forbidden for non-admin")
     void getAllUsers_shouldReturnForbiddenForUser() throws Exception {
         mockMvc.perform(get("/api/users").with(authUser(1L, "owner", "USER")))
-                .andExpect(status().isOk());
+                .andExpect(status().isForbidden());
     }
 
     @Test
