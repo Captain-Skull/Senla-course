@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="test-data-cleanup" author="George" context="test">
+        <sql>
+            TRUNCATE TABLE messages, comments, payments, ratings, sales_history, chats, ads, user_roles, users RESTART IDENTITY CASCADE;
+        </sql>
+    </changeSet>
+
+    <changeSet id="test-data-users" author="George" context="test">
+        <insert tableName="users">
+            <column name="id" value="1"/>
+            <column name="username" value="owner"/>
+            <column name="email" value="owner@test.com"/>
+            <column name="password" value="$2a$10$xxx"/>
+            <column name="about_me" value="Owner user for integration tests"/>
+            <column name="average_rating" value="4.5"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="2"/>
+            <column name="username" value="other"/>
+            <column name="email" value="other@test.com"/>
+            <column name="password" value="$2a$10$xxx"/>
+            <column name="about_me" value="Other user for integration tests"/>
+            <column name="average_rating" value="3.0"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="3"/>
+            <column name="username" value="admin"/>
+            <column name="email" value="admin@test.com"/>
+            <column name="password" value="$2a$10$xxx"/>
+            <column name="about_me" value="Admin user for integration tests"/>
+            <column name="average_rating" value="0.0"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-user-roles" author="George" context="test">
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/>
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="3"/>
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-ads" author="test" context="test">
+        <insert tableName="ads">
+            <column name="id" value="1"/>
+            <column name="user_id" value="1"/>
+            <column name="category" value="ELECTRONICS"/>
+            <column name="title" value="iPhone 13"/>
+            <column name="description" value="Хороший телефон"/>
+            <column name="price" value="60000"/>
+            <column name="is_active" value="true"/>
+            <column name="is_premium" value="false"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+        <insert tableName="ads">
+            <column name="id" value="2"/>
+            <column name="user_id" value="1"/>
+            <column name="category" value="TRANSPORT"/>
+            <column name="title" value="Toyota Camry"/>
+            <column name="description" value="Хорошая машина"/>
+            <column name="price" value="1500000"/>
+            <column name="is_active" value="true"/>
+            <column name="is_premium" value="true"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+        <insert tableName="ads">
+            <column name="id" value="3"/>
+            <column name="user_id" value="2"/>
+            <column name="category" value="ELECTRONICS"/>
+            <column name="title" value="Samsung TV"/>
+            <column name="description" value="Большой телевизор"/>
+            <column name="price" value="80000"/>
+            <column name="is_active" value="true"/>
+            <column name="is_premium" value="false"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-comments" author="George" context="test">
+        <insert tableName="comments">
+            <column name="id" value="1"/>
+            <column name="user_id" value="2"/>
+            <column name="ad_id" value="1"/>
+            <column name="content" value="Отличное объявление"/>
+            <column name="send_at" valueDate="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-chats" author="George" context="test">
+        <insert tableName="chats">
+            <column name="id" value="1"/>
+            <column name="ad_id" value="1"/>
+            <column name="buyer_id" value="2"/>
+            <column name="seller_id" value="1"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-messages" author="George" context="test">
+        <insert tableName="messages">
+            <column name="id" value="1"/>
+            <column name="chat_id" value="1"/>
+            <column name="sender_id" value="2"/>
+            <column name="content" value="Здравствуйте, объявление актуально?"/>
+            <column name="send_at" valueDate="now()"/>
+            <column name="is_read" valueBoolean="false"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-payments" author="George" context="test">
+        <insert tableName="payments">
+            <column name="id" value="1"/>
+            <column name="ad_id" value="2"/>
+            <column name="user_id" value="1"/>
+            <column name="plan" value="WEEK"/>
+            <column name="amount" value="500"/>
+            <column name="confirmed_at" valueDate="now()"/>
+            <column name="expire_at" valueComputed="NOW() + INTERVAL '7 days'"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-ratings" author="George" context="test">
+        <insert tableName="ratings">
+            <column name="id" value="1"/>
+            <column name="recipient_id" value="1"/>
+            <column name="reviewer_id" value="2"/>
+            <column name="rating" value="4"/>
+            <column name="created_at" valueDate="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-sales" author="George" context="test">
+        <insert tableName="sales_history">
+            <column name="id" value="1"/>
+            <column name="ad_id" value="3"/>
+            <column name="ad_title" value="Samsung TV"/>
+            <column name="seller_id" value="2"/>
+            <column name="buyer_id" value="1"/>
+            <column name="price" value="80000"/>
+            <column name="sold_at" valueDate="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-data-sequences" author="George" context="test">
+        <sql>SELECT setval(pg_get_serial_sequence('users', 'id'), COALESCE((SELECT MAX(id) FROM users), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('ads', 'id'), COALESCE((SELECT MAX(id) FROM ads), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('comments', 'id'), COALESCE((SELECT MAX(id) FROM comments), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('chats', 'id'), COALESCE((SELECT MAX(id) FROM chats), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('messages', 'id'), COALESCE((SELECT MAX(id) FROM messages), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('payments', 'id'), COALESCE((SELECT MAX(id) FROM payments), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('ratings', 'id'), COALESCE((SELECT MAX(id) FROM ratings), 1), true);</sql>
+        <sql>SELECT setval(pg_get_serial_sequence('sales_history', 'id'), COALESCE((SELECT MAX(id) FROM sales_history), 1), true);</sql>
+    </changeSet>
+
+</databaseChangeLog>
