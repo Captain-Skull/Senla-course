@@ -112,10 +112,6 @@
         </insert>
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_CREATE')"/>
-        </insert>
-        <insert tableName="role_privileges">
-            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
             <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_DELETE')"/>
         </insert>
 
@@ -222,10 +218,6 @@
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
             <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_UPDATE')"/>
-        </insert>
-        <insert tableName="role_privileges">
-            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_CREATE')"/>
         </insert>
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
