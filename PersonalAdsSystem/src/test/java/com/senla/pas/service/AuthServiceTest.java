@@ -8,6 +8,7 @@ import com.senla.pas.dto.response.AuthResponse;
 import com.senla.pas.dto.response.UserResponse;
 import com.senla.pas.entity.Role;
 import com.senla.pas.entity.User;
+import com.senla.pas.exception.ForbiddenException;
 import com.senla.pas.exception.PasException;
 import com.senla.pas.exception.ResourceAlreadyExistsException;
 import com.senla.pas.mapper.UserMapper;
@@ -47,8 +48,9 @@ public class AuthServiceTest {
     @InjectMocks
     private AuthService authService;
 
+    // ==================== registerUser ====================
     @Test
-    void register_positive() {
+    void registerUser_positive() {
         RegisterRequest request = new RegisterRequest("john", "john@mail.com", "secret123");
         Role role = new Role();
         role.setName("ROLE_USER");
@@ -67,7 +69,7 @@ public class AuthServiceTest {
         when(jwtTokenProvider.generateToken(authentication, 55L)).thenReturn("token");
         when(userMapper.toResponse(any(User.class))).thenReturn(userResponse);
 
-        AuthResponse result = authService.register(request);
+        AuthResponse result = authService.registerUser(request);
 
         assertEquals("token", result.getAccessToken());
         assertSame(userResponse, result.getUser());
@@ -77,21 +79,39 @@ public class AuthServiceTest {
     }
 
     @Test
-    void register_negative_usernameExists() {
+    void registerUser_negative_usernameExists() {
         when(userDao.existsByUsername("john")).thenReturn(true);
         assertThrows(ResourceAlreadyExistsException.class,
-                () -> authService.register(new RegisterRequest("john", "e@mail.com", "pwd")));
+                () -> authService.registerUser(new RegisterRequest("john", "e@mail.com", "pwd")));
     }
 
     @Test
-    void register_npeSafety_nullFields() {
+    void registerUser_negative_emailExists() {
+        when(userDao.existsByUsername("john")).thenReturn(false);
+        when(userDao.existsByEmail("john@mail.com")).thenReturn(true);
+        assertThrows(ResourceAlreadyExistsException.class,
+                () -> authService.registerUser(new RegisterRequest("john", "john@mail.com", "pwd")));
+    }
+
+    @Test
+    void registerUser_negative_roleNotFound() {
+        when(userDao.existsByUsername("john")).thenReturn(false);
+        when(userDao.existsByEmail("john@mail.com")).thenReturn(false);
+        when(roleDao.findByName("ROLE_USER")).thenReturn(Optional.empty());
+        assertThrows(PasException.class,
+                () -> authService.registerUser(new RegisterRequest("john", "john@mail.com", "pwd")));
+    }
+
+    @Test
+    void registerUser_npeSafety_nullFields() {
         RegisterRequest request = new RegisterRequest(null, null, null);
         when(userDao.existsByUsername(null)).thenReturn(false);
         when(userDao.existsByEmail(null)).thenReturn(false);
         when(roleDao.findByName("ROLE_USER")).thenReturn(Optional.empty());
-        assertThrows(PasException.class, () -> authService.register(request));
+        assertThrows(PasException.class, () -> authService.registerUser(request));
     }
 
+    // ==================== login ====================
     @Test
     void login_positive() {
         LoginRequest request = new LoginRequest("john", "pwd");
@@ -118,10 +138,80 @@ public class AuthServiceTest {
     }
 
     @Test
+    void login_negative_invalidCredentials() {
+        when(authenticationManager.authenticate(any())).thenThrow(new IllegalArgumentException("Bad credentials"));
+        assertThrows(IllegalArgumentException.class, () -> authService.login(new LoginRequest("john", "wrong")));
+    }
+
+    @Test
     void login_npeSafety_nullUsernameOrEmail() {
         when(authenticationManager.authenticate(any())).thenReturn(mock(Authentication.class));
         when(userDao.findByUsernameOrEmail(null)).thenReturn(Optional.empty());
         assertThrows(PasException.class, () -> authService.login(new LoginRequest(null, "pwd")));
         verify(userDao).findByUsernameOrEmail(eq(null));
+    }
+
+    // ==================== registerAdmin ====================
+    @Test
+    void registerAdmin_positive() {
+        RegisterRequest request = new RegisterRequest("newadmin", "newadmin@mail.com", "secret456");
+        Role adminRole = new Role();
+        adminRole.setName("ROLE_ADMIN");
+        Authentication authentication = mock(Authentication.class);
+        UserResponse userResponse = new UserResponse();
+        
+        when(userDao.existsByUsername("newadmin")).thenReturn(false);
+        when(userDao.existsByEmail("newadmin@mail.com")).thenReturn(false);
+        when(roleDao.findByName("ROLE_ADMIN")).thenReturn(Optional.of(adminRole));
+        when(passwordEncoder.encode("secret456")).thenReturn("encoded_admin");
+        doAnswer(invocation -> {
+            User u = invocation.getArgument(0);
+            u.setId(100L);
+            return null;
+        }).when(userDao).save(any(User.class));
+        when(authenticationManager.authenticate(any())).thenReturn(authentication);
+        when(jwtTokenProvider.generateToken(authentication, 100L)).thenReturn("admin_token");
+        when(userMapper.toResponse(any(User.class))).thenReturn(userResponse);
+
+        AuthResponse result = authService.registerAdmin(request);
+
+        assertEquals("admin_token", result.getAccessToken());
+        assertSame(userResponse, result.getUser());
+        ArgumentCaptor<User> captor = ArgumentCaptor.forClass(User.class);
+        verify(userDao).save(captor.capture());
+        assertEquals("encoded_admin", captor.getValue().getPassword());
+    }
+
+    @Test
+    void registerAdmin_negative_usernameExists() {
+        when(userDao.existsByUsername("existing")).thenReturn(true);
+        assertThrows(ResourceAlreadyExistsException.class,
+                () -> authService.registerAdmin(new RegisterRequest("existing", "e@mail.com", "pwd")));
+    }
+
+    @Test
+    void registerAdmin_negative_emailExists() {
+        when(userDao.existsByUsername("newadmin")).thenReturn(false);
+        when(userDao.existsByEmail("exist@mail.com")).thenReturn(true);
+        assertThrows(ResourceAlreadyExistsException.class,
+                () -> authService.registerAdmin(new RegisterRequest("newadmin", "exist@mail.com", "pwd")));
+    }
+
+    @Test
+    void registerAdmin_negative_roleNotFound() {
+        RegisterRequest request = new RegisterRequest("newadmin", "newadmin@mail.com", "pwd");
+        when(userDao.existsByUsername("newadmin")).thenReturn(false);
+        when(userDao.existsByEmail("newadmin@mail.com")).thenReturn(false);
+        when(roleDao.findByName("ROLE_ADMIN")).thenReturn(Optional.empty());
+        assertThrows(PasException.class, () -> authService.registerAdmin(request));
+    }
+
+    @Test
+    void registerAdmin_npeSafety_nullFields() {
+        RegisterRequest request = new RegisterRequest(null, null, null);
+        when(userDao.existsByUsername(null)).thenReturn(false);
+        when(userDao.existsByEmail(null)).thenReturn(false);
+        when(roleDao.findByName("ROLE_ADMIN")).thenReturn(Optional.empty());
+        assertThrows(PasException.class, () -> authService.registerAdmin(request));
     }
 }

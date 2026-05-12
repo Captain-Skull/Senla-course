@@ -34,7 +34,7 @@ public class AuthController {
     @Operation(summary = "Регистрация пользователя")
     public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
         logger.info("Запрос на регистрацию пользователя: {}", request.getUsername());
-        AuthResponse response = authService.register(request);
+        AuthResponse response = authService.registerUser(request);
         logger.info("Пользователь успешно зарегистрирован: {}", request.getUsername());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -46,5 +46,14 @@ public class AuthController {
         AuthResponse response = authService.login(request);
         logger.info("Пользователь успешно вошел: {}", request.getUsernameOrEmail());
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/register/admin")
+    @Operation(summary = "Регистрация администратора")
+    public ResponseEntity<AuthResponse> registerAdmin(@Valid @RequestBody RegisterRequest request) {
+        logger.info("Запрос на регистрацию администратора: {}", request.getUsername());
+        AuthResponse response = authService.registerAdmin(request);
+        logger.info("Администратор успешно зарегистрирован: {}", request.getUsername());
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

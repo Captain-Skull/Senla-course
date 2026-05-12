@@ -3,6 +3,7 @@ package com.senla.pas.controller;
 import com.senla.pas.dto.request.LoginRequest;
 import com.senla.pas.dto.request.RegisterRequest;
 import com.senla.pas.dto.response.AuthResponse;
+import com.senla.pas.exception.ForbiddenException;
 import com.senla.pas.service.AuthService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,32 +25,69 @@ class AuthControllerTest {
     private AuthController authController;
 
     @Test
-    void register_positive() {
+    void registerUser_positive() {
         RegisterRequest request = new RegisterRequest();
         AuthResponse response = new AuthResponse();
-        when(authService.register(request)).thenReturn(response);
+        when(authService.registerUser(request)).thenReturn(response);
 
         ResponseEntity<AuthResponse> result = authController.register(request);
 
         assertEquals(HttpStatus.CREATED, result.getStatusCode());
         assertSame(response, result.getBody());
-        verify(authService).register(request);
+        verify(authService).registerUser(request);
     }
 
     @Test
-    void register_negative_serviceThrows() {
+    void registerUser_negative_serviceThrows() {
         RegisterRequest request = new RegisterRequest();
-        when(authService.register(request)).thenThrow(new IllegalStateException("fail"));
+        when(authService.registerUser(request)).thenThrow(new IllegalStateException("fail"));
 
         assertThrows(IllegalStateException.class, () -> authController.register(request));
     }
 
     @Test
-    void register_npeSafety_nullFields() {
+    void registerUser_npeSafety_nullFields() {
         RegisterRequest request = new RegisterRequest();
-        when(authService.register(request)).thenReturn(new AuthResponse());
+        when(authService.registerUser(request)).thenReturn(new AuthResponse());
 
         assertDoesNotThrow(() -> authController.register(request));
+    }
+
+    @Test
+    void registerAdmin_positive() {
+        RegisterRequest request = new RegisterRequest();
+        AuthResponse response = new AuthResponse();
+        when(authService.registerAdmin(request)).thenReturn(response);
+
+        ResponseEntity<AuthResponse> result = authController.registerAdmin(request);
+
+        assertEquals(HttpStatus.CREATED, result.getStatusCode());
+        assertSame(response, result.getBody());
+        verify(authService).registerAdmin(request);
+    }
+
+    @Test
+    void registerAdmin_negative_serviceThrows() {
+        RegisterRequest request = new RegisterRequest();
+        when(authService.registerAdmin(request)).thenThrow(new IllegalStateException("fail"));
+
+        assertThrows(IllegalStateException.class, () -> authController.registerAdmin(request));
+    }
+
+    @Test
+    void registerAdmin_negative_notAllowed() {
+        RegisterRequest request = new RegisterRequest();
+        when(authService.registerAdmin(request)).thenThrow(new ForbiddenException("not allowed"));
+
+        assertThrows(ForbiddenException.class, () -> authController.registerAdmin(request));
+    }
+
+    @Test
+    void registerAdmin_npeSafety_nullFields() {
+        RegisterRequest request = new RegisterRequest();
+        when(authService.registerAdmin(request)).thenReturn(new AuthResponse());
+
+        assertDoesNotThrow(() -> authController.registerAdmin(request));
     }
 
     @Test

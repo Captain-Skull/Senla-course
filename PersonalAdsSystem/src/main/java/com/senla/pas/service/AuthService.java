@@ -8,10 +8,12 @@ import com.senla.pas.dto.response.AuthResponse;
 import com.senla.pas.dto.response.UserResponse;
 import com.senla.pas.entity.Role;
 import com.senla.pas.entity.User;
+import com.senla.pas.exception.ForbiddenException;
 import com.senla.pas.exception.PasException;
 import com.senla.pas.exception.ResourceAlreadyExistsException;
 import com.senla.pas.mapper.UserMapper;
 import com.senla.pas.security.JwtTokenProvider;
+import com.senla.pas.security.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -43,7 +45,34 @@ public class AuthService {
     }
 
     @Transactional
-    public AuthResponse register(RegisterRequest request) {
+    public AuthResponse registerUser(RegisterRequest request) {
+        return register(request, "ROLE_USER");
+    }
+
+    @Transactional
+    public AuthResponse registerAdmin(RegisterRequest request) {
+        return register(request, "ROLE_ADMIN");
+    }
+
+    @Transactional(readOnly = true)
+    public AuthResponse login(LoginRequest request) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getUsernameOrEmail(),
+                        request.getPassword()
+                )
+        );
+
+        User user = userDao.findByUsernameOrEmail(request.getUsernameOrEmail()).orElseThrow(() -> new PasException("Пользователь с таким именем или почтой не найден"));
+
+        String jwtToken = jwtTokenProvider.generateToken(authentication, user.getId());
+
+        UserResponse userResponse = userMapper.toResponse(user);
+
+        return new AuthResponse(jwtToken, userResponse);
+    }
+
+    private AuthResponse register(RegisterRequest request, String role) {
         if (userDao.existsByUsername(request.getUsername())) {
             throw new ResourceAlreadyExistsException(
                     "Пользователь с именем '" + request.getUsername() + "' уже существует"
@@ -56,8 +85,8 @@ public class AuthService {
             );
         }
 
-        Role userRole = roleDao.findByName("ROLE_USER")
-                .orElseThrow(() -> new PasException("Роль ROLE_USER не найдена"));
+        Role userRole = roleDao.findByName(role)
+                .orElseThrow(() -> new PasException("Роль не найдена: " + role));
 
         User user = new User(request.getUsername(), passwordEncoder.encode(request.getPassword()), request.getEmail());
 
@@ -74,24 +103,6 @@ public class AuthService {
         );
 
         String jwtToken = jwtTokenProvider.generateToken(authentication, user.getId());
-        UserResponse userResponse = userMapper.toResponse(user);
-
-        return new AuthResponse(jwtToken, userResponse);
-    }
-
-    @Transactional(readOnly = true)
-    public AuthResponse login(LoginRequest request) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getUsernameOrEmail(),
-                        request.getPassword()
-                )
-        );
-
-        User user = userDao.findByUsernameOrEmail(request.getUsernameOrEmail()).orElseThrow(() -> new PasException("Пользователь с таким именем или почтой не найден"));
-
-        String jwtToken = jwtTokenProvider.generateToken(authentication, user.getId());
-
         UserResponse userResponse = userMapper.toResponse(user);
 
         return new AuthResponse(jwtToken, userResponse);
