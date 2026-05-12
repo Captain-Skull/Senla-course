@@ -8,5 +8,6 @@
     <include file="db/changelog/changes/001-init.xml"/>
     <include file="db/changelog/changes/002-indexes.xml"/>
     <include file="db/changelog/changes/003-init-roles-and-privileges.xml" />
+    <include file="db/changelog/changes/004-seed-default-admin.xml" />
 
 </databaseChangeLog>

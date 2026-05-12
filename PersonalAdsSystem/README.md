@@ -165,6 +165,14 @@ mvn clean package
 
 - `target/personal-ads-system.war`
 
+### Дефолтный администратор
+
+После применения миграций создается базовый администратор:
+
+- username: `admin`
+- email: `admin@test.com`
+- password: `Admin123!`
+
 ## 8. Тестирование
 
 В проекте используется разделение:
@@ -198,33 +206,7 @@ mvn verify
 mvn test
 ```
 
-## 9. Основные API маршруты
-
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `GET /api/users/me`
-- `PUT /api/users/me`
-- `GET /api/ads`
-- `POST /api/ads`
-- `PUT /api/ads/{adId}`
-- `DELETE /api/ads/{adId}`
-- `GET /api/ads/{adId}/comments`
-- `POST /api/ads/{adId}/comments`
-- `GET /api/chats`
-- `POST /api/chats/ad/{adId}`
-- `GET /api/chats/{chatId}/messages`
-- `POST /api/chats/{chatId}/messages`
-- `PATCH /api/chats/{chatId}/messages/{messageId}/read`
-- `GET /api/payments/my`
-- `POST /api/payments`
-- `GET /api/sales/my-sales`
-- `GET /api/sales/my-purchases`
-- `POST /api/sales/ad/{adId}/buy`
-- `POST /api/sales/chat/{chatId}/buy`
-- `GET /api/docs/openapi.json`
-- `GET /api/docs/swagger-ui.html`
-
-## 10. Структура проекта (кратко)
+## 9. Структура проекта (кратко)
 
 ```text
 src/main/java/com/senla/pas
@@ -245,15 +227,15 @@ src/test/java
   integration/  # интеграционные тесты
 ```
 
-## 11. Частые проблемы и решения
+## 10. Частые проблемы и решения
 
-### 11.1 `JWT_SECRET` не задан
+### 10.1 `JWT_SECRET` не задан
 
 Симптом: ошибка старта security/jwt.
 
 Решение: задайте `JWT_SECRET` в `.env` или через `export`.
 
-### 11.2 Порт занят
+### 10.2 Порт занят
 
 - Приложение в Docker: `8081`
 - Локальный Cargo Tomcat: `8080`
@@ -261,7 +243,7 @@ src/test/java
 
 Проверьте/освободите порт или измените маппинг в `docker-compose.yaml`.
 
-### 11.3 Интеграционные тесты падают из-за Docker
+### 10.3 Интеграционные тесты падают из-за Docker
 
 Запустите verify без Testcontainers и укажите тестовую БД:
 

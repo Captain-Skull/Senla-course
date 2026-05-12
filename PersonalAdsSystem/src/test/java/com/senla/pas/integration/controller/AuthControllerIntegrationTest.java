@@ -67,4 +67,5 @@ class AuthControllerIntegrationTest extends BaseIntegrationTest {
                         .content(json(login)))
                 .andExpect(status().isUnauthorized());
     }
+
 }

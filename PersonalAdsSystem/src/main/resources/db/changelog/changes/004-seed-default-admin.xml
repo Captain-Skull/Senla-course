@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.26.xsd">
+
+    <changeSet id="004-seed-default-admin" author="George">
+        <sql>
+            INSERT INTO users (username, email, password, about_me, average_rating)
+            VALUES (
+                'admin',
+                'admin@test.com',
+                '$2a$10$2HkAMwlOxhj5lt96c2SzM.3vqSPteG3Aj3xSue/WS1.mzqvnQqq1y',
+                'Default administrator account',
+                0.0
+            );
+        </sql>
+
+        <sql>
+            INSERT INTO user_roles (user_id, role_id)
+            SELECT u.id, r.id
+            FROM users u
+            CROSS JOIN roles r
+            WHERE u.username = 'admin'
+              AND r.name = 'ROLE_ADMIN';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

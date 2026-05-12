@@ -30,15 +30,18 @@
             <column name="average_rating" value="3.0"/>
             <column name="created_at" valueDate="now()"/>
         </insert>
-        <insert tableName="users">
-            <column name="id" value="3"/>
-            <column name="username" value="admin"/>
-            <column name="email" value="admin@test.com"/>
-            <column name="password" value="$2a$10$xxx"/>
-            <column name="about_me" value="Admin user for integration tests"/>
-            <column name="average_rating" value="0.0"/>
-            <column name="created_at" valueDate="now()"/>
-        </insert>
+        <sql>
+            INSERT INTO users (id, username, email, password, about_me, average_rating, created_at)
+            VALUES (
+                3,
+                'admin',
+                'admin@test.com',
+                '$2a$10$2HkAMwlOxhj5lt96c2SzM.3vqSPteG3Aj3xSue/WS1.mzqvnQqq1y',
+                'Admin user for integration tests',
+                0.0,
+                now()
+            );
+        </sql>
     </changeSet>
 
     <changeSet id="test-data-user-roles" author="George" context="test">
