@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class PaymentController {
     }
 
     @GetMapping("/my")
+    @PreAuthorize("hasAuthority('PAYMENT_READ')")
     @Operation(summary = "Получить список моих платежей")
     public ResponseEntity<List<PaymentResponse>> getMyPayments() {
         logger.info("Получение платежей текущего пользователя");
@@ -36,6 +38,7 @@ public class PaymentController {
     }
 
     @GetMapping("/{paymentId}")
+    @PreAuthorize("hasAuthority('PAYMENT_READ')")
     @Operation(summary = "Получить платеж по ID")
     public ResponseEntity<PaymentResponse> getPaymentById(@PathVariable Long paymentId) {
         logger.info("Получение платежа по ID: {}", paymentId);
@@ -43,6 +46,7 @@ public class PaymentController {
     }
 
     @GetMapping("/ad/{adId}")
+    @PreAuthorize("hasAuthority('PAYMENT_READ')")
     @Operation(summary = "Получить список платежей объявления по ID")
     public ResponseEntity<List<PaymentResponse>> getPaymentsByAd(@PathVariable Long adId) {
         logger.info("Запрос платежей объявления: {}", adId);
@@ -50,6 +54,7 @@ public class PaymentController {
     }
 
     @GetMapping("/ad/{adId}/active")
+    @PreAuthorize("hasAuthority('PAYMENT_READ')")
     @Operation(summary = "Получить активный платеж объявления по ID")
     public ResponseEntity<PaymentResponse> getActivePayment(@PathVariable Long adId) {
         logger.info("Запрос активного продвижения объявления: {}", adId);
@@ -57,6 +62,7 @@ public class PaymentController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('PAYMENT_CREATE')")
     @Operation(summary = "Создать платеж")
     public ResponseEntity<PaymentResponse> createPayment(
             @Valid @RequestBody PaymentRequest request

@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +37,7 @@ public class AdController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADS_READ')")
     @Operation(summary = "Получить список отфильтрованных реклам")
     public ResponseEntity<List<AdResponse>> getAds(
             @RequestParam(required = false) AdCategory category,
@@ -55,6 +57,7 @@ public class AdController {
     }
 
     @GetMapping("/{adId}")
+    @PreAuthorize("hasAuthority('ADS_READ')")
     @Operation(summary = "Получить объявление по ID")
     public ResponseEntity<AdResponse> getAdById(@PathVariable Long adId) {
         logger.info("Запрос объявления: {}", adId);
@@ -62,6 +65,7 @@ public class AdController {
     }
 
     @GetMapping("my")
+    @PreAuthorize("hasAuthority('ADS_READ')")
     @Operation(summary = "Получить список моих объявлений")
     public ResponseEntity<List<AdResponse>> getMyAds() {
         logger.info("Запрос объявлений текущего пользователя");
@@ -69,6 +73,7 @@ public class AdController {
     }
 
     @GetMapping("/user/{userId}")
+    @PreAuthorize("hasAuthority('ADS_READ')")
     @Operation(summary = "Получить список объявлений пользователя по ID")
     public ResponseEntity<List<AdResponse>> getUserAds(@PathVariable Long userId) {
         logger.info("Запрос объявлений пользователя {}", userId);
@@ -76,6 +81,7 @@ public class AdController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADS_CREATE')")
     @Operation(summary = "Создать новое объявление")
     public ResponseEntity<AdResponse> createAd(@Valid @RequestBody CreateAdRequest request) {
         logger.info("Запрос на создание нового объявления");
@@ -85,6 +91,7 @@ public class AdController {
     }
 
     @PutMapping("/{adId}")
+    @PreAuthorize("hasAuthority('ADS_UPDATE')")
     @Operation(summary = "Обновить объявление по ID")
     public ResponseEntity<AdResponse> updateAd(@PathVariable Long adId, @Valid @RequestBody UpdateAdRequest request) {
         logger.info("Запрос обновления объявления {} ,", adId);
@@ -92,6 +99,7 @@ public class AdController {
     }
 
     @DeleteMapping("/{adId}")
+    @PreAuthorize("hasAuthority('ADS_DELETE')")
     @Operation(summary = "Удалить объявление по ID")
     public ResponseEntity<AdResponse> deleteAd(@PathVariable Long adId) {
         logger.info("Запрос удаления объявления, {}", adId);

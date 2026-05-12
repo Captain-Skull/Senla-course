@@ -8,16 +8,90 @@
     <changeSet id="003-init-roles-and-privileges" author="George">
 
         <insert tableName="privileges">
-            <column name="name" value="READ_PRIVILEGE"/>
+            <column name="name" value="USERS_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="name" value="WRITE_PRIVILEGE"/>
+            <column name="name" value="USERS_UPDATE"/>
         </insert>
         <insert tableName="privileges">
-            <column name="name" value="DELETE_PRIVILEGE"/>
+            <column name="name" value="USERS_DELETE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="ADS_READ"/>
         </insert>
         <insert tableName="privileges">
-            <column name="name" value="ADMIN_PRIVILEGE"/>
+            <column name="name" value="ADS_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="ADS_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="ADS_DELETE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="CHATS_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="CHATS_CREATE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="COMMENTS_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="COMMENTS_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="COMMENTS_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="COMMENTS_DELETE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="MESSAGES_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="MESSAGES_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="MESSAGES_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="MESSAGES_DELETE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="PAYMENT_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="PAYMENT_CREATE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="RATING_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="RATING_UPDATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="RATING_CREATE"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="RATING_DELETE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="SALE_READ"/>
+        </insert>
+        <insert tableName="privileges">
+            <column name="name" value="SALE_CREATE"/>
+        </insert>
+
+        <insert tableName="privileges">
+            <column name="name" value="REGISTER_ADMIN"/>
         </insert>
 
         <insert tableName="roles">
@@ -27,30 +101,235 @@
             <column name="name" value="ROLE_ADMIN"/>
         </insert>
 
+        <!-- USERS PRIVILEGES -->
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'READ_PRIVILEGE')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_READ')"/>
         </insert>
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'WRITE_PRIVILEGE')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'CHATS_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'CHATS_CREATE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'PAYMENT_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'PAYMENT_CREATE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'SALE_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_USER')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'SALE_CREATE')"/>
+        </insert>
+
+        <!-- ADMINS PRIVILEGES -->
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'USERS_DELETE')"/>
         </insert>
 
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'READ_PRIVILEGE')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_READ')"/>
         </insert>
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'WRITE_PRIVILEGE')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_UPDATE')"/>
         </insert>
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'DELETE_PRIVILEGE')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_CREATE')"/>
         </insert>
         <insert tableName="role_privileges">
             <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
-            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADMIN_PRIVILEGE')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'ADS_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'CHATS_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'CHATS_CREATE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'COMMENTS_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'MESSAGES_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'PAYMENT_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'PAYMENT_CREATE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_UPDATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_CREATE')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'RATING_DELETE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'SALE_READ')"/>
+        </insert>
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'SALE_CREATE')"/>
+        </insert>
+
+        <insert tableName="role_privileges">
+            <column name="role_id" valueComputed="(SELECT id FROM roles WHERE name = 'ROLE_ADMIN')"/>
+            <column name="privilege_id" valueComputed="(SELECT id FROM privileges WHERE name = 'REGISTER_ADMIN')"/>
         </insert>
 
     </changeSet>

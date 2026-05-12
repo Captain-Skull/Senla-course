@@ -80,10 +80,75 @@ public abstract class BaseIntegrationTest {
     }
 
     protected RequestPostProcessor authUser(Long id, String username, String... roles) {
-        List<SimpleGrantedAuthority> authorities = Arrays.stream(roles)
+        List<String> roleList = Arrays.stream(roles)
                 .map(role -> role.startsWith("ROLE_") ? role : "ROLE_" + role)
-                .map(SimpleGrantedAuthority::new)
                 .toList();
+        
+        List<SimpleGrantedAuthority> authorities = new java.util.ArrayList<>();
+        
+        roleList.forEach(role -> authorities.add(new SimpleGrantedAuthority(role)));
+        
+        roleList.forEach(role -> {
+            if ("ROLE_USER".equals(role)) {
+                authorities.addAll(Arrays.asList(
+                        new SimpleGrantedAuthority("USERS_READ"),
+                        new SimpleGrantedAuthority("USERS_UPDATE"),
+                        new SimpleGrantedAuthority("USERS_DELETE"),
+                        new SimpleGrantedAuthority("ADS_READ"),
+                        new SimpleGrantedAuthority("ADS_UPDATE"),
+                        new SimpleGrantedAuthority("ADS_CREATE"),
+                        new SimpleGrantedAuthority("ADS_DELETE"),
+                        new SimpleGrantedAuthority("CHATS_READ"),
+                        new SimpleGrantedAuthority("CHATS_CREATE"),
+                        new SimpleGrantedAuthority("COMMENTS_READ"),
+                        new SimpleGrantedAuthority("COMMENTS_UPDATE"),
+                        new SimpleGrantedAuthority("COMMENTS_CREATE"),
+                        new SimpleGrantedAuthority("COMMENTS_DELETE"),
+                        new SimpleGrantedAuthority("MESSAGES_READ"),
+                        new SimpleGrantedAuthority("MESSAGES_UPDATE"),
+                        new SimpleGrantedAuthority("MESSAGES_CREATE"),
+                        new SimpleGrantedAuthority("MESSAGES_DELETE"),
+                        new SimpleGrantedAuthority("PAYMENT_READ"),
+                        new SimpleGrantedAuthority("PAYMENT_CREATE"),
+                        new SimpleGrantedAuthority("RATING_READ"),
+                        new SimpleGrantedAuthority("RATING_UPDATE"),
+                        new SimpleGrantedAuthority("RATING_CREATE"),
+                        new SimpleGrantedAuthority("RATING_DELETE"),
+                        new SimpleGrantedAuthority("SALE_READ"),
+                        new SimpleGrantedAuthority("SALE_CREATE")
+                ));
+            } else if ("ROLE_ADMIN".equals(role)) {
+                authorities.addAll(Arrays.asList(
+                        new SimpleGrantedAuthority("USERS_READ"),
+                        new SimpleGrantedAuthority("USERS_UPDATE"),
+                        new SimpleGrantedAuthority("USERS_DELETE"),
+                        new SimpleGrantedAuthority("ADS_READ"),
+                        new SimpleGrantedAuthority("ADS_UPDATE"),
+                        new SimpleGrantedAuthority("ADS_CREATE"),
+                        new SimpleGrantedAuthority("ADS_DELETE"),
+                        new SimpleGrantedAuthority("CHATS_READ"),
+                        new SimpleGrantedAuthority("CHATS_CREATE"),
+                        new SimpleGrantedAuthority("COMMENTS_READ"),
+                        new SimpleGrantedAuthority("COMMENTS_UPDATE"),
+                        new SimpleGrantedAuthority("COMMENTS_CREATE"),
+                        new SimpleGrantedAuthority("COMMENTS_DELETE"),
+                        new SimpleGrantedAuthority("MESSAGES_READ"),
+                        new SimpleGrantedAuthority("MESSAGES_UPDATE"),
+                        new SimpleGrantedAuthority("MESSAGES_CREATE"),
+                        new SimpleGrantedAuthority("MESSAGES_DELETE"),
+                        new SimpleGrantedAuthority("PAYMENT_READ"),
+                        new SimpleGrantedAuthority("PAYMENT_CREATE"),
+                        new SimpleGrantedAuthority("RATING_READ"),
+                        new SimpleGrantedAuthority("RATING_UPDATE"),
+                        new SimpleGrantedAuthority("RATING_CREATE"),
+                        new SimpleGrantedAuthority("RATING_DELETE"),
+                        new SimpleGrantedAuthority("SALE_READ"),
+                        new SimpleGrantedAuthority("SALE_CREATE"),
+                        new SimpleGrantedAuthority("REGISTER_ADMIN")
+                ));
+            }
+        });
+        
         CustomUserDetails userDetails = new CustomUserDetails(id, username, "n/a", authorities);
         UsernamePasswordAuthenticationToken authentication =
                 new UsernamePasswordAuthenticationToken(userDetails, null, authorities);

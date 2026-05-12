@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class ChatController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('CHATS_READ')")
     @Operation(summary = "Получить список моих чатов")
     public ResponseEntity<List<ChatResponse>> getMyChats() {
         logger.info("Запрос всех чатов текущего пользователя");
@@ -33,6 +35,7 @@ public class ChatController {
     }
 
     @GetMapping("/{chatId}")
+    @PreAuthorize("hasAuthority('CHATS_READ')")
     @Operation(summary = "Получить чат по ID")
     public ResponseEntity<ChatResponse> getChatById(@PathVariable Long chatId) {
         logger.info("Запрос чата по ID: {}", chatId);
@@ -40,6 +43,7 @@ public class ChatController {
     }
 
     @PostMapping("/ad/{adId}")
+    @PreAuthorize("hasAuthority('CHATS_CREATE')")
     @Operation(summary = "Создать или открыть чат")
     public ResponseEntity<ChatResponse> getOrCreateChat(@PathVariable Long adId) {
         logger.info("Получение или создания чата");

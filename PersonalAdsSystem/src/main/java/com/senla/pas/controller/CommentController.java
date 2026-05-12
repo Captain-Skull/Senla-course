@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class CommentController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('COMMENTS_READ')")
     @Operation(summary = "Получить список комментариев объявления по ID")
     public ResponseEntity<List<CommentResponse>> getCommentsByAd(@PathVariable Long adId) {
         logger.info("Запрос на получение комментариев поста {}", adId);
@@ -36,6 +38,7 @@ public class CommentController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('COMMENTS_CREATE')")
     @Operation(summary = "Добавить комментарий к объявлению")
     public ResponseEntity<CommentResponse> addComment(@PathVariable Long adId, @RequestBody @Valid CommentRequest request) {
         logger.info("Запрос на отправку комментария к посту {}", adId);
@@ -45,6 +48,7 @@ public class CommentController {
     }
 
     @PutMapping("/{commentId}")
+    @PreAuthorize("hasAuthority('COMMENTS_UPDATE')")
     @Operation(summary = "Изменить комментарий")
     public ResponseEntity<CommentResponse> updateComment(@PathVariable Long adId, @PathVariable Long commentId, @RequestBody @Valid CommentRequest request) {
         logger.info("Запрос на изменение комментария {} к посту {}", commentId, adId);
@@ -52,6 +56,7 @@ public class CommentController {
     }
 
     @DeleteMapping("/{commentId}")
+    @PreAuthorize("hasAuthority('COMMENTS_DELETE')")
     @Operation(summary = "Удалить комментарий")
     public ResponseEntity<CommentResponse> deleteComment(@PathVariable Long adId, @PathVariable Long commentId) {
         logger.info("Запрос на удаление комментария {} в объявлении {}", adId, commentId);

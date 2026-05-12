@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class SaleHistoryController {
     }
 
     @GetMapping("/my-sales")
+    @PreAuthorize("hasAuthority('SALE_READ')")
     @Operation(summary = "Получить список моих продаж")
     public ResponseEntity<List<SaleHistoryResponse>> getMySales() {
         logger.info("Получение продаж текущего пользователя");
@@ -36,6 +38,7 @@ public class SaleHistoryController {
     }
 
     @GetMapping("/my-purchases")
+    @PreAuthorize("hasAuthority('SALE_READ')")
     @Operation(summary = "Получить список моих покупок")
     public ResponseEntity<List<SaleHistoryResponse>> getMyPurchases() {
         logger.info("Получение покупок текущего пользователя");
@@ -43,6 +46,7 @@ public class SaleHistoryController {
     }
 
     @GetMapping("/{saleId}")
+    @PreAuthorize("hasAuthority('SALE_READ')")
     @Operation(summary = "Получить истории о сделке по ID")
     public ResponseEntity<SaleHistoryResponse> getSaleById(@PathVariable Long saleId) {
         logger.info("Получить историю покупки по ID: {}", saleId);
@@ -50,6 +54,7 @@ public class SaleHistoryController {
     }
 
     @PostMapping("/ad/{adId}/buy")
+    @PreAuthorize("hasAuthority('SALE_CREATE')")
     @Operation(summary = "Купить напрямую из объявления")
     public ResponseEntity<SaleHistoryResponse> buyDirectly(@PathVariable Long adId) {
         logger.info("Запрос на покупку напрямую из объявления {}", adId);
@@ -59,6 +64,7 @@ public class SaleHistoryController {
     }
 
     @PostMapping("/chat/{chatId}/buy")
+    @PreAuthorize("hasAuthority('SALE_CREATE')")
     @Operation(summary = "Купить из чата с возможностью договорной цены")
     public ResponseEntity<SaleHistoryResponse> buyViaChat(@PathVariable Long chatId, @Valid @RequestBody SaleHistoryRequest request) {
         logger.info("Запрос на покупку из чата {}", chatId);

@@ -42,6 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
+    @PreAuthorize("hasAuthority('USERS_READ')")
     @Operation(summary = "Получить пользователя по ID")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long userId) {
         logger.info("Запрос пользователя по ID: {}", userId);
@@ -49,6 +50,7 @@ public class UserController {
     }
 
     @GetMapping("/me")
+    @PreAuthorize("hasAuthority('USERS_READ')")
     @Operation(summary = "Получить текущего пользователя")
     public ResponseEntity<UserResponse> getMyProfile() {
         logger.info("Запрос профиля текущего пользователя");
@@ -56,6 +58,7 @@ public class UserController {
     }
 
     @GetMapping("/filter")
+    @PreAuthorize("hasAuthority('USERS_READ')")
     @Operation(summary = "Получить список отфильтрованных пользователей")
     public ResponseEntity<List<UserResponse>> getUsersFilteredByRating(
             @RequestParam(defaultValue = "DESC") SortDirection direction,
@@ -67,6 +70,7 @@ public class UserController {
     }
 
     @PutMapping("/me")
+    @PreAuthorize("hasAuthority('USERS_UPDATE')")
     @Operation(summary = "Обновить мой профиль")
     public ResponseEntity<UserResponse> updateMyProfile(@Valid @RequestBody UpdateUserRequest request) {
         logger.info("Запрос на обновление текущего пользователя");
@@ -74,6 +78,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{userId}")
+    @PreAuthorize("hasAuthority('USERS_DELETE')")
     @Operation(summary = "Удалить профиль")
     public ResponseEntity<UserResponse> deleteUser(@PathVariable Long userId) {
         logger.info("Запрос на удаление пользователя: {}", userId);
