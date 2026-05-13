@@ -66,11 +66,27 @@ public class OpenApiSpecBuilder {
     private void applySecurityAndResponses(ObjectNode paths) {
         paths.fields().forEachRemaining(pathEntry -> {
             String path = pathEntry.getKey();
-            ObjectNode pathItem = (ObjectNode) pathEntry.getValue();
+            com.fasterxml.jackson.databind.JsonNode pathNode = pathEntry.getValue();
+            
+            if (!pathNode.isObject()) return;
+            
+            ObjectNode pathItem = (ObjectNode) pathNode;
 
             pathItem.fields().forEachRemaining(opEntry -> {
-                ObjectNode op = (ObjectNode) opEntry.getValue();
-                ObjectNode responses = op.putObject("responses");
+                String opName = opEntry.getKey();
+                com.fasterxml.jackson.databind.JsonNode opNode = opEntry.getValue();
+                
+                // Skip non-operation fields (like 'parameters', 'servers', etc.)
+                if (!opNode.isObject() || !isHttpMethod(opName)) return;
+                
+                ObjectNode op = (ObjectNode) opNode;
+                ObjectNode responses;
+                
+                if (op.has("responses") && op.get("responses").isObject()) {
+                    responses = (ObjectNode) op.get("responses");
+                } else {
+                    responses = op.putObject("responses");
+                }
 
                 boolean requiresAuth = !PUBLIC_PATHS.contains(path);
 
@@ -81,12 +97,22 @@ public class OpenApiSpecBuilder {
                     security.add(bearerAuth);
                     op.set("security", security);
 
-                    responses.set("401", ref("Unauthorized"));
+                    if (!responses.has("401")) {
+                        responses.set("401", ref("Unauthorized"));
+                    }
                 }
 
-                responses.set("500", ref("InternalServerError"));
+                if (!responses.has("500")) {
+                    responses.set("500", ref("InternalServerError"));
+                }
             });
         });
+    }
+    
+    private boolean isHttpMethod(String method) {
+        return method.equals("get") || method.equals("post") || method.equals("put") || 
+               method.equals("delete") || method.equals("patch") || method.equals("options") || 
+               method.equals("head");
     }
 
     private ObjectNode ref(String componentName) {
@@ -104,6 +130,17 @@ public class OpenApiSpecBuilder {
         add201(registerResponses, "AuthResponse");
         registerResponses.set("400", ref("BadRequest"));
         registerResponses.set("409", ref("Conflict"));
+
+        ObjectNode registerAdmin = paths.putObject("/api/auth/register/admin").putObject("post");
+        registerAdmin.put("summary", "Регистрация админа. Эндпоинт доступен только администратору");
+        registerAdmin.put("operationId", "registerAdmin");
+        addTag(registerAdmin, "Аутентификация");
+        addRequestBody(registerAdmin, "RegisterRequest");
+        ObjectNode registerAdminResponse = registerAdmin.putObject(("responses"));
+        add201(registerAdminResponse, "AuthResponse");
+        registerAdminResponse.set("400", ref("BadRequest"));
+        registerAdminResponse.set("403", ref("Forbidden"));
+        registerAdminResponse.set("409", ref("Conflict"));
 
         ObjectNode login = paths.putObject("/api/auth/login").putObject("post");
         login.put("summary", "Вход в систему");
