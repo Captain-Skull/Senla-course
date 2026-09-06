@@ -117,11 +117,23 @@ docker compose down -v
 curl http://localhost:8081/api/health
 ```
 
-## 6. Локальный запуск без Docker (Tomcat через Maven Cargo)
+## 6. Дефолтный администратор
+
+После первого запуска Liquibase автоматически создаёт учётную запись администратора:
+
+| Поле     | Значение        |
+|----------|-----------------|
+| username | `admin`         |
+| email    | `admin@test.com` |
+| password | `admin123`      |
+
+Используйте эти данные для входа через `POST /api/auth/login` сразу после запуска приложения.
+
+## 7. Локальный запуск без Docker (Tomcat через Maven Cargo)
 
 Проект собирается как `war` и запускается через плагин Cargo (Tomcat 11).
 
-### 6.1 Подготовьте PostgreSQL
+### 7.1 Подготовьте PostgreSQL
 
 Вариант A: локальный PostgreSQL на `localhost:5432` (по умолчанию в `database.properties`).
 
@@ -141,7 +153,7 @@ export JWT_SECRET="$(openssl rand -base64 64 | tr -d '\n')"
 export JWT_EXPIRATION_MS=3600000
 ```
 
-### 6.2 Запуск приложения
+### 7.2 Запуск приложения
 
 ```bash
 mvn clean package cargo:run
@@ -153,7 +165,7 @@ mvn clean package cargo:run
 
 Остановка: `Ctrl+C`.
 
-## 7. Сборка и артефакты
+## 8. Сборка и артефакты
 
 Собрать `war`:
 
@@ -165,15 +177,7 @@ mvn clean package
 
 - `target/personal-ads-system.war`
 
-### Дефолтный администратор
-
-После применения миграций создается базовый администратор:
-
-- username: `admin`
-- email: `admin@test.com`
-- password: `Admin123!`
-
-## 8. Тестирование
+## 9. Тестирование
 
 В проекте используется разделение:
 
@@ -206,7 +210,7 @@ mvn verify
 mvn test
 ```
 
-## 9. Структура проекта (кратко)
+## 10. Структура проекта (кратко)
 
 ```text
 src/main/java/com/senla/pas
@@ -227,15 +231,15 @@ src/test/java
   integration/  # интеграционные тесты
 ```
 
-## 10. Частые проблемы и решения
+## 11. Частые проблемы и решения
 
-### 10.1 `JWT_SECRET` не задан
+### 11.1 `JWT_SECRET` не задан
 
 Симптом: ошибка старта security/jwt.
 
 Решение: задайте `JWT_SECRET` в `.env` или через `export`.
 
-### 10.2 Порт занят
+### 11.2 Порт занят
 
 - Приложение в Docker: `8081`
 - Локальный Cargo Tomcat: `8080`
@@ -243,7 +247,7 @@ src/test/java
 
 Проверьте/освободите порт или измените маппинг в `docker-compose.yaml`.
 
-### 10.3 Интеграционные тесты падают из-за Docker
+### 11.3 Интеграционные тесты падают из-за Docker
 
 Запустите verify без Testcontainers и укажите тестовую БД:
 
